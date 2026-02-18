@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>DA205E_Assignment1</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Company />
+    <Authors>Sixten Peterson</Authors>
+    <Description>This is my solution for assignment 1 in the Programming in C#, II course at Malmö University. This program will be updated for assignment 2 at a later date.
+
+Credit to my girlfriend, Moa Sjöblom, for the application artwork that she hand made on her iPad. See the application icon as well as the icon in this about box.</Description>
+    <AssemblyVersion></AssemblyVersion>
+    <Product>EcoPark Animal Management System (EAMS)</Product>
+    <PackageId>EcoPark Animal Management System (EAMS)</PackageId>
+    <AssemblyTitle>EcoPark Animal Management System (EAMS)</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
