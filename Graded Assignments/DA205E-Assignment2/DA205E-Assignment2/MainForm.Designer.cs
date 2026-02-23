@@ -1,4 +1,4 @@
-﻿namespace DA205E_Assignment1
+﻿namespace DA205E_Assignment2
 {
     partial class MainForm
     {
@@ -51,6 +51,17 @@
             loadImageToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            lstAnimals = new ListBox();
+            btnChange = new Button();
+            btnDelete = new Button();
+            lblSpecies = new Label();
+            lblId = new Label();
+            lblNameLst = new Label();
+            lblAgeLst = new Label();
+            lblWeightLst = new Label();
+            lblGenderLst = new Label();
+            rtxtAdditionalData = new RichTextBox();
+            btnClearSelection = new Button();
             grpCreateAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
             grpGeneralData.SuspendLayout();
@@ -65,14 +76,14 @@
             grpCreateAnimal.Controls.Add(lstCategory);
             grpCreateAnimal.Location = new Point(12, 28);
             grpCreateAnimal.Name = "grpCreateAnimal";
-            grpCreateAnimal.Size = new Size(300, 247);
+            grpCreateAnimal.Size = new Size(300, 185);
             grpCreateAnimal.TabIndex = 0;
             grpCreateAnimal.TabStop = false;
             grpCreateAnimal.Text = "Create Animal";
             // 
             // btnCreateAnimal
             // 
-            btnCreateAnimal.Location = new Point(6, 208);
+            btnCreateAnimal.Location = new Point(6, 143);
             btnCreateAnimal.Name = "btnCreateAnimal";
             btnCreateAnimal.Size = new Size(265, 33);
             btnCreateAnimal.TabIndex = 3;
@@ -96,7 +107,7 @@
             lstSpecies.FormattingEnabled = true;
             lstSpecies.Location = new Point(132, 63);
             lstSpecies.Name = "lstSpecies";
-            lstSpecies.Size = new Size(139, 124);
+            lstSpecies.Size = new Size(139, 64);
             lstSpecies.TabIndex = 1;
             lstSpecies.SelectedIndexChanged += lstSpecies_SelectedIndexChanged;
             // 
@@ -105,24 +116,24 @@
             lstCategory.FormattingEnabled = true;
             lstCategory.Location = new Point(6, 33);
             lstCategory.Name = "lstCategory";
-            lstCategory.Size = new Size(120, 154);
+            lstCategory.Size = new Size(120, 94);
             lstCategory.TabIndex = 0;
             lstCategory.SelectedIndexChanged += lstCategory_SelectedIndexChanged;
             // 
             // picImage
             // 
             picImage.BorderStyle = BorderStyle.FixedSingle;
-            picImage.Location = new Point(344, 28);
+            picImage.Location = new Point(624, 27);
             picImage.Name = "picImage";
-            picImage.Size = new Size(214, 149);
+            picImage.Size = new Size(262, 135);
             picImage.TabIndex = 1;
             picImage.TabStop = false;
             // 
             // btnLoadImage
             // 
-            btnLoadImage.Location = new Point(344, 183);
+            btnLoadImage.Location = new Point(624, 180);
             btnLoadImage.Name = "btnLoadImage";
-            btnLoadImage.Size = new Size(214, 33);
+            btnLoadImage.Size = new Size(262, 33);
             btnLoadImage.TabIndex = 2;
             btnLoadImage.Text = "Load Image";
             btnLoadImage.UseVisualStyleBackColor = true;
@@ -138,7 +149,7 @@
             grpGeneralData.Controls.Add(txtAge);
             grpGeneralData.Controls.Add(txtName);
             grpGeneralData.Controls.Add(lblName);
-            grpGeneralData.Location = new Point(12, 297);
+            grpGeneralData.Location = new Point(318, 28);
             grpGeneralData.Name = "grpGeneralData";
             grpGeneralData.Size = new Size(300, 134);
             grpGeneralData.TabIndex = 3;
@@ -213,9 +224,9 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(12, 437);
+            btnAdd.Location = new Point(318, 180);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(300, 44);
+            btnAdd.Size = new Size(300, 33);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
@@ -223,10 +234,11 @@
             // 
             // rtxtAnimalData
             // 
-            rtxtAnimalData.Location = new Point(344, 236);
+            rtxtAnimalData.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtxtAnimalData.Location = new Point(425, 227);
             rtxtAnimalData.Name = "rtxtAnimalData";
             rtxtAnimalData.ReadOnly = true;
-            rtxtAnimalData.Size = new Size(214, 245);
+            rtxtAnimalData.Size = new Size(193, 254);
             rtxtAnimalData.TabIndex = 5;
             rtxtAnimalData.Text = "";
             // 
@@ -235,7 +247,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(570, 24);
+            menuStrip1.Size = new Size(898, 24);
             menuStrip1.TabIndex = 6;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -269,11 +281,126 @@
             aboutToolStripMenuItem.Text = "&About";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
+            // lstAnimals
+            // 
+            lstAnimals.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstAnimals.FormattingEnabled = true;
+            lstAnimals.Location = new Point(12, 245);
+            lstAnimals.Name = "lstAnimals";
+            lstAnimals.Size = new Size(407, 184);
+            lstAnimals.TabIndex = 7;
+            lstAnimals.SelectedIndexChanged += lstAnimals_SelectedIndexChanged;
+            // 
+            // btnChange
+            // 
+            btnChange.Location = new Point(12, 448);
+            btnChange.Name = "btnChange";
+            btnChange.Size = new Size(159, 33);
+            btnChange.TabIndex = 8;
+            btnChange.Text = "Change";
+            btnChange.UseVisualStyleBackColor = true;
+            btnChange.Click += btnChange_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(301, 448);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(118, 33);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // lblSpecies
+            // 
+            lblSpecies.AutoSize = true;
+            lblSpecies.Location = new Point(12, 227);
+            lblSpecies.Name = "lblSpecies";
+            lblSpecies.Size = new Size(46, 15);
+            lblSpecies.TabIndex = 11;
+            lblSpecies.Text = "Species";
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(90, 227);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(18, 15);
+            lblId.TabIndex = 12;
+            lblId.Text = "ID";
+            // 
+            // lblNameLst
+            // 
+            lblNameLst.AutoSize = true;
+            lblNameLst.Location = new Point(144, 227);
+            lblNameLst.Name = "lblNameLst";
+            lblNameLst.Size = new Size(39, 15);
+            lblNameLst.TabIndex = 13;
+            lblNameLst.Text = "Name";
+            // 
+            // lblAgeLst
+            // 
+            lblAgeLst.AutoSize = true;
+            lblAgeLst.Location = new Point(245, 227);
+            lblAgeLst.Name = "lblAgeLst";
+            lblAgeLst.Size = new Size(28, 15);
+            lblAgeLst.TabIndex = 14;
+            lblAgeLst.Text = "Age";
+            // 
+            // lblWeightLst
+            // 
+            lblWeightLst.AutoSize = true;
+            lblWeightLst.Location = new Point(301, 227);
+            lblWeightLst.Name = "lblWeightLst";
+            lblWeightLst.Size = new Size(45, 15);
+            lblWeightLst.TabIndex = 15;
+            lblWeightLst.Text = "Weight";
+            // 
+            // lblGenderLst
+            // 
+            lblGenderLst.AutoSize = true;
+            lblGenderLst.Location = new Point(374, 227);
+            lblGenderLst.Name = "lblGenderLst";
+            lblGenderLst.Size = new Size(45, 15);
+            lblGenderLst.TabIndex = 16;
+            lblGenderLst.Text = "Gender";
+            // 
+            // rtxtAdditionalData
+            // 
+            rtxtAdditionalData.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtxtAdditionalData.Location = new Point(624, 227);
+            rtxtAdditionalData.Name = "rtxtAdditionalData";
+            rtxtAdditionalData.ReadOnly = true;
+            rtxtAdditionalData.Size = new Size(262, 254);
+            rtxtAdditionalData.TabIndex = 17;
+            rtxtAdditionalData.Text = "";
+            // 
+            // btnClearSelection
+            // 
+            btnClearSelection.Location = new Point(177, 448);
+            btnClearSelection.Name = "btnClearSelection";
+            btnClearSelection.Size = new Size(118, 33);
+            btnClearSelection.TabIndex = 18;
+            btnClearSelection.Text = "Clear Selection";
+            btnClearSelection.UseVisualStyleBackColor = true;
+            btnClearSelection.Click += btnClearSelection_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(570, 493);
+            ClientSize = new Size(898, 493);
+            Controls.Add(btnClearSelection);
+            Controls.Add(rtxtAdditionalData);
+            Controls.Add(lblGenderLst);
+            Controls.Add(lblWeightLst);
+            Controls.Add(lblAgeLst);
+            Controls.Add(lblNameLst);
+            Controls.Add(lblId);
+            Controls.Add(lblSpecies);
+            Controls.Add(btnDelete);
+            Controls.Add(btnChange);
+            Controls.Add(lstAnimals);
             Controls.Add(rtxtAnimalData);
             Controls.Add(btnAdd);
             Controls.Add(grpGeneralData);
@@ -285,7 +412,7 @@
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "MainForm";
-            Text = "E-Animal Management System";
+            Text = "E-Animal Management System (V2)";
             grpCreateAnimal.ResumeLayout(false);
             grpCreateAnimal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picImage).EndInit();
@@ -322,5 +449,16 @@
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem loadImageToolStripMenuItem;
+        private ListBox lstAnimals;
+        private Button btnChange;
+        private Button btnDelete;
+        private Label lblSpecies;
+        private Label lblId;
+        private Label lblNameLst;
+        private Label lblAgeLst;
+        private Label lblWeightLst;
+        private Label lblGenderLst;
+        private RichTextBox rtxtAdditionalData;
+        private Button btnClearSelection;
     }
 }

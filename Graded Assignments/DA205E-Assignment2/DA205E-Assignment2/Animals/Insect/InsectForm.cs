@@ -1,10 +1,11 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals.Insect.Species;
-using DA205E_Assignment1.Animals.Insect.Species.Beetle;
-using DA205E_Assignment1.Animals.Insect.Species.Butterfly;
-using DA205E_Assignment1.Utils;
+using DA205E_Assignment2.Animals.Bird;
+using DA205E_Assignment2.Animals.Insect.Species;
+using DA205E_Assignment2.Animals.Insect.Species.Beetle;
+using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
+using DA205E_Assignment2.Utils;
 
-namespace DA205E_Assignment1.Animals.Insect
+namespace DA205E_Assignment2.Animals.Insect
 {
     /// <summary>
     /// The form used for creating a specified insect species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class.
@@ -16,11 +17,11 @@ namespace DA205E_Assignment1.Animals.Insect
         #endregion
 
         #region Constructors
-        public InsectForm(int species)
+        public InsectForm(int species, Insect? insect)
         {
             InitializeComponent();
             this.species = (InsectSpecies)species; // Setting the species based on the provided sepcies int that represents an Enum value
-            InitializeGUI(); // Initializing the GUI, see the method below
+            InitializeGUI(insect); // Initializing the GUI, see the method below
         }
         #endregion
 
@@ -28,17 +29,22 @@ namespace DA205E_Assignment1.Animals.Insect
         /// <summary>
         /// Initializes the GUI by A) making sure that the relevant controls are shown to the user and B) Populating the cmbLifecycleStage control and C) Setting the icon for the form
         /// </summary>
-        private void InitializeGUI()
+        private void InitializeGUI(Insect? insect)
         {
-            ShowInsectSpecies();
+            ShowInsectSpecies(insect);
             ComponentPopulationUtility.populate(cmbLifecycleStage, Enum.GetNames(typeof(LifecycleStage)), (int)LifecycleStage.Egg); // Populating the combo box and preselecting the Egg lifecycle stage
+            if (insect != null) // Pre-filling form if an insect object was provided
+            {
+                chkHasWings.Checked = insect.HasWings;
+                cmbLifecycleStage.SelectedIndex = (int)insect.LifecycleStage;
+            }
             Icon = Properties.Resources.EAMS;
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
-        private void ShowInsectSpecies()
+        private void ShowInsectSpecies(Insect? insect)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
 
@@ -47,10 +53,14 @@ namespace DA205E_Assignment1.Animals.Insect
                 case InsectSpecies.Beetle:
                     lblSpecificToAnimal1.Text = "Body type";
                     ComponentPopulationUtility.populate(cmbSpecificToAnimal1, Enum.GetNames(typeof(BodyType)), (int)BodyType.Flat); // Populating the combo box and preselecting the flat body type
+                    if (insect is Beetle beetle)
+                        cmbSpecificToAnimal1.SelectedIndex = (int) beetle.BodyType;
                     break;
                 case InsectSpecies.Butterfly:
                     lblSpecificToAnimal1.Text = "Wing pattern";
                     ComponentPopulationUtility.populate(cmbSpecificToAnimal1, Enum.GetNames(typeof(WingPattern)), (int)WingPattern.Spotted); // Populating the combo box and preselecting the spotted wing pattern
+                    if (insect is Butterfly butterfly)
+                        cmbSpecificToAnimal1.SelectedIndex = (int)butterfly.WingPattern;
                     break;
             }
         }

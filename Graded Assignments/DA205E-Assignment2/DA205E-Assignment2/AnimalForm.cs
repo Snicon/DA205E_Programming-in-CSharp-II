@@ -1,8 +1,8 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals;
+using DA205E_Assignment2.Animals;
 using System.ComponentModel;
 
-namespace DA205E_Assignment1
+namespace DA205E_Assignment2
 {
     /// <summary>
     /// This class acts as the super class for all the different kinds of animal forms. I notices that all the forms used an animal property which caused me to opt to implement this class.

@@ -1,8 +1,9 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals.Reptile.Species;
-using DA205E_Assignment1.Utils;
+using DA205E_Assignment2.Animals.Bird;
+using DA205E_Assignment2.Animals.Reptile.Species;
+using DA205E_Assignment2.Utils;
 
-namespace DA205E_Assignment1.Animals.Reptile
+namespace DA205E_Assignment2.Animals.Reptile
 {
     /// <summary>
     /// The form used for creating a specified reptile species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class
@@ -14,11 +15,11 @@ namespace DA205E_Assignment1.Animals.Reptile
         #endregion
 
         #region Constructors
-        public ReptileForm(int species)
+        public ReptileForm(int species, Reptile? reptile)
         {
             InitializeComponent();
             this.species = (ReptileSpecies)species; // Setting the species based on the provided sepcies int that represents an Enum value
-            InitializeGUI();
+            InitializeGUI(reptile);
         }
         #endregion
 
@@ -26,16 +27,21 @@ namespace DA205E_Assignment1.Animals.Reptile
         /// <summary>
         /// Initializes the GUI by making sure that the relevant controls are shown to the user. Also sets the form icon.
         /// </summary>
-        private void InitializeGUI()
+        private void InitializeGUI(Reptile? reptile)
         {
-            ShowReptileSpecies();
+            ShowReptileSpecies(reptile);
+            if (reptile != null) // Pre-filling form if a reptile object was provided
+            {
+                chkCanRegrowTail.Checked = reptile.CanRegrowTail;
+                chkLivesInWater.Checked = reptile.LivesInWater;
+            }
             Icon = Properties.Resources.EAMS;
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
-        private void ShowReptileSpecies()
+        private void ShowReptileSpecies(Reptile? reptile)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
 
@@ -44,12 +50,17 @@ namespace DA205E_Assignment1.Animals.Reptile
                 case ReptileSpecies.Snake:
                     chkVenomous.Visible = true; // Setting the check box visible
                     chkVenomous.Top = lblSpecificToAnimal1.Top; // Moving the check box up
+                    if (reptile is Snake snake)
+                        chkVenomous.Checked = snake.Venomous;
                     break;
                 case ReptileSpecies.Turtle:
                     txtSpecificToAnimal1.Visible = true;
                     lblSpecificToAnimal1.Visible = true;
 
                     lblSpecificToAnimal1.Text = "Shell width";
+
+                    if (reptile is Turtle turtle)
+                        txtSpecificToAnimal1.Text = turtle.ShellWidth.ToString();
                     break;
             }
         }

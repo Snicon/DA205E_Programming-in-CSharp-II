@@ -1,4 +1,4 @@
-﻿namespace DA205E_Assignment1.Animals.Insect
+﻿namespace DA205E_Assignment2.Animals.Insect
 {
     partial class InsectForm
     {

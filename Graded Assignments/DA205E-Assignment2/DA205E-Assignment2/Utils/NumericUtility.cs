@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Utils
+namespace DA205E_Assignment2.Utils
 {
     /// <summary>
     /// Utility for reading numeric input from text fields or other controls. The logic is mostly based on the help Faird has provided in the LMS but written on my own.

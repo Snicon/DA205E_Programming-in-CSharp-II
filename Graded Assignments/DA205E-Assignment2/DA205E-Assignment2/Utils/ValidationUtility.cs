@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Utils
+namespace DA205E_Assignment2.Utils
 {
     /// <summary>
     /// Static utility class containing validation logic and a helper function for showing a Message box to the user.

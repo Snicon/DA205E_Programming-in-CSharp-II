@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Utils
+namespace DA205E_Assignment2.Utils
 {
     /// <summary>
     /// After noticing code duplication for populating combo boxes I decided to make a static class with generic implementations for populating combo and list boxes.

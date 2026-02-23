@@ -1,10 +1,10 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Animals.Reptile
+namespace DA205E_Assignment2.Animals.Reptile
 {
     /// <summary>
     /// Sub class/derived class of the base/super class Animal. It adds fields and properties for lives in water and can regrow tail along with an overriden ToString()-method.
     /// </summary>
-    public class Reptile : Animal
+    public abstract class Reptile : Animal
     {
         #region Fields
         private bool livesInWater;
@@ -31,6 +31,14 @@ namespace DA205E_Assignment1.Animals.Reptile
             get { return canRegrowTail; }
             set { canRegrowTail = value; }
         }
+
+        public override Category Category
+        {
+            get
+            {
+                return Category.Reptile;
+            }
+        }
         #endregion
 
         #region ToString() method
@@ -40,8 +48,15 @@ namespace DA205E_Assignment1.Animals.Reptile
         /// <returns>A representation of the object as a string containing all relevant fields.</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nLives in water: {LivesInWater}\nCan regrow tail: {CanRegrowTail}";
+            string livesInWaterString = $"{"Lives in water",-18} {LivesInWater,-10}{Environment.NewLine}";
+            string canRegrowTailString = $"{"Can regrow tail",-18} {CanRegrowTail,-10}{Environment.NewLine}";
+            return base.ToString() + livesInWaterString + canRegrowTailString;
         }
         #endregion
+
+        public override int GetAverageLifeSpan()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

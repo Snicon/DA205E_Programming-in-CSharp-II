@@ -1,12 +1,187 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\animalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\animalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\animals\\reptile\\reptileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\animals\\reptile\\reptileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\applicationmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\applicationmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\animals\\reptile\\reptile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\animals\\reptile\\reptile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\da205e-assignment2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment2\\da205e-assignment2\\utils\\componentpopulationutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24525B28-58AE-4F2E-9D1D-F67B0FAEE074}|DA205E-Assignment2\\DA205E-Assignment2.csproj|solutionrelative:da205e-assignment2\\utils\\componentpopulationutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reptile.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Reptile\\Reptile.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\Animals\\Reptile\\Reptile.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Reptile\\Reptile.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\Animals\\Reptile\\Reptile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:19:14.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InsectForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Insect\\InsectForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\Animals\\Insect\\InsectForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Insect\\InsectForm.cs [Design]",
+              "RelativeToolTip": "DA205E-Assignment2\\Animals\\Insect\\InsectForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:12:57.33Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\MainForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\MainForm.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:38:50.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReptileForm.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Reptile\\ReptileForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\Animals\\Reptile\\ReptileForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Reptile\\ReptileForm.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\Animals\\Reptile\\ReptileForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:19:21.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationMode.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\ApplicationMode.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\ApplicationMode.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\ApplicationMode.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\ApplicationMode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T19:23:37.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnimalForm.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\AnimalForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\AnimalForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\AnimalForm.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\AnimalForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T14:52:01.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ComponentPopulationUtility.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Utils\\ComponentPopulationUtility.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\Utils\\ComponentPopulationUtility.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Utils\\ComponentPopulationUtility.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\Utils\\ComponentPopulationUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:09:36.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Animal.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\Animals\\Animal.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\Animals\\Animal.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\Animals\\Animal.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAYwIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:04:27.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\GenericList\\ListManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\GenericList\\ListManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\GenericList\\ListManager.cs",
+              "RelativeToolTip": "DA205E-Assignment2\\GenericList\\ListManager.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAWwCcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:32:35.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\MainForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment2\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment2\\DA205E-Assignment2\\MainForm.cs [Design]",
+              "RelativeToolTip": "DA205E-Assignment2\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:38:31.514Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

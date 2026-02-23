@@ -13,14 +13,14 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sixten Peterson")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute(@"This is my solution for assignment 1 in the Programming in C#, II course at Malmö University. This program will be updated for assignment 2 at a later date.
+[assembly: System.Reflection.AssemblyDescriptionAttribute(@"This is my solution for assignment 2 in the Programming in C#, II course at Malmö University. This program will be updated for assignment 3 at a later date. Version 2 introduced more data structures and OOP concepts to the application.
 
 Credit to my girlfriend, Moa Sjöblom, for the application artwork that she hand made on her iPad. See the application icon as well as the icon in this about box.")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84b4cd32634ec58ce22c76488e5e295796ba78e4")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.0+06c280d1a7473e562e7b923c16baab1d720e59fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcoPark Animal Management System (EAMS)")]
-[assembly: System.Reflection.AssemblyTitleAttribute("EcoPark Animal Management System (EAMS)")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyTitleAttribute("EcoPark Animal Management System (EAMS) V2")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

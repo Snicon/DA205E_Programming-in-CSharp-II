@@ -3,19 +3,20 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
-    <RootNamespace>DA205E_Assignment1</RootNamespace>
+    <RootNamespace>DA205E_Assignment2</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Company />
     <Authors>Sixten Peterson</Authors>
-    <Description>This is my solution for assignment 1 in the Programming in C#, II course at Malmö University. This program will be updated for assignment 2 at a later date.
+    <Description>This is my solution for assignment 2 in the Programming in C#, II course at Malmö University. This program will be updated for assignment 3 at a later date. Version 2 introduced more data structures and OOP concepts to the application.
 
 Credit to my girlfriend, Moa Sjöblom, for the application artwork that she hand made on her iPad. See the application icon as well as the icon in this about box.</Description>
     <AssemblyVersion></AssemblyVersion>
     <Product>EcoPark Animal Management System (EAMS)</Product>
     <PackageId>EcoPark Animal Management System (EAMS)</PackageId>
-    <AssemblyTitle>EcoPark Animal Management System (EAMS)</AssemblyTitle>
+    <AssemblyTitle>EcoPark Animal Management System (EAMS) V2</AssemblyTitle>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Animals.Reptile.Species
+namespace DA205E_Assignment2.Animals.Reptile.Species
 {
     /// <summary>
     /// Simple enum consisting of all the available reptile species in the application

@@ -1,9 +1,9 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals.Insect.Species;
-using DA205E_Assignment1.Animals.Insect.Species.Beetle;
-using DA205E_Assignment1.Animals.Insect.Species.Butterfly;
+using DA205E_Assignment2.Animals.Insect.Species;
+using DA205E_Assignment2.Animals.Insect.Species.Beetle;
+using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
 
-namespace DA205E_Assignment1.Animals.Insect
+namespace DA205E_Assignment2.Animals.Insect
 {
     /// <summary>
     /// Factory class used for creating insect objects.

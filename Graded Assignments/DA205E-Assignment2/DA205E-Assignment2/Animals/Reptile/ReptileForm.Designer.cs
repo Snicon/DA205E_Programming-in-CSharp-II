@@ -1,4 +1,4 @@
-﻿namespace DA205E_Assignment1.Animals.Reptile
+﻿namespace DA205E_Assignment2.Animals.Reptile
 {
     partial class ReptileForm
     {

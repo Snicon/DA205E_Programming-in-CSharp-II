@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Animals
+namespace DA205E_Assignment2.Animals
 {
     /// <summary>
     /// Simple enum containing all the available animal categories.

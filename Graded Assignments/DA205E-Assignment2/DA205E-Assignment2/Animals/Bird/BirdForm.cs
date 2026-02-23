@@ -1,9 +1,9 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals.Bird.Species;
-using DA205E_Assignment1.Animals.Bird.Species.Raven;
-using DA205E_Assignment1.Utils;
+using DA205E_Assignment2.Animals.Bird.Species;
+using DA205E_Assignment2.Animals.Bird.Species.Raven;
+using DA205E_Assignment2.Utils;
 
-namespace DA205E_Assignment1.Animals.Bird
+namespace DA205E_Assignment2.Animals.Bird
 {
     /// <summary>
     /// The form used for creating a specified bird species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class
@@ -15,11 +15,11 @@ namespace DA205E_Assignment1.Animals.Bird
         #endregion
 
         #region Constructors
-        public BirdForm(int species)
+        public BirdForm(int species, Bird? bird)
         {
             InitializeComponent();
             this.species = (BirdSpecies)species; // Setting the species based on the provided sepcies int that represents an Enum value
-            InitializeGUI(); // Initializing the GUI, see the method below
+            InitializeGUI(bird); // Initializing the GUI, see the method below
         }
         #endregion
 
@@ -27,17 +27,23 @@ namespace DA205E_Assignment1.Animals.Bird
         /// <summary>
         /// Initializes the GUI by A) making sure that the relevant controls are shown to the user and B) Populating the cmbBeakType control
         /// </summary>
-        private void InitializeGUI()
+        private void InitializeGUI(Bird? bird)
         {
-            ShowBirdSpecies();
+            ShowBirdSpecies(bird);
             ComponentPopulationUtility.populate(cmbBeakType, Enum.GetNames(typeof(BeakType)), (int)BeakType.Hooked);// Populating the combo box and preselecting the Hooked beak type 
+            if (bird != null) // Pre-filling form if a bird object was provided
+            {
+                txtWingspan.Text = bird.Wingspan.ToString();
+                cmbBeakType.SelectedIndex = (int)bird.BeakType;
+            }
+
             Icon = Properties.Resources.EAMS;
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
-        private void ShowBirdSpecies()
+        private void ShowBirdSpecies(Bird? bird)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
 
@@ -45,14 +51,17 @@ namespace DA205E_Assignment1.Animals.Bird
             {
                 case BirdSpecies.Dove:
                     lblSpecificToAnimal1.Text = "Milk production";
+                    if (bird is Dove dove)
+                        txtSpecificToAnimal1.Text = dove.MilkProduction.ToString();
                     break;
                 case BirdSpecies.Raven:
                     lblSpecificToAnimal1.Text = "Beak width";
+                    if (bird is Raven raven)
+                        txtSpecificToAnimal1.Text = raven.BeakSize.ToString();
                     break;
             }
         }
         #endregion
-
 
         #region Object creation
         /// <summary>

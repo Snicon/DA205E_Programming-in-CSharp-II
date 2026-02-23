@@ -1,6 +1,6 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
 using System.Reflection;
-namespace DA205E_Assignment1
+namespace DA205E_Assignment2
 {
     /// <summary>
     /// Not taking much credit for this class as it is more or less completley generated for me by Visual Studio.

@@ -1,9 +1,9 @@
-﻿namespace DA205E_Assignment1.Animals.Bird
+﻿namespace DA205E_Assignment2.Animals.Bird
 {
     /// <summary>
     /// Sub class/derived class of the base/super class Animal. It adds fields and properties for wingspan and beak type along with an overriden ToString()-method.
     /// </summary>
-    public class Bird : Animal
+    public abstract class Bird : Animal
     {
         #region Fields
         private double wingspan;
@@ -33,6 +33,14 @@
             get { return beakType; }
             set { beakType = value; }
         }
+
+        public override Category Category
+        {
+            get
+            {
+                return Category.Bird;
+            }
+        }
         #endregion
 
         #region ToString()
@@ -42,7 +50,9 @@
         /// <returns>A representation of the object as a string containing all relevant fields.</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nWingspan: {Wingspan}\nBeak type: {BeakType.ToString()}";
+            string wingspanString = $"{"Wingspan",-18} {Wingspan,-10}{Environment.NewLine}";
+            string beakTypeString = $"{"BeakType",-18} {BeakType.ToString(),-10}{Environment.NewLine}";
+            return base.ToString() + wingspanString + beakTypeString;
         }
         #endregion
     }

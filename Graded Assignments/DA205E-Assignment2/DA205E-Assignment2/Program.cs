@@ -1,4 +1,4 @@
-namespace DA205E_Assignment1
+namespace DA205E_Assignment2
 {
     internal static class Program
     {

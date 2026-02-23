@@ -1,14 +1,17 @@
 // Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals;
-using DA205E_Assignment1.Animals.Bird;
-using DA205E_Assignment1.Animals.Bird.Species;
-using DA205E_Assignment1.Animals.Insect;
-using DA205E_Assignment1.Animals.Insect.Species;
-using DA205E_Assignment1.Animals.Reptile;
-using DA205E_Assignment1.Animals.Reptile.Species;
-using DA205E_Assignment1.Utils;
+using DA205E_Assignment2.Animals;
+using DA205E_Assignment2.Animals.Bird;
+using DA205E_Assignment2.Animals.Bird.Species;
+using DA205E_Assignment2.Animals.Bird.Species.Raven;
+using DA205E_Assignment2.Animals.Insect;
+using DA205E_Assignment2.Animals.Insect.Species;
+using DA205E_Assignment2.Animals.Insect.Species.Beetle;
+using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
+using DA205E_Assignment2.Animals.Reptile;
+using DA205E_Assignment2.Animals.Reptile.Species;
+using DA205E_Assignment2.Utils;
 
-namespace DA205E_Assignment1
+namespace DA205E_Assignment2
 {
     /// <summary>
     /// The main form of the application. From here the user is able to choose an animal category and species, create an animal and adding it which for now only stores the latest added animal.
@@ -16,8 +19,10 @@ namespace DA205E_Assignment1
     public partial class MainForm : Form
     {
         #region Fields
-        private Animal animal = new Animal(); // Since the application is supposed to only support one animal I'm keeping the animal object here, it will be overwritten when a new animal is created.
+        private AnimalManager animalManager = new AnimalManager();
+        private Animal currentAnimal = null;
         private int speciesIndex = -1; // The int representing the animal speices in its species enum. This was introduced to support the "list all animal species" feature for grade B in assignment 1. Only use this value if the GUI is in the list all species mode (can be determined by checking if the chkListAllSpecies is checked.
+        private ApplicationMode applicationMode = ApplicationMode.CreateMode;
         #endregion
 
         #region Constructor
@@ -40,6 +45,8 @@ namespace DA205E_Assignment1
             ComponentPopulationUtility.populate(lstCategory, Enum.GetNames(typeof(Category)), (int)Category.Bird); // Populating the lstCategory list box and preselecting the Bird category
             ComponentPopulationUtility.populate(cmbGender, Enum.GetNames(typeof(GenderType)), (int)GenderType.Unknown); // Populating the cmbGender combo box and preselecting the Unknown gender
             Icon = Properties.Resources.EAMS;
+
+            RefreshUI(); // This method is called to assure that the UI is drawn correctly based on the active application mode
         }
         #endregion
 
@@ -91,6 +98,87 @@ namespace DA205E_Assignment1
                 populateSpecies((Category)lstCategory.SelectedIndex, true); // Populating the species list box with the appropriate species
             }
         }
+
+        private void ClearUI()
+        {
+            currentAnimal = null; // Making sure state is clean
+
+            lstCategory.SelectedIndex = (int)Category.Bird; // Defaulting to Bird
+            lstSpecies.SelectedIndex = (int)BirdSpecies.Dove; // Defaulting to Dove
+
+            txtName.Text = string.Empty;
+            txtAge.Text = string.Empty;
+            txtWeight.Text = string.Empty;
+            cmbGender.SelectedIndex = (int)GenderType.Unknown; // Defaulting to Unknown gender
+
+            picImage.Image = null;
+
+            rtxtAnimalData.Text = string.Empty;
+            rtxtAdditionalData.Text = string.Empty;
+        }
+
+        private void RefreshApplicationModeUI()
+        {
+            if (applicationMode == ApplicationMode.CreateMode)
+            {
+                btnCreateAnimal.Text = "Create animal";
+                btnAdd.Enabled = true;
+                btnAdd.Text = "Add";
+                lstCategory.Enabled = true;
+                lstSpecies.Enabled = true;
+                btnChange.Enabled = false;
+                btnDelete.Enabled = false;
+                btnLoadImage.Enabled = false;
+                btnClearSelection.Enabled = false;
+            } 
+            else if (applicationMode == ApplicationMode.EditMode)
+            {
+                btnCreateAnimal.Text = "Change animal data";
+                btnAdd.Text = "Clear selection to be able to add";
+                btnAdd.Enabled = false;
+                lstCategory.Enabled = false;
+                lstSpecies.Enabled = false;
+                btnChange.Enabled = true;
+                btnDelete.Enabled = true;
+                btnLoadImage.Enabled = true;
+                btnClearSelection.Enabled = true;
+            }
+        }
+
+        // Dependet on state
+        private void RefreshUI(bool repopulateLstAnimals = false)
+        {
+            // int animalCount = lstAnimals.Items.Count;
+            //int currentlySelectedAnimalIndex = lstAnimals.SelectedIndex;
+
+            if (currentAnimal == null) // Making sure the currentAnimal is not null
+            {
+                ClearUI();
+                applicationMode = ApplicationMode.CreateMode;
+            }
+            else
+            {
+                applicationMode = ApplicationMode.EditMode;
+
+                lstCategory.SelectedIndex = (int)currentAnimal.Category;
+                lstSpecies.SelectedIndex = GetSpeciesIndexFromAnimal(currentAnimal); // If species index is -1 the species won't be selected in the list.
+                txtName.Text = currentAnimal.Name;
+                txtAge.Text = currentAnimal.Age.ToString();
+                txtWeight.Text = currentAnimal.Weight.ToString();
+                cmbGender.SelectedIndex = (int)currentAnimal.Gender;
+                picImage.Image = currentAnimal.Image;
+                rtxtAnimalData.Text = currentAnimal.ToString();
+                rtxtAdditionalData.Text = currentAnimal.ToStringAdditional();
+            }
+
+            if (repopulateLstAnimals)
+            {
+                lstAnimals.Items.Clear(); // Clearing the lstAnimals listbox before re-populating it
+                ComponentPopulationUtility.populate(lstAnimals, animalManager.ToStringSummaryAllAnimals(), -1);
+            }
+
+            RefreshApplicationModeUI();
+        }
         #endregion
 
         #region Data reading
@@ -110,13 +198,13 @@ namespace DA205E_Assignment1
 
             if (ValidationUtility.ValidateGeneral(name, age, weight) && isValidAge && isValidWeight) // Validating the input and setting it for the animal object if it is valid
             {
-                animal.Name = name;
-                animal.Age = age;
-                animal.Weight = weight;
-                animal.Gender = gender;
+                currentAnimal.Name = name;
+                currentAnimal.Age = age;
+                currentAnimal.Weight = weight;
+                currentAnimal.Gender = gender;
 
                 return true; // data was valid and has been set for the animal object
-            } 
+            }
 
             ValidationUtility.WarnUser("It seems like some of your input was invalid. Make sure you have inputted a name, age (0.0 or older) and weight (0.0 or heavier).");
             return false; // data was invalid and nothing has been saved to the animal object
@@ -129,34 +217,24 @@ namespace DA205E_Assignment1
         /// </summary>
         private void CreateAnimal()
         {
-            int relevantSpeciesIndex = -1; // Setting -1 indicating that no relevant species has been selected
-
-            if (chkListAllSpecies.Checked) // Setting the relevant species index based on if the user is in list all species mode or not
-            {
-                relevantSpeciesIndex = speciesIndex; // Setting the species index based on what has been stored during species selection in all species mode
-            } else
-            {
-                if (lstSpecies.SelectedIndex >= 0)
-                    relevantSpeciesIndex = lstSpecies.SelectedIndex; // Setting the species based on the selected index as it matches up with the relevant enum when all species are not listed.
-            }
-
-            if (relevantSpeciesIndex != -1) // Only execute the code within this if statement if a valid species index has been provided.
+            if (speciesIndex != -1) // Only execute the code within this if statement if a valid species index has been provided.
             {
                 AnimalForm form = null;
 
-                if (lstSpecies.SelectedIndex >= 0) {
+                if (lstSpecies.SelectedIndex >= 0)
+                {
                     switch ((Category)lstCategory.SelectedIndex) // Determining which kind of form to create
                     {
                         case Category.Bird:
-                            form = new BirdForm(relevantSpeciesIndex);
+                                form = new BirdForm(speciesIndex, (Bird)currentAnimal);
                             break;
                         case Category.Insect:
-                            form = new InsectForm(relevantSpeciesIndex);
+                            form = new InsectForm(speciesIndex, (Insect)currentAnimal);
                             break;
                         case Category.Reptile:
-                            form = new ReptileForm(relevantSpeciesIndex);
+                            form = new ReptileForm(speciesIndex, (Reptile)currentAnimal);
                             break;
-                        default: // NO matching form could be found
+                        default: // No matching form could be found
                             ValidationUtility.WarnUser("Animal category not properly implemented. Please let the developer know how to reproduce this. Developer hint: CreateAnimal()-method."); // Just a notice if I manage to forget to add the code for an animal category or in other ways break the application.
                             break;
                     }
@@ -164,20 +242,26 @@ namespace DA205E_Assignment1
 
                 if (form != null) // If a form was created we show it as a dialog with this form as the owner. If the Dialog closes with OK DialogResult we add the animal.
                 {
+                    if (currentAnimal != null)
+                    {
+                        form.Animal = currentAnimal;
+                    }
+
                     if (form.ShowDialog(this) == DialogResult.OK)
                     {
                         Animal formAnimal = form.Animal; // I'd rather write this in a variable once than writing this casting each time I want to access the animal property from the form
 
                         if (formAnimal != null)
                         {
-                            animal = formAnimal;
+                            currentAnimal = formAnimal;
                             // Can be used for debugging: MessageBox.Show(this.animal.ToString());
                             formAnimal = null; // Clearing the animal object inside the form
                         }
                     }
                 }
 
-            } else
+            }
+            else
             {
                 ValidationUtility.WarnUser("Invlaid species index, please provide the developer with steps to repoduce."); // As long as the rest of the code is sound this won't ever execute. Though I guess coding has given me some trust issues so see this as a way for me to make the testing stage of the application easier in order to catch any bugs that may or may not occur. 
             }
@@ -188,9 +272,18 @@ namespace DA205E_Assignment1
         /// </summary>
         private void AddAnimal()
         {
-            if (ReadGeneralData()) { // Only setting the rtxtAnimalData text if the general data was valid
-                rtxtAnimalData.Text = animal.ToString();
-                picImage.Image = animal.Image; // The picture box should not show any old animal images, this way we make sure the correct image is shown for the animal
+            if (currentAnimal == null)
+            {
+                ValidationUtility.WarnUser($"Don't forget to create an animal by pressing the \"Create Animal\" button first.");
+                return;
+            }
+
+            if (ReadGeneralData()) // Making sure the data that was read was valid before doing all of the intersting stuff
+            {
+                animalManager.SetNewID(currentAnimal);
+                animalManager.Add(currentAnimal);
+                currentAnimal = null;
+                RefreshUI(true);
             }
         }
 
@@ -215,7 +308,8 @@ namespace DA205E_Assignment1
             }
             else
             {
-                lstCategory.Enabled = true;
+                if (applicationMode != ApplicationMode.EditMode)
+                    lstCategory.Enabled = true;
                 if (lstCategory.SelectedIndex >= 0)
                     populateSpecies((Category)lstCategory.SelectedIndex, true); // Populate species based on selected category
             }
@@ -226,53 +320,46 @@ namespace DA205E_Assignment1
         /// </summary>
         private void SpeciesSelectionChanged()
         {
-            if (chkListAllSpecies.Checked) // Irrelevant unless the checkbox for listing all species is checked
-            {
-                string selectedSpecies = "";
+            string selectedSpecies = "";
 
-                // Updating the category selction in the listbox control based on the selected species
-                if (lstSpecies.SelectedItem != null)
+            // Updating the category selction in the listbox control based on the selected species
+            if (lstSpecies.SelectedItem != null)
+            {
+                selectedSpecies = lstSpecies.SelectedItem.ToString();
+
+                // Determining the category based on the selected species. TODO: Improve code
+                switch (selectedSpecies)
                 {
-                    selectedSpecies = lstSpecies.SelectedItem.ToString();
-
-                    // Determining the category based on the selected species. TODO: Improve code
-                    switch (selectedSpecies)
-                    {
-                        case nameof(BirdSpecies.Dove):
-                            lstCategory.SelectedIndex = (int)Category.Bird;
-                            speciesIndex = (int)BirdSpecies.Dove;
-                            break;
-                        case nameof(BirdSpecies.Raven):
-                            lstCategory.SelectedIndex = (int)Category.Bird; // Setting the corresponding category index
-                            speciesIndex = (int)BirdSpecies.Raven;
-                            break;
-                        case nameof(InsectSpecies.Beetle):
-                            lstCategory.SelectedIndex = (int)Category.Insect;
-                            speciesIndex = (int)InsectSpecies.Beetle;
-                            break;
-                        case nameof(InsectSpecies.Butterfly):
-                            lstCategory.SelectedIndex = (int)Category.Insect; // Setting the corresponding category index
-                            speciesIndex = (int)InsectSpecies.Butterfly;
-                            break;
-                        case nameof(ReptileSpecies.Snake):
-                            lstCategory.SelectedIndex = (int)Category.Reptile;
-                            speciesIndex = (int)ReptileSpecies.Snake;
-                            break;
-                        case nameof(ReptileSpecies.Turtle):
-                            lstCategory.SelectedIndex = (int)Category.Reptile; // Setting the corresponding category index
-                            speciesIndex = (int)ReptileSpecies.Turtle;
-                            break;
-                        default:
-                            lstCategory.SelectedIndex = (int)Category.Bird; // Just defaulting to something
-                            speciesIndex = -1; // No valid sepcies index could be interpreted
-                            MessageBox.Show("Whoops! Seems like this species is missing in the lstSpecies_SelectedIndexChanged() MainForm GUI method. Defaulted to Bird, please report this to the developer of the application.", "Whoops!");
-                            break;
-                    }
+                    case nameof(BirdSpecies.Dove):
+                        lstCategory.SelectedIndex = (int)Category.Bird;
+                        speciesIndex = (int)BirdSpecies.Dove;
+                        break;
+                    case nameof(BirdSpecies.Raven):
+                        lstCategory.SelectedIndex = (int)Category.Bird; // Setting the corresponding category index
+                        speciesIndex = (int)BirdSpecies.Raven;
+                        break;
+                    case nameof(InsectSpecies.Beetle):
+                        lstCategory.SelectedIndex = (int)Category.Insect;
+                        speciesIndex = (int)InsectSpecies.Beetle;
+                        break;
+                    case nameof(InsectSpecies.Butterfly):
+                        lstCategory.SelectedIndex = (int)Category.Insect; // Setting the corresponding category index
+                        speciesIndex = (int)InsectSpecies.Butterfly;
+                        break;
+                    case nameof(ReptileSpecies.Snake):
+                        lstCategory.SelectedIndex = (int)Category.Reptile;
+                        speciesIndex = (int)ReptileSpecies.Snake;
+                        break;
+                    case nameof(ReptileSpecies.Turtle):
+                        lstCategory.SelectedIndex = (int)Category.Reptile; // Setting the corresponding category index
+                        speciesIndex = (int)ReptileSpecies.Turtle;
+                        break;
+                    default:
+                        lstCategory.SelectedIndex = (int)Category.Bird; // Just defaulting to something
+                        speciesIndex = -1; // No valid sepcies index could be interpreted
+                        MessageBox.Show("Whoops! Seems like this species is missing in the lstSpecies_SelectedIndexChanged() MainForm GUI method. Defaulted to Bird, please report this to the developer of the application.", "Whoops!");
+                        break;
                 }
-            }
-            else
-            {
-                speciesIndex = -1; // Species index is irrelevant. Shouldn't really matter to update this but hey at least I can programmatically check the state if I ever wish to in the future.
             }
         }
 
@@ -281,9 +368,34 @@ namespace DA205E_Assignment1
         /// </summary>
         private void LoadImage()
         {
-            animal.LoadImage();
-            if (animal.Image != null)
-                picImage.Image = animal.Image;
+            if (currentAnimal == null)
+            {
+                ValidationUtility.WarnUser("Can't load an Image if no animal is selected.");
+                return;
+            }
+
+            currentAnimal.LoadImage();
+            if (currentAnimal.Image != null)
+                picImage.Image = currentAnimal.Image;
+        }
+
+        private void ChangeAnimal()
+        {
+            if (ReadGeneralData())
+            {
+                int index = lstAnimals.SelectedIndex;
+
+                if (animalManager.CheckIndex(index))
+                {
+                    if (!animalManager.ChangeAt(currentAnimal, index))
+                    {
+                        ValidationUtility.WarnUser("Something went wrong while trying to change the animal.");
+                    }
+                }
+
+                currentAnimal = null; // Setting current animal to null in order to clear the UI upon refresh
+                RefreshUI(true);
+            }
         }
         #endregion
 
@@ -370,5 +482,74 @@ namespace DA205E_Assignment1
             AddAnimal();
         }
         #endregion
+
+        private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstAnimals.SelectedIndex == -1)
+            {
+                currentAnimal = null; // Making sure that there is no current animal
+            }
+            else if (animalManager.CheckIndex(lstAnimals.SelectedIndex))
+            {
+                currentAnimal = animalManager.GetAt(lstAnimals.SelectedIndex);
+            }
+
+            RefreshUI(); // Makes sure the UI is "up to date" based on the state (currentAnimal)
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index = lstAnimals.SelectedIndex;
+
+            if (index >= 0)
+            {
+                bool isSuccessful = animalManager.DeleteAt(lstAnimals.SelectedIndex);
+
+                if (isSuccessful)
+                {
+                    currentAnimal = null; // Setting current animal to null which triggers a UI clear when refreshing the ui
+                    RefreshUI(true);
+                }
+                else
+                {
+                    ValidationUtility.WarnUser("It seems like the index of the selected animal in the listbox of all animals was invalid. Please provide the developer with steps to reproduce this warning.");
+                }
+            }
+            else
+            {
+                ValidationUtility.WarnUser("Deletion failed. Are you sure you selected an animal in the listbox of all animals?");
+            }
+        }
+
+        private void btnClearSelection_Click(object sender, EventArgs e)
+        {
+            lstAnimals.SelectedIndex = -1;
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            ChangeAnimal();
+        }
+
+        public static int GetSpeciesIndexFromAnimal(Animal animal)
+        {
+            switch(animal)
+            {
+                case Dove:
+                    return (int)BirdSpecies.Dove;
+                case Raven:
+                    return (int)BirdSpecies.Raven;
+                case Beetle:
+                    return (int)InsectSpecies.Beetle;
+                case Butterfly:
+                    return (int)InsectSpecies.Butterfly;
+                case Snake:
+                    return (int)ReptileSpecies.Snake;
+                case Turtle:
+                    return (int)ReptileSpecies.Turtle;
+                default:
+                    return -1;
+            }
+        }
     }
 }

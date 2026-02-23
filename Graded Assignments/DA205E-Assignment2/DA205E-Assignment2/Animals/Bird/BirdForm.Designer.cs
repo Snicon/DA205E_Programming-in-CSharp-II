@@ -1,4 +1,4 @@
-﻿namespace DA205E_Assignment1.Animals.Bird
+﻿namespace DA205E_Assignment2.Animals.Bird
 {
     partial class BirdForm
     {

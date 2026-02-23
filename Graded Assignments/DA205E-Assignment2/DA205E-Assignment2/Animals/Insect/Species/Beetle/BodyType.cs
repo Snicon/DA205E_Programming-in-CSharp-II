@@ -1,5 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-namespace DA205E_Assignment1.Animals.Insect.Species.Beetle
+namespace DA205E_Assignment2.Animals.Insect.Species.Beetle
 {
     /// <summary>
     /// Simple enum consisting of different body types for a beetle

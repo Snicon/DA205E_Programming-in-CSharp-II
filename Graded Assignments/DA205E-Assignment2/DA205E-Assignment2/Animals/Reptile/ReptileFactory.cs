@@ -1,7 +1,7 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment1.Animals.Reptile.Species;
+using DA205E_Assignment2.Animals.Reptile.Species;
 
-namespace DA205E_Assignment1.Animals.Reptile
+namespace DA205E_Assignment2.Animals.Reptile
 {
     /// <summary>
     /// Factory class used for creating bird objects.
