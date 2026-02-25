@@ -94,27 +94,6 @@ namespace DA205E_Assignment2.Animals
         }
         #endregion
 
-        #region Image setter
-        /// <summary>
-        /// Handling image loading via an OpenFileDialog, filters and default extensions are applied. The file path is then used to create a new instance of a bitmap which is then set for the animal.
-        /// </summary>
-        public void LoadImage()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog(); // Opens a File Dialog for picking what file to load
-            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
-            openFileDialog.DefaultExt = "jpg"; // Defaulting to the jpg file extenision
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                String filePath = openFileDialog.FileName; // Getting full file path (called FileName in C#, which I first learned about during assignment 6 for the previous course)
-                Bitmap bitmap = new Bitmap(filePath); // "Making" a bitmap out of the image file
-                Image = bitmap; // Setting the bitmap
-            }
-
-            openFileDialog.Dispose();
-        }
-        #endregion
-
         #region Other methods
         /// <summary>
         /// Virtual method for the sleep time of the animal. Some derived classes override this method. Others use the default of 0.0.

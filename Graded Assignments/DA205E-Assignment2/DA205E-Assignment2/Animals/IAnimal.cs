@@ -63,11 +63,6 @@ namespace DA205E_Assignment2.Animals
         public string ToStringAdditional();
 
         /// <summary>
-        /// Logic for setting (and optionally picking) an image for the object.
-        /// </summary>
-        public void LoadImage();
-
-        /// <summary>
         /// Overriding the ToString to better represent the object data/fields in a string. Showcasing ID, Name, Gender, Age and Weight in a nicley formatted string.
         /// </summary>
         /// <returns>The string representing the object with nice formatting.</returns>

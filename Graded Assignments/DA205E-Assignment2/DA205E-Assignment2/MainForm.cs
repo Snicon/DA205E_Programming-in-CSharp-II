@@ -386,10 +386,12 @@ namespace DA205E_Assignment2
                 ValidationUtility.WarnUser("Can't load an Image if no animal is selected.");
                 return;
             }
+            Bitmap image = FileManager.LoadImage(); // Prompts the user to select an image
 
-            currentAnimal.LoadImage();
-            if (currentAnimal.Image != null)
-                picImage.Image = currentAnimal.Image;
+            if (image != null)
+                currentAnimal.Image = image; // Sets the image in the currentAnimal object
+
+            picImage.Image = currentAnimal.Image; // Making sure the image is displayed in the ui
         }
 
         private void ChangeAnimal()
