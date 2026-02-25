@@ -1,12 +1,14 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment2.Animals.Bird;
+﻿// Sixten Peterson (AQ9300) 2026-02-24
 using DA205E_Assignment2.Animals.Reptile.Species;
 using DA205E_Assignment2.Utils;
 
 namespace DA205E_Assignment2.Animals.Reptile
 {
     /// <summary>
-    /// The form used for creating a specified reptile species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class
+    /// The form used for creating a specified reptile species. The form inherits the AnimalForm which contains an Animal property
+    /// that it has in common with the rest of the animal form derived class.
+    /// 
+    /// If a reptile object is passed into the form the form is pre-filled (handy when editing an animal inside the application).
     /// </summary>
     public partial class ReptileForm : AnimalForm
     {
@@ -15,6 +17,12 @@ namespace DA205E_Assignment2.Animals.Reptile
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// The constructor initializes the GUI. Depending on the provided ReptileSpecies the GUI is initialized differently.
+        /// If a reptile object is passed in the form will get pre-filled for easier editing.
+        /// </summary>
+        /// <param name="species">The species of reptile used for creating/editing the animal.</param>
+        /// <param name="reptile">An optional reptile object used for prefilling. Can be null if no pre-filling is required.</param>
         public ReptileForm(int species, Reptile? reptile)
         {
             InitializeComponent();
@@ -35,12 +43,13 @@ namespace DA205E_Assignment2.Animals.Reptile
                 chkCanRegrowTail.Checked = reptile.CanRegrowTail;
                 chkLivesInWater.Checked = reptile.LivesInWater;
             }
-            Icon = Properties.Resources.EAMS;
+            Icon = Properties.Resources.EAMS; // Setting the icon for the form
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
+        /// <param name="reptile">An optional Bird object used for pre-filling, can be null.</param>
         private void ShowReptileSpecies(Reptile? reptile)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
@@ -50,7 +59,7 @@ namespace DA205E_Assignment2.Animals.Reptile
                 case ReptileSpecies.Snake:
                     chkVenomous.Visible = true; // Setting the check box visible
                     chkVenomous.Top = lblSpecificToAnimal1.Top; // Moving the check box up
-                    if (reptile is Snake snake)
+                    if (reptile is Snake snake) // Pre-filling if the bird object is of type Snake
                         chkVenomous.Checked = snake.Venomous;
                     break;
                 case ReptileSpecies.Turtle:
@@ -59,7 +68,7 @@ namespace DA205E_Assignment2.Animals.Reptile
 
                     lblSpecificToAnimal1.Text = "Shell width";
 
-                    if (reptile is Turtle turtle)
+                    if (reptile is Turtle turtle) // Pre-filling if the bird object is of type Turtle
                         txtSpecificToAnimal1.Text = turtle.ShellWidth.ToString();
                     break;
             }

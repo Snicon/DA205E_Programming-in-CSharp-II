@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml;
+﻿// Sixten Peterson (AQ9300) 2026-02-23
+
+using DA205E_Assignment2.Animals.Bird.Species;
+using DA205E_Assignment2.Animals.Bird.Species.Raven;
+using DA205E_Assignment2.Animals.Insect.Species;
+using DA205E_Assignment2.Animals.Insect.Species.Beetle;
+using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
+using DA205E_Assignment2.Animals.Reptile.Species;
 
 namespace DA205E_Assignment2.Animals
 {
+    /// <summary>
+    /// The root class for all animal derived classes (obviously). This class implements the IAnimal interface.
+    /// </summary>
     public abstract class Animal: IAnimal
     {
         #region Fields
-        private string id = string.Empty;
+        private string id = string.Empty; // Introduced in assignment 2
         private string? name;
         private GenderType gender = GenderType.Unknown;
         private double age = 0.0;
         private double weight = 0.0;
         private Bitmap? image;
 
-        private double sleepTime = 0.0;
+        protected double sleepTime = 0.0; // Introduced in assignment 2
         #endregion
 
-        public string Id { 
+        #region Properties
+        public string Id 
+        {
             get { return id; }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value)) // Only setting new ids that are not an empty string or null
                     id = value;
             }
         }
@@ -68,24 +77,24 @@ namespace DA205E_Assignment2.Animals
             }
         }
 
-        public Bitmap? Image
+        public Bitmap? Image // Bitmap
         {
             get { return image; }
             set { image = value; }
         }
 
-        abstract public Category Category
+        abstract public Category Category // Will be implemented in a derived class
         {
             get;
         }
 
         public double SleepTime
         {
-            get;
-            set;
-            // TODO: Improve and remove auto properties
+            get; // No set is required since there is a virtual setter method already in order to comply with the assignment requirements.
         }
+        #endregion
 
+        #region Image setter
         /// <summary>
         /// Handling image loading via an OpenFileDialog, filters and default extensions are applied. The file path is then used to create a new instance of a bitmap which is then set for the animal.
         /// </summary>
@@ -104,27 +113,58 @@ namespace DA205E_Assignment2.Animals
 
             openFileDialog.Dispose();
         }
+        #endregion
 
+        #region Other methods
+        /// <summary>
+        /// Virtual method for the sleep time of the animal. Some derived classes override this method. Others use the default of 0.0.
+        /// </summary>
         public virtual void SetSleepTime()
         {
-            SleepTime = 0.0;
+            sleepTime = 0.0;
         }
 
+        /// <summary>
+        /// Abstract method for getting the average life span. Since different species have different average life spans this is implemented in a derived class.
+        /// </summary>
+        /// <returns>An int representing the amount of years for an average life span of the animalspecies.</returns>
         public abstract int GetAverageLifeSpan();
 
+        /// <summary>
+        /// Abstract method for keeping track of daily food requirements through a dictionary.
+        /// </summary>
+        /// <returns>Dictionary containing all food requirements.</returns>
         public abstract Dictionary<string, string> DailyFoodRequirement();
 
+        /// <summary>
+        /// Abstract method for keeping track of upcoming events through a queue.
+        /// </summary>
+        /// <returns>Dictionary containing upcoming events.</returns>
         public abstract Queue<string> GetUpcomingEvents();
 
+        /// <summary>
+        /// This is my additional abstract mehtod of my own as per the requirement for grade A on the bottom of page 6 of the assignment document. In short it lets derived classes override the latin name of the species.
+        /// </summary>
+        /// <returns>The latin name of the animal as a string</returns>
         public abstract string GetLatinName();
+        #endregion
 
+        #region Methods for string representations of the object
+        /// <summary>
+        /// A string representation of some of the more important fields of the class (id, name, age, weight, gender). Note that the class is virtual and is therefor overridable in a derived class.
+        /// </summary>
+        /// <returns>The simplified representation of the class ass a string adapted for the lstAnimal listbox.</returns>
         public virtual string ToStringSummary()
         {
             string name = Name.Substring(0, Math.Min(12, Name.Length));
-            string strOut = $"{Id,-8} {name,-12} {Age,6:f1} {Weight,6:f1} {Gender.ToString()}";
+            string strOut = $"{Id,-8} {Name,-12} {Age,6:f1} {Weight,6:f1} {Gender.ToString()}";
             return strOut;
         }
 
+        /// <summary>
+        /// Virtual method for representing additional data of the class, specifically, the latin name, daily food requirement, upcoming events and life span.
+        /// </summary>
+        /// <returns>The additional data in a nicley formatted string for use in a rich text box.</returns>
         public virtual string ToStringAdditional()
         {
             string latinString = $"Latin name: {GetLatinName()}{Environment.NewLine}";
@@ -146,6 +186,10 @@ namespace DA205E_Assignment2.Animals
             return latinString + dailyFoodRequirementsString + upcomingEventsString + lifespanString;
         }
 
+        /// <summary>
+        /// The string representation of the object. It displays the id, name, age, weight and gender nicley formatted.
+        /// </summary>
+        /// <returns>A nicley formatted string representing the object.</returns>
         public override string ToString()
         {
             string idString = $"{"ID",-18} {Id,-10}{Environment.NewLine}";
@@ -155,5 +199,34 @@ namespace DA205E_Assignment2.Animals
             string genderString = $"{"Gender",-18} {Gender,-10}{Environment.NewLine}";
             return idString + nameString + ageString + weightString + genderString;
         }
+        #endregion
+
+        #region Static methods
+        /// <summary>
+        /// Helper method used to determine the index of the specified animal by casting the XSpecies enum for said animal to an int
+        /// </summary>
+        /// <param name="animal">The animal to get the species index from</param>
+        /// <returns>The species index of the animal</returns>
+        public static int GetSpeciesIndexFromAnimal(Animal animal)
+        {
+            switch (animal)
+            {
+                case Dove:
+                    return (int)BirdSpecies.Dove;
+                case Raven:
+                    return (int)BirdSpecies.Raven;
+                case Beetle:
+                    return (int)InsectSpecies.Beetle;
+                case Butterfly:
+                    return (int)InsectSpecies.Butterfly;
+                case Snake:
+                    return (int)ReptileSpecies.Snake;
+                case Turtle:
+                    return (int)ReptileSpecies.Turtle;
+                default:
+                    return -1;
+            }
+        }
+        #endregion
     }
 }

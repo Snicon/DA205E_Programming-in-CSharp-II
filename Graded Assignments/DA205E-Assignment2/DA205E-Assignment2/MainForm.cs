@@ -1,12 +1,9 @@
-// Sixten Peterson (AQ9300) 2026-02-04
+// Sixten Peterson (AQ9300) 2026-02-25
 using DA205E_Assignment2.Animals;
 using DA205E_Assignment2.Animals.Bird;
 using DA205E_Assignment2.Animals.Bird.Species;
-using DA205E_Assignment2.Animals.Bird.Species.Raven;
 using DA205E_Assignment2.Animals.Insect;
 using DA205E_Assignment2.Animals.Insect.Species;
-using DA205E_Assignment2.Animals.Insect.Species.Beetle;
-using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
 using DA205E_Assignment2.Animals.Reptile;
 using DA205E_Assignment2.Animals.Reptile.Species;
 using DA205E_Assignment2.Utils;
@@ -19,10 +16,10 @@ namespace DA205E_Assignment2
     public partial class MainForm : Form
     {
         #region Fields
-        private AnimalManager animalManager = new AnimalManager();
-        private Animal currentAnimal = null;
-        private int speciesIndex = -1; // The int representing the animal speices in its species enum. This was introduced to support the "list all animal species" feature for grade B in assignment 1. Only use this value if the GUI is in the list all species mode (can be determined by checking if the chkListAllSpecies is checked.
-        private ApplicationMode applicationMode = ApplicationMode.CreateMode;
+        private AnimalManager animalManager = new AnimalManager(); // The animal manager handles the 
+        private Animal currentAnimal = null; // Keeps track of the current animal when editing/creating an animal
+        private int speciesIndex = -1; // The int representing the animal speices in its species enum. This was introduced to support the "list all animal species" feature for grade B in assignment 1. Specifically to handle the checkbox for showing all species in the species list box control.
+        private ApplicationMode applicationMode = ApplicationMode.CreateMode; // Defaults to CreateMode
         #endregion
 
         #region Constructor
@@ -99,6 +96,10 @@ namespace DA205E_Assignment2
             }
         }
 
+        /// <summary>
+        /// "Clears" the UI or rather removes any input made by the user restoring the application to its initial UI state.
+        /// NOTE: This method also clears the state of the currentAnimal field.
+        /// </summary>
         private void ClearUI()
         {
             currentAnimal = null; // Making sure state is clean
@@ -117,6 +118,10 @@ namespace DA205E_Assignment2
             rtxtAdditionalData.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Causes an update of the ui state to make sure the UI reflects the application mode.
+        /// The CreateMode is "optimized" for creating a new animal while EditMode is "optimized" for editing an aniaml.
+        /// </summary>
         private void RefreshApplicationModeUI()
         {
             if (applicationMode == ApplicationMode.CreateMode)
@@ -145,7 +150,13 @@ namespace DA205E_Assignment2
             }
         }
 
-        // Dependet on state
+        /// <summary>
+        /// This method essentialy updates the ui to make sure it reflects the state in the form of the current animal.
+        /// Additionally an optional boolean can be passed in the parameter to cause a repopulation of the lstAnimals control.
+        /// In short, if the currentAnimal field is null the UI is cleared and the UI is drawn for the CreateMode.
+        /// However, if there is a current animal that means the UI is updated to EditMode.
+        /// </summary>
+        /// <param name="repopulateLstAnimals">Whether or not the lstAnimals control should be repopulated (true for yes, false for no which is default if this is omitted)</param>
         private void RefreshUI(bool repopulateLstAnimals = false)
         {
             // int animalCount = lstAnimals.Items.Count;
@@ -161,7 +172,7 @@ namespace DA205E_Assignment2
                 applicationMode = ApplicationMode.EditMode;
 
                 lstCategory.SelectedIndex = (int)currentAnimal.Category;
-                lstSpecies.SelectedIndex = GetSpeciesIndexFromAnimal(currentAnimal); // If species index is -1 the species won't be selected in the list.
+                lstSpecies.SelectedIndex = Animal.GetSpeciesIndexFromAnimal(currentAnimal); // If species index is -1 the species won't be selected in the list.
                 txtName.Text = currentAnimal.Name;
                 txtAge.Text = currentAnimal.Age.ToString();
                 txtWeight.Text = currentAnimal.Weight.ToString();
@@ -196,14 +207,14 @@ namespace DA205E_Assignment2
             if (cmbGender.SelectedIndex >= 0)
                 gender = (GenderType)cmbGender.SelectedIndex;
 
-            if (ValidationUtility.ValidateGeneral(name, age, weight) && isValidAge && isValidWeight) // Validating the input and setting it for the animal object if it is valid
+            if (ValidationUtility.ValidateGeneral(name, age, weight) && isValidAge && isValidWeight) // Validating the input and setting it for the current animal object if it is valid
             {
                 currentAnimal.Name = name;
                 currentAnimal.Age = age;
                 currentAnimal.Weight = weight;
                 currentAnimal.Gender = gender;
 
-                return true; // data was valid and has been set for the animal object
+                return true; // data was valid and has been set for the current animal object
             }
 
             ValidationUtility.WarnUser("It seems like some of your input was invalid. Make sure you have inputted a name, age (0.0 or older) and weight (0.0 or heavier).");
@@ -214,6 +225,7 @@ namespace DA205E_Assignment2
         #region Component event handlers
         /// <summary>
         /// Creates the appropriate animal object through the use of the relevant AnimalForm (BirdForm, InsectForm or ReptileForm) based on the selected species.
+        /// NOTE TO SELF: Logic was simplified for the species index for assignment 2. Without tests it's hard to pinpoint any regression. For now everything seem to work on my machine..
         /// </summary>
         private void CreateAnimal()
         {
@@ -242,7 +254,7 @@ namespace DA205E_Assignment2
 
                 if (form != null) // If a form was created we show it as a dialog with this form as the owner. If the Dialog closes with OK DialogResult we add the animal.
                 {
-                    if (currentAnimal != null)
+                    if (currentAnimal != null) // Simple null check before setting the currentAnimal.
                     {
                         form.Animal = currentAnimal;
                     }
@@ -274,7 +286,7 @@ namespace DA205E_Assignment2
         {
             if (currentAnimal == null)
             {
-                ValidationUtility.WarnUser($"Don't forget to create an animal by pressing the \"Create Animal\" button first.");
+                ValidationUtility.WarnUser($"Don't forget to create an animal by pressing the \"Create Animal\" button first."); // Reminding the user that they have to create an animal before adding it
                 return;
             }
 
@@ -308,7 +320,7 @@ namespace DA205E_Assignment2
             }
             else
             {
-                if (applicationMode != ApplicationMode.EditMode)
+                if (applicationMode != ApplicationMode.EditMode) // NOTE: This is needed to make sure the controls works accordingly to the specified application mode.
                     lstCategory.Enabled = true;
                 if (lstCategory.SelectedIndex >= 0)
                     populateSpecies((Category)lstCategory.SelectedIndex, true); // Populate species based on selected category
@@ -317,6 +329,7 @@ namespace DA205E_Assignment2
 
         /// <summary>
         /// This method is used to keep track of which species is selected if the chkListAllSpecies control is checked in order to make it work with the GUI.
+        /// NOTE TO SELF: Logic was simplified for the species index for assignment 2. Without tests it's hard to pinpoint any regression. For now everything seem to work on my machine..
         /// </summary>
         private void SpeciesSelectionChanged()
         {
@@ -396,6 +409,51 @@ namespace DA205E_Assignment2
                 currentAnimal = null; // Setting current animal to null in order to clear the UI upon refresh
                 RefreshUI(true);
             }
+        }
+
+        /// <summary>
+        /// Deletes the selected animal if there is a valid one selected. Otherwise warns the user about the lack of selection or invalid selection
+        /// (invalid selection should not be possible but might come in handy to catch any evnetual bugs).
+        /// </summary>
+        private void DeleteSelectedAnimal()
+        {
+            int index = lstAnimals.SelectedIndex;
+
+            if (animalManager.CheckIndex(index))
+            {
+                bool isSuccessful = animalManager.DeleteAt(lstAnimals.SelectedIndex);
+
+                if (isSuccessful)
+                {
+                    currentAnimal = null; // Setting current animal to null which triggers a UI clear when refreshing the ui
+                    RefreshUI(true);
+                }
+                else
+                {
+                    ValidationUtility.WarnUser("It seems like the index of the selected animal in the listbox of all animals was invalid. Please provide the developer with steps to reproduce this warning.");
+                }
+            }
+            else
+            {
+                ValidationUtility.WarnUser("Deletion failed. Are you sure you selected an animal in the listbox of all animals?");
+            }
+        }
+
+        /// <summary>
+        /// Updates the UI and state based on the new selected item in the LstAnimal control
+        /// </summary>
+        private void SelectedLstAnimalChanged()
+        {
+            if (lstAnimals.SelectedIndex == -1)
+            {
+                currentAnimal = null; // Making sure that there is no current animal
+            }
+            else if (animalManager.CheckIndex(lstAnimals.SelectedIndex))
+            {
+                currentAnimal = animalManager.GetAt(lstAnimals.SelectedIndex);
+            }
+
+            RefreshUI(); // Makes sure the UI is "up to date" based on the state (currentAnimal)
         }
         #endregion
 
@@ -481,75 +539,41 @@ namespace DA205E_Assignment2
         {
             AddAnimal();
         }
-        #endregion
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstAnimals.SelectedIndex == -1)
-            {
-                currentAnimal = null; // Making sure that there is no current animal
-            }
-            else if (animalManager.CheckIndex(lstAnimals.SelectedIndex))
-            {
-                currentAnimal = animalManager.GetAt(lstAnimals.SelectedIndex);
-            }
-
-            RefreshUI(); // Makes sure the UI is "up to date" based on the state (currentAnimal)
+            SelectedLstAnimalChanged();
         }
 
+        /// <summary>
+        /// Deletes the selected animal based on the selection in the lstAnimal control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int index = lstAnimals.SelectedIndex;
-
-            if (index >= 0)
-            {
-                bool isSuccessful = animalManager.DeleteAt(lstAnimals.SelectedIndex);
-
-                if (isSuccessful)
-                {
-                    currentAnimal = null; // Setting current animal to null which triggers a UI clear when refreshing the ui
-                    RefreshUI(true);
-                }
-                else
-                {
-                    ValidationUtility.WarnUser("It seems like the index of the selected animal in the listbox of all animals was invalid. Please provide the developer with steps to reproduce this warning.");
-                }
-            }
-            else
-            {
-                ValidationUtility.WarnUser("Deletion failed. Are you sure you selected an animal in the listbox of all animals?");
-            }
+            DeleteSelectedAnimal();
         }
 
+        /// <summary>
+        /// Clears the animal slection when the btnClear control is clicked/pressed by setting the SelectedIndex of the lstAnimal control to -1.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClearSelection_Click(object sender, EventArgs e)
         {
             lstAnimals.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Handles the event that occurs when the btnChange control is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChange_Click(object sender, EventArgs e)
         {
             ChangeAnimal();
         }
-
-        public static int GetSpeciesIndexFromAnimal(Animal animal)
-        {
-            switch(animal)
-            {
-                case Dove:
-                    return (int)BirdSpecies.Dove;
-                case Raven:
-                    return (int)BirdSpecies.Raven;
-                case Beetle:
-                    return (int)InsectSpecies.Beetle;
-                case Butterfly:
-                    return (int)InsectSpecies.Butterfly;
-                case Snake:
-                    return (int)ReptileSpecies.Snake;
-                case Turtle:
-                    return (int)ReptileSpecies.Turtle;
-                default:
-                    return -1;
-            }
-        }
+        #endregion
     }
 }

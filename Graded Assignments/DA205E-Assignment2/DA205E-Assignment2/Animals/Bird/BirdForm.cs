@@ -6,7 +6,10 @@ using DA205E_Assignment2.Utils;
 namespace DA205E_Assignment2.Animals.Bird
 {
     /// <summary>
-    /// The form used for creating a specified bird species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class
+    /// The form used for creating a specified bird species. The form inherits the AnimalForm which contains an Animal property 
+    /// that it has in common with the rest of the animal form derived class.
+    /// 
+    /// If a bird object is passed into the form the form is pre-filled (handy when editing an animal inside the application).
     /// </summary>
     public partial class BirdForm : AnimalForm
     {
@@ -15,6 +18,12 @@ namespace DA205E_Assignment2.Animals.Bird
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// The constructor initializes the GUI. Depending on the provided BirdSpecies the GUI is initialized differently.
+        /// If a bird object is passed in the form will get pre-filled for easier editing.
+        /// </summary>
+        /// <param name="species">The species of bird used for creating/editing the animal.</param>
+        /// <param name="bird">An optional bird objetc used for prefilling. Can be null if no pre-filling is required.</param>
         public BirdForm(int species, Bird? bird)
         {
             InitializeComponent();
@@ -25,24 +34,29 @@ namespace DA205E_Assignment2.Animals.Bird
 
         #region GUI initialization
         /// <summary>
-        /// Initializes the GUI by A) making sure that the relevant controls are shown to the user and B) Populating the cmbBeakType control
+        /// Initializes the GUI by:
+        /// A) making sure that the relevant controls are shown to the user 
+        /// B) Populating the cmbBeakType control 
+        /// C) Pre-filling the relevant form controls if the bird parameter is not null.
         /// </summary>
+        /// <param name="bird">An optional Bird object used for pre-filling, can be null.</param>
         private void InitializeGUI(Bird? bird)
         {
-            ShowBirdSpecies(bird);
-            ComponentPopulationUtility.populate(cmbBeakType, Enum.GetNames(typeof(BeakType)), (int)BeakType.Hooked);// Populating the combo box and preselecting the Hooked beak type 
+            ShowBirdSpecies(bird); // Making sure the GUI shows the correct controls and proving the bird object to allow for additional pre-filling
+            ComponentPopulationUtility.populate(cmbBeakType, Enum.GetNames(typeof(BeakType)), (int)BeakType.Hooked); // Populating the combo box and preselecting the Hooked beak type 
             if (bird != null) // Pre-filling form if a bird object was provided
             {
                 txtWingspan.Text = bird.Wingspan.ToString();
                 cmbBeakType.SelectedIndex = (int)bird.BeakType;
             }
 
-            Icon = Properties.Resources.EAMS;
+            Icon = Properties.Resources.EAMS; // Setting the icon for the form
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
+        /// <param name="bird">An optional Bird object used for pre-filling, can be null.</param>
         private void ShowBirdSpecies(Bird? bird)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
@@ -51,12 +65,12 @@ namespace DA205E_Assignment2.Animals.Bird
             {
                 case BirdSpecies.Dove:
                     lblSpecificToAnimal1.Text = "Milk production";
-                    if (bird is Dove dove)
+                    if (bird is Dove dove) // Pre-filling if the bird object is of type dove
                         txtSpecificToAnimal1.Text = dove.MilkProduction.ToString();
                     break;
                 case BirdSpecies.Raven:
                     lblSpecificToAnimal1.Text = "Beak width";
-                    if (bird is Raven raven)
+                    if (bird is Raven raven) // Pre-filling if the bird object is of type raven
                         txtSpecificToAnimal1.Text = raven.BeakSize.ToString();
                     break;
             }

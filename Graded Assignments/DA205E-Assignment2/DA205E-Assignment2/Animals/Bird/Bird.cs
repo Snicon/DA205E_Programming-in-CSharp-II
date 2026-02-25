@@ -1,7 +1,8 @@
-﻿namespace DA205E_Assignment2.Animals.Bird
+﻿// Sixten Peterson (AQ9300) 2026-02-24
+namespace DA205E_Assignment2.Animals.Bird
 {
     /// <summary>
-    /// Sub class/derived class of the base/super class Animal. It adds fields and properties for wingspan and beak type along with an overriden ToString()-method.
+    /// An abstract sub class/derived class of the base/super class Animal. It adds fields and properties for wingspan and beak type along with an overriden ToString()-method. It also implements the Category property.
     /// </summary>
     public abstract class Bird : Animal
     {
@@ -11,6 +12,11 @@
         #endregion
 
         #region Constructor(s)
+        /// <summary>
+        /// Sets the wingspan and beaktype via thir properties based on the provided parameters. Also calls the base constructor.
+        /// </summary>
+        /// <param name="wingspan">The wingspan value for the bird</param>
+        /// <param name="beakType">The type of beak the bird has</param>
         public Bird(double wingspan, BeakType beakType) : base()
         {
             Wingspan = wingspan;
@@ -47,7 +53,7 @@
         /// <summary>
         /// Overriden ToString method. Adds the wingspan and beak type to the base ToString().
         /// </summary>
-        /// <returns>A representation of the object as a string containing all relevant fields.</returns>
+        /// <returns>A representation of the object as a nicley formatted string containing all relevant fields.</returns>
         public override string ToString()
         {
             string wingspanString = $"{"Wingspan",-18} {Wingspan,-10}{Environment.NewLine}";

@@ -1,8 +1,8 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
+﻿// Sixten Peterson (AQ9300) 2026-02-24
 namespace DA205E_Assignment2.Animals.Reptile
 {
     /// <summary>
-    /// Sub class/derived class of the base/super class Animal. It adds fields and properties for lives in water and can regrow tail along with an overriden ToString()-method.
+    /// An abstract sub class/derived class of the base/super class Animal. It adds fields and properties for lives in water and can regrow tail along with an overriden ToString()-method.
     /// </summary>
     public abstract class Reptile : Animal
     {
@@ -53,10 +53,5 @@ namespace DA205E_Assignment2.Animals.Reptile
             return base.ToString() + livesInWaterString + canRegrowTailString;
         }
         #endregion
-
-        public override int GetAverageLifeSpan()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

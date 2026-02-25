@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
+﻿// Sixten Peterson (AQ9300) 2026-02-24
 namespace DA205E_Assignment2.Animals.Reptile.Species
 {
     /// <summary>
@@ -14,6 +14,11 @@ namespace DA205E_Assignment2.Animals.Reptile.Species
         private bool venomous;
         #endregion
 
+        /// <summary>
+        /// Simple constructor, just calls the base constructor.
+        /// </summary>
+        /// <param name="livesInWater">A boolean representing if the snake lives in water, used in the base constructor</param>
+        /// <param name="canRegrowTail">A boolean representing if the snake regrow its tail, used in the base constructor</param>
         #region Constructor(s)
         public Snake(bool livesInWater, bool canRegrowTail) : base(livesInWater, canRegrowTail)
         {
@@ -39,23 +44,39 @@ namespace DA205E_Assignment2.Animals.Reptile.Species
             return base.ToString() + venomousString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringSummary() with the name of the species (Snake).
+        /// </summary>
+        /// <returns>The summary representation as a string</returns>
         public override string ToStringSummary()
         {
             return $"{nameof(Snake),-8} {base.ToStringSummary()}";
         }
         #endregion
 
+
         #region Other methods
+        /// <summary>
+        /// Sets the sleep time field to 16.
+        /// </summary>
         public override void SetSleepTime()
         {
-            SleepTime = 16;
+            base.sleepTime = 16;
         }
 
+        /// <summary>
+        /// Gets the average lifespan of the Snake in years. Which is overriden to 8.
+        /// </summary>
+        /// <returns>The average life span in years</returns>
         public override int GetAverageLifeSpan()
         {
             return 8;
         }
 
+        /// <summary>
+        /// Creates a dictionary and fills it with the food requirements of the Snake.
+        /// </summary>
+        /// <returns>Returns the created dictionary.</returns>
         public override Dictionary<string, string> DailyFoodRequirement()
         {
             Dictionary<string, string> foodDictionary = new Dictionary<string, string>();
@@ -66,6 +87,10 @@ namespace DA205E_Assignment2.Animals.Reptile.Species
             return foodDictionary;
         }
 
+        /// <summary>
+        /// Creates a queue collection and fills it with the upcoming events for the animal
+        /// </summary>
+        /// <returns>The newly created queue collection.</returns>
         public override Queue<string> GetUpcomingEvents()
         {
             Queue<string> eventQueue = new Queue<string>();
@@ -76,6 +101,10 @@ namespace DA205E_Assignment2.Animals.Reptile.Species
             return eventQueue;
         }
 
+        /// <summary>
+        /// Gets the latin name of the animal, this string is stored as a constant in this class.
+        /// </summary>
+        /// <returns>The latin name as a string</returns>
         public override string GetLatinName()
         {
             return LatinName;

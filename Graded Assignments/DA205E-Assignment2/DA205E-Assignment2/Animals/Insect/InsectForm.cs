@@ -1,5 +1,4 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment2.Animals.Bird;
 using DA205E_Assignment2.Animals.Insect.Species;
 using DA205E_Assignment2.Animals.Insect.Species.Beetle;
 using DA205E_Assignment2.Animals.Insect.Species.Butterfly;
@@ -8,7 +7,10 @@ using DA205E_Assignment2.Utils;
 namespace DA205E_Assignment2.Animals.Insect
 {
     /// <summary>
-    /// The form used for creating a specified insect species. The form inherits the AnimalForm which contains an Animal property that it has in common with the rest of the animal form derived class.
+    /// The form used for creating a specified insect species. The form inherits the AnimalForm which contains an Animal property
+    /// that it has in common with the rest of the animal form derived class.
+    /// 
+    /// If an insect object is passed into the form the form is pre-filled (handy when editing an animal inside the application).
     /// </summary>
     public partial class InsectForm : AnimalForm
     {
@@ -17,6 +19,12 @@ namespace DA205E_Assignment2.Animals.Insect
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// The constructor initializes the GUI. Depending on the provided InsectSpecies the GUI is initialized differently.
+        /// If an insect object is passed in the form will get pre-filled for easier editing.
+        /// </summary>
+        /// <param name="species">The species of insect used for creating/editing the animal.</param>
+        /// <param name="insect">An optional insect object used for prefilling. Can be null if no pre-filling is required.</param>
         public InsectForm(int species, Insect? insect)
         {
             InitializeComponent();
@@ -27,8 +35,12 @@ namespace DA205E_Assignment2.Animals.Insect
 
         #region GUI initialization
         /// <summary>
-        /// Initializes the GUI by A) making sure that the relevant controls are shown to the user and B) Populating the cmbLifecycleStage control and C) Setting the icon for the form
+        /// Initializes the GUI by:
+        /// A) making sure that the relevant controls are shown to the user 
+        /// B) Populating the cmbBeakType control 
+        /// C) Pre-filling the relevant form controls if the insect parameter is not null.
         /// </summary>
+        /// <param name="insect">An optional Insect object used for pre-filling, can be null.</param>
         private void InitializeGUI(Insect? insect)
         {
             ShowInsectSpecies(insect);
@@ -38,12 +50,13 @@ namespace DA205E_Assignment2.Animals.Insect
                 chkHasWings.Checked = insect.HasWings;
                 cmbLifecycleStage.SelectedIndex = (int)insect.LifecycleStage;
             }
-            Icon = Properties.Resources.EAMS;
+            Icon = Properties.Resources.EAMS; // Setting the icon for the form
         }
 
         /// <summary>
         /// Makes the GUI reflect the specified species. The group box text is updated to showcase the species and any fields/properties specific to the different species get set correctly.
         /// </summary>
+        /// <param name="insect">An optional Insect object used for pre-filling, can be null.</param>
         private void ShowInsectSpecies(Insect? insect)
         {
             grpSpecificToAnimal.Text = $"Specific data to {species.ToString()}"; // Setting the group box text to reflect the animal species
@@ -53,13 +66,13 @@ namespace DA205E_Assignment2.Animals.Insect
                 case InsectSpecies.Beetle:
                     lblSpecificToAnimal1.Text = "Body type";
                     ComponentPopulationUtility.populate(cmbSpecificToAnimal1, Enum.GetNames(typeof(BodyType)), (int)BodyType.Flat); // Populating the combo box and preselecting the flat body type
-                    if (insect is Beetle beetle)
+                    if (insect is Beetle beetle) // Pre-filling if the insect object is of beetle dove
                         cmbSpecificToAnimal1.SelectedIndex = (int) beetle.BodyType;
                     break;
                 case InsectSpecies.Butterfly:
                     lblSpecificToAnimal1.Text = "Wing pattern";
                     ComponentPopulationUtility.populate(cmbSpecificToAnimal1, Enum.GetNames(typeof(WingPattern)), (int)WingPattern.Spotted); // Populating the combo box and preselecting the spotted wing pattern
-                    if (insect is Butterfly butterfly)
+                    if (insect is Butterfly butterfly) // Pre-filling if the insect object is of type butterfly
                         cmbSpecificToAnimal1.SelectedIndex = (int)butterfly.WingPattern;
                     break;
             }

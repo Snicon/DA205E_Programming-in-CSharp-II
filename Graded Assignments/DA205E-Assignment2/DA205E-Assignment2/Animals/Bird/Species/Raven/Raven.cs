@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
+﻿// Sixten Peterson (AQ9300) 2026-02-24
 
 namespace DA205E_Assignment2.Animals.Bird.Species.Raven
 {
@@ -16,6 +16,11 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Simple constructor, just calls the base constructor.
+        /// </summary>
+        /// <param name="wingspan">The wingspan of the Raven, used in the base constructor</param>
+        /// <param name="beakType">The type of beak of the Raven, used in the base constructor</param>
         public Raven(double wingspan, BeakType beakType) : base(wingspan, beakType)
         {
         }
@@ -34,7 +39,7 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
 
         #region ToString() and simliar methods
         /// <summary>
-        /// Overriden ToString method. Adds the milk production to the base ToString().
+        /// Overriden ToString method. Adds the beak size to the base ToString().
         /// </summary>
         /// <returns>A representation of the object as a string containing all relevant fields.</returns>
         public override string ToString()
@@ -42,8 +47,11 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
             string beakSizeString = $"{Environment.NewLine}{"Beak size",-18} {BeakSize,-10}{Environment.NewLine}";
             return base.ToString() + beakSizeString;
         }
-        
 
+        /// <summary>
+        /// Prefixes the base ToStringSummary() with the name of the species (Raven).
+        /// </summary>
+        /// <returns>The summary representation as a string</returns>
         public override string ToStringSummary()
         {
             return $"{nameof(Raven),-8} {base.ToStringSummary()}";
@@ -51,16 +59,27 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
         #endregion
 
         #region Other methods
+        /// <summary>
+        /// Sets the sleep time field to 10.
+        /// </summary>
         public override void SetSleepTime()
         {
-            SleepTime = 10;
+            base.sleepTime = 10;
         }
 
+        /// <summary>
+        /// Gets the average lifespan of the Raven in years. Which is overriden to 15.
+        /// </summary>
+        /// <returns>The average life span in years</returns>
         public override int GetAverageLifeSpan()
         {
             return 15;
         }
 
+        /// <summary>
+        /// Creates a dictionary and fills it with the food requirements of the Raven.
+        /// </summary>
+        /// <returns>Returns the created dictionary.</returns>
         public override Dictionary<string, string> DailyFoodRequirement()
         {
             Dictionary<string, string> foodDictionary = new Dictionary<string, string>();
@@ -72,6 +91,10 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
             return foodDictionary;
         }
 
+        /// <summary>
+        /// Creates a queue collection and fills it with the upcoming events for the animal
+        /// </summary>
+        /// <returns>The newly created queue collection.</returns>
         public override Queue<string> GetUpcomingEvents()
         {
             Queue<string> eventQueue = new Queue<string>();
@@ -83,6 +106,10 @@ namespace DA205E_Assignment2.Animals.Bird.Species.Raven
             return eventQueue;
         }
 
+        /// <summary>
+        /// Gets the latin name of the animal, this string is stored as a constant in this class.
+        /// </summary>
+        /// <returns>The latin name as a string</returns>
         public override string GetLatinName()
         {
             return LatinName;
