@@ -26,8 +26,8 @@ More assignments will be added once they are published...
 
 |Assignment|Handed in|Grade|Best possible grade|
 |-|-|-|-|
-|Assignment 1|☑|-|A|
-|Assignment 2|☐|-|A|
+|Assignment 1|☑|A|A|
+|Assignment 2|☑|-|A|
 |Quiz 1|☑|A|A|
 |Assignment 3|☐|-|A|
 |Assignment 4|☐|-|A|
@@ -39,5 +39,6 @@ More assignments will be added once they are published...
 ### Final grade
 
 To be determined.
+
 
 
