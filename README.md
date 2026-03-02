@@ -30,8 +30,8 @@ More assignments will be added once they are published...
 |Assignment 2|☑|-|A|
 |Quiz 1|☑|A|A|
 |Assignment 3|☐|-|A|
-|Assignment 4|☐|-|A|
 |Quiz 2|☐|-|A|
+|Assignment 4|☐|-|A|
 |Assignment 5|☐|-|A|
 |Assignment 6|☐|-|A|
 |Quiz 3|☐|-|A|
@@ -39,6 +39,7 @@ More assignments will be added once they are published...
 ### Final grade
 
 To be determined.
+
 
 
 
