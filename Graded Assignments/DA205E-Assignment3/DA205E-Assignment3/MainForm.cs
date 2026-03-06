@@ -135,7 +135,7 @@ namespace DA205E_Assignment3
                 btnDelete.Enabled = false;
                 btnLoadImage.Enabled = false;
                 btnClearSelection.Enabled = false;
-            } 
+            }
             else if (applicationMode == ApplicationMode.EditMode)
             {
                 btnCreateAnimal.Text = "Change animal data";
@@ -238,7 +238,7 @@ namespace DA205E_Assignment3
                     switch ((Category)lstCategory.SelectedIndex) // Determining which kind of form to create
                     {
                         case Category.Bird:
-                                form = new BirdForm(speciesIndex, (Bird)currentAnimal);
+                            form = new BirdForm(speciesIndex, (Bird)currentAnimal);
                             break;
                         case Category.Insect:
                             form = new InsectForm(speciesIndex, (Insect)currentAnimal);

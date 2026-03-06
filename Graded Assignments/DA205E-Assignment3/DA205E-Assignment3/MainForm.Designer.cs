@@ -47,10 +47,16 @@
             btnAdd = new Button();
             rtxtAnimalData = new RichTextBox();
             menuStrip1 = new MenuStrip();
-            fileToolStripMenuItem = new ToolStripMenuItem();
-            loadImageToolStripMenuItem = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
+            mnuFile = new ToolStripMenuItem();
+            mnuFileNew = new ToolStripMenuItem();
+            mnuFileOpen = new ToolStripMenuItem();
+            mnuFileSave = new ToolStripMenuItem();
+            mnuFileSaveAs = new ToolStripMenuItem();
+            mnuFileLoadImage = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            mnuFileExitApp = new ToolStripMenuItem();
+            mnuHelp = new ToolStripMenuItem();
+            mnuHelpAbout = new ToolStripMenuItem();
             lstAnimals = new ListBox();
             btnChange = new Button();
             btnDelete = new Button();
@@ -244,42 +250,82 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuHelp });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(898, 24);
             menuStrip1.TabIndex = 6;
             menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // mnuFile
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loadImageToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
-            fileToolStripMenuItem.Text = "File";
+            mnuFile.DropDownItems.AddRange(new ToolStripItem[] { mnuFileNew, mnuFileOpen, mnuFileSave, mnuFileSaveAs, mnuFileLoadImage, toolStripMenuItem1, mnuFileExitApp });
+            mnuFile.Name = "mnuFile";
+            mnuFile.Size = new Size(37, 20);
+            mnuFile.Text = "File";
             // 
-            // loadImageToolStripMenuItem
+            // mnuFileNew
             // 
-            loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            loadImageToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Alt | Keys.L;
-            loadImageToolStripMenuItem.Size = new Size(199, 22);
-            loadImageToolStripMenuItem.Text = "Load Image";
-            loadImageToolStripMenuItem.Click += loadImageToolStripMenuItem_Click;
+            mnuFileNew.Name = "mnuFileNew";
+            mnuFileNew.ShortcutKeys = Keys.Control | Keys.N;
+            mnuFileNew.Size = new Size(199, 22);
+            mnuFileNew.Text = "New";
             // 
-            // helpToolStripMenuItem
+            // mnuFileOpen
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
-            helpToolStripMenuItem.Text = "&Help";
+            mnuFileOpen.Name = "mnuFileOpen";
+            mnuFileOpen.ShortcutKeys = Keys.Control | Keys.O;
+            mnuFileOpen.Size = new Size(199, 22);
+            mnuFileOpen.Text = "Open...";
             // 
-            // aboutToolStripMenuItem
+            // mnuFileSave
             // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Alt | Keys.A;
-            aboutToolStripMenuItem.Size = new Size(172, 22);
-            aboutToolStripMenuItem.Text = "&About";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            mnuFileSave.Name = "mnuFileSave";
+            mnuFileSave.ShortcutKeys = Keys.Control | Keys.S;
+            mnuFileSave.Size = new Size(199, 22);
+            mnuFileSave.Text = "Save";
+            // 
+            // mnuFileSaveAs
+            // 
+            mnuFileSaveAs.Name = "mnuFileSaveAs";
+            mnuFileSaveAs.ShortcutKeys = Keys.Control | Keys.Alt | Keys.S;
+            mnuFileSaveAs.Size = new Size(199, 22);
+            mnuFileSaveAs.Text = "Save As...";
+            // 
+            // mnuFileLoadImage
+            // 
+            mnuFileLoadImage.Name = "mnuFileLoadImage";
+            mnuFileLoadImage.ShortcutKeys = Keys.Control | Keys.Alt | Keys.L;
+            mnuFileLoadImage.Size = new Size(199, 22);
+            mnuFileLoadImage.Text = "Load Image";
+            mnuFileLoadImage.Click += loadImageToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(196, 6);
+            // 
+            // mnuFileExitApp
+            // 
+            mnuFileExitApp.Name = "mnuFileExitApp";
+            mnuFileExitApp.ShortcutKeys = Keys.Alt | Keys.F4;
+            mnuFileExitApp.Size = new Size(199, 22);
+            mnuFileExitApp.Text = "Exit";
+            // 
+            // mnuHelp
+            // 
+            mnuHelp.DropDownItems.AddRange(new ToolStripItem[] { mnuHelpAbout });
+            mnuHelp.Name = "mnuHelp";
+            mnuHelp.Size = new Size(44, 20);
+            mnuHelp.Text = "&Help";
+            // 
+            // mnuHelpAbout
+            // 
+            mnuHelpAbout.Name = "mnuHelpAbout";
+            mnuHelpAbout.ShortcutKeys = Keys.Control | Keys.Alt | Keys.A;
+            mnuHelpAbout.Size = new Size(180, 22);
+            mnuHelpAbout.Text = "&About";
+            mnuHelpAbout.Click += aboutToolStripMenuItem_Click;
             // 
             // lstAnimals
             // 
@@ -445,10 +491,10 @@
         private Button btnAdd;
         private RichTextBox rtxtAnimalData;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem loadImageToolStripMenuItem;
+        private ToolStripMenuItem mnuFile;
+        private ToolStripMenuItem mnuHelp;
+        private ToolStripMenuItem mnuHelpAbout;
+        private ToolStripMenuItem mnuFileLoadImage;
         private ListBox lstAnimals;
         private Button btnChange;
         private Button btnDelete;
@@ -460,5 +506,11 @@
         private Label lblGenderLst;
         private RichTextBox rtxtAdditionalData;
         private Button btnClearSelection;
+        private ToolStripMenuItem mnuFileNew;
+        private ToolStripMenuItem mnuFileOpen;
+        private ToolStripMenuItem mnuFileSave;
+        private ToolStripMenuItem mnuFileSaveAs;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem mnuFileExitApp;
     }
 }
