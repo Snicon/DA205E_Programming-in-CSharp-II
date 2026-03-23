@@ -1,9 +1,15 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-24
+using DA205E_Assignment3.Animals.Insect.Species.Beetle;
+using DA205E_Assignment3.Animals.Insect.Species.Butterfly;
+using System.Xml.Serialization;
+
 namespace DA205E_Assignment3.Animals.Insect
 {
     /// <summary>
     /// An abstract sub class/derived class of the base/super class Animal. It adds fields and properties for hasWings andlifeCycleStage along with an overriden ToString()-method.
     /// </summary>
+    [XmlInclude(typeof(Beetle))]
+    [XmlInclude(typeof(Butterfly))]
     public abstract class Insect : Animal
     {
         #region Fields
@@ -11,8 +17,9 @@ namespace DA205E_Assignment3.Animals.Insect
         private LifecycleStage lifecycleStage;
         #endregion
 
-
         #region Constructor(s)
+        public Insect() { }
+
         /// <summary>
         /// Sets the hasWings and lifecycleStage via thir properties based on the provided parameters. Also calls the base constructor.
         /// </summary>
@@ -57,6 +64,12 @@ namespace DA205E_Assignment3.Animals.Insect
             string hasWingsString = $"{"Has wings",-18} {HasWings,-10}{Environment.NewLine}";
             string lifecycleStageString = $"{"Lifecycle stage",-18} {LifecycleStage,-10}{Environment.NewLine}";
             return base.ToString() + hasWingsString + lifecycleStageString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return base.ToStringTxt() + $"Has wings: {HasWings}{Environment.NewLine}" +
+                $"Lifecycle stage: {LifecycleStage}{Environment.NewLine}";
         }
         #endregion
     }

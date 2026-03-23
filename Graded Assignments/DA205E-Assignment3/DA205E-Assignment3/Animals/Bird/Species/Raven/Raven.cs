@@ -1,5 +1,4 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-24
-
 namespace DA205E_Assignment3.Animals.Bird.Species.Raven
 {
     /// <summary>
@@ -16,6 +15,11 @@ namespace DA205E_Assignment3.Animals.Bird.Species.Raven
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Simplest form of constructor...
+        /// </summary>
+        public Raven(): base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
@@ -46,6 +50,11 @@ namespace DA205E_Assignment3.Animals.Bird.Species.Raven
         {
             string beakSizeString = $"{Environment.NewLine}{"Beak size",-18} {BeakSize,-10}{Environment.NewLine}";
             return base.ToString() + beakSizeString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Raven)}{Environment.NewLine}" + base.ToStringTxt() + $"Beak Size: {BeakSize}";
         }
 
         /// <summary>

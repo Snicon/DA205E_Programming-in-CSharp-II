@@ -109,7 +109,6 @@
             lblSpecificToAnimal1.Size = new Size(110, 15);
             lblSpecificToAnimal1.TabIndex = 0;
             lblSpecificToAnimal1.Text = "Specific to animal 1";
-            lblSpecificToAnimal1.Visible = false;
             // 
             // btnCancel
             // 

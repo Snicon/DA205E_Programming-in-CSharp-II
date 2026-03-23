@@ -1,4 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-04
+using DA205E_Assignment3.Animals.Bird.Species.Raven;
 using DA205E_Assignment3.Animals.Insect.Species;
 using DA205E_Assignment3.Animals.Insect.Species.Beetle;
 using DA205E_Assignment3.Animals.Insect.Species.Butterfly;
@@ -29,6 +30,45 @@ namespace DA205E_Assignment3.Animals.Insect
                 case InsectSpecies.Butterfly:
                     insect = new Butterfly(hasWings, lifecycleStage);
                     break;
+            }
+
+            return insect;
+        }
+
+        public static Insect CreateInsect(InsectSpecies species, Dictionary<string, object> data)
+        {
+            Insect insect = null;
+
+            switch (species)
+            {
+                case InsectSpecies.Beetle:
+                    return new Beetle
+                    {
+                        Id = (string)data["Id"],
+                        Name = (string)data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"]
+                        HasWings = (bool)data["HasWings"],
+                        LifecycleStage = (LifecycleStage)data["LifecycleStage"],
+                        BodyType = (BodyType)data["BodyType"]
+                    };
+                    break;
+
+                case InsectSpecies.Butterfly:
+                    return new Butterfly
+                    {
+                        Id = (string)data["Id"],
+                        Name = (string)data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"]
+                        HasWings = (bool)data["HasWings"],
+                        LifecycleStage = (LifecycleStage)data["LifecycleStage"],
+                        WingPattern = (WingPattern)data["WingPattern"]
+                    };
             }
 
             return insect;

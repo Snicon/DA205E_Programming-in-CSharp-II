@@ -14,7 +14,12 @@ namespace DA205E_Assignment3.Animals.Bird.Species
         private double milkProduction; // I was very suprised to hear that pigeons sweat milk for their babies, but hey, apparently thats a thing so here we are
         #endregion
 
-        #region Constructor
+        #region Constructors
+        /// <summary>
+        /// Simplest form of constructor...
+        /// </summary>
+        public Dove(): base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
@@ -34,7 +39,7 @@ namespace DA205E_Assignment3.Animals.Bird.Species
             } 
             set 
             {
-                if (milkProduction >= 0) // Milk production can't be negative.
+                if (value >= 0) // Milk production can't be negative.
                 {
                     milkProduction = value;
                 }
@@ -53,6 +58,11 @@ namespace DA205E_Assignment3.Animals.Bird.Species
             return base.ToString() + milkProductionString;
         }
 
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Dove)}{Environment.NewLine}" + base.ToStringTxt() + $"Milk Production: {MilkProduction}";
+        }
+
         /// <summary>
         /// Prefixes the base ToStringSummary() with the name of the species (Dove).
         /// </summary>
@@ -61,7 +71,6 @@ namespace DA205E_Assignment3.Animals.Bird.Species
         {
             return $"{nameof(Dove),-8} {base.ToStringSummary()}"; // Prefixes the base ToStringSummary()-method with the name of the class (the name of the animal species)
         }
-
         #endregion
 
         #region Other methods

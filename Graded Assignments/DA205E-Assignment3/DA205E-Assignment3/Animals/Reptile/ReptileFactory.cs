@@ -31,5 +31,42 @@ namespace DA205E_Assignment3.Animals.Reptile
 
             return reptile;
         }
+
+        public static Reptile CreateReptile(ReptileSpecies species, Dictionary<string, object> data)
+        {
+            Reptile reptile = null;
+
+            switch (species)
+            {
+                case ReptileSpecies.Snake:
+                    return new Snake
+                    {
+                        Id = (string)data["Id"],
+                        Name = (string)data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"],
+                        LivesInWater = (bool)data["LivesInWater"],
+                        CanRegrowTail = (bool)data["CanRegrowTail"],
+                        Venomous = (bool)data["Venomous"]
+                    };
+                case ReptileSpecies.Turtle:
+                    return new Turtle
+                    {
+                        Id = (string)data["Id"],
+                        Name = (string)data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"],
+                        LivesInWater = (bool)data["LivesInWater"],
+                        CanRegrowTail = (bool)data["CanRegrowTail"],
+                        ShellWidth = (double)data["ShellWidth"]
+                    };
+            }
+
+            return reptile;
+        }
     }
 }

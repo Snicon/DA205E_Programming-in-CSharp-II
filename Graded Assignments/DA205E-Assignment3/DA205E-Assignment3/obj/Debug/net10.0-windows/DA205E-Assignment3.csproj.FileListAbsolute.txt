@@ -21,3 +21,6 @@ C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment
 C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\obj\Debug\net10.0-windows\DA205E-Assignment3.pdb
 C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\obj\Debug\net10.0-windows\DA205E-Assignment3.genruntimeconfig.cache
 C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\obj\Debug\net10.0-windows\ref\DA205E-Assignment3.dll
+C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\bin\Debug\net10.0-windows\Newtonsoft.Json.dll
+C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\obj\Debug\net10.0-windows\DA205E-Assignment3.csproj.AssemblyReference.cache
+C:\Users\Sixten Peterson\Development\DA205E\Graded Assignments\DA205E-Assignment3\DA205E-Assignment3\obj\Debug\net10.0-windows\DA205E-A.172336F3.Up2Date

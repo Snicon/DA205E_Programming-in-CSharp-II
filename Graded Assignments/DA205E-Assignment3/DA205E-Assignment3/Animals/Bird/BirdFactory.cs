@@ -32,5 +32,42 @@ namespace DA205E_Assignment3.Animals.Bird
 
             return bird;
         }
+
+        public static Bird CreateBird(BirdSpecies species, Dictionary<string, object> data)
+        {
+            Bird bird = null;
+
+            switch (species)
+            {
+                case BirdSpecies.Dove:
+                    return new Dove
+                    {
+                        Id = (string) data["Id"],
+                        Name = (string) data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"],
+                        Wingspan = (double)data["Wingspan"],
+                        BeakType = (BeakType)data["BeakType"],
+                        MilkProduction = (double)data["MilkProduction"]
+                    };
+                case BirdSpecies.Raven:
+                    return new Raven
+                    {
+                        Id = (string)data["Id"],
+                        Name = (string)data["Name"],
+                        Age = (double)data["Age"],
+                        Gender = (GenderType)data["Gender"],
+                        Weight = (double)data["Weight"],
+                        // SleepTime = (double)data["SleepTime"],
+                        Wingspan = (double)data["Wingspan"],
+                        BeakType = (BeakType)data["BeakType"],
+                        BeakSize = (double)data["BeakSize"]
+                    };
+            }
+
+            return bird;
+        }
     }
 }

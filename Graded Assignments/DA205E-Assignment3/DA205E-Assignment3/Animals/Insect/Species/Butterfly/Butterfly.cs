@@ -14,12 +14,15 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
         private WingPattern wingPattern;
         #endregion
 
+
+        #region Constructor(s)
+        public Butterfly() : base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
         /// <param name="hasWings">A boolean representing if the Butterfly have any wings, used in the base constructor</param>
         /// <param name="lifecycleStage">The lifecycle stage of the Butterfly, used in the base constructor</param>
-        #region Constructor(s)
         public Butterfly(bool hasWings, LifecycleStage lifecycleStage) : base(hasWings, lifecycleStage)
         {
         }
@@ -42,6 +45,11 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
         {
             string wingpatternString = $"{Environment.NewLine}{"Wing pattern",-18} {WingPattern,-10}{Environment.NewLine}";
             return base.ToString() + wingpatternString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Butterfly)}{Environment.NewLine}" + base.ToStringTxt() + $"Wing Pattern: {WingPattern}";
         }
 
         /// <summary>

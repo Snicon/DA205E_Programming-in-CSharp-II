@@ -6,12 +6,19 @@ using DA205E_Assignment3.Animals.Insect.Species;
 using DA205E_Assignment3.Animals.Insect.Species.Beetle;
 using DA205E_Assignment3.Animals.Insect.Species.Butterfly;
 using DA205E_Assignment3.Animals.Reptile.Species;
+using System.Xml.Serialization;
 
 namespace DA205E_Assignment3.Animals
 {
     /// <summary>
     /// The root class for all animal derived classes (obviously). This class implements the IAnimal interface.
     /// </summary>
+    [XmlInclude(typeof(Dove))]
+    [XmlInclude(typeof(Raven))]
+    [XmlInclude(typeof(Beetle))]
+    [XmlInclude(typeof(Butterfly))]
+    [XmlInclude(typeof(Snake))]
+    [XmlInclude(typeof(Turtle))]
     public abstract class Animal: IAnimal
     {
         #region Fields
@@ -163,6 +170,21 @@ namespace DA205E_Assignment3.Animals
             string lifespanString = $"Lifespan: {GetAverageLifeSpan()} years";
 
             return latinString + dailyFoodRequirementsString + upcomingEventsString + lifespanString;
+        }
+
+        /// <summary>
+        /// A method that formats the animal data in a suitable format for persistant data storage in a txt file.
+        /// Each field of interest is outputted on a new line in a format like below:
+        /// Id: <ID>
+        /// Name: <NAME>
+        /// etc...
+        /// </summary>
+        /// <returns>A string that is formatted and ready to be written to a txt file.</returns>
+        public virtual string ToStringTxt()
+        {
+            return $"Id: {Id}{Environment.NewLine}Name: {Name}{Environment.NewLine}" +
+                $"Age: {Age}{Environment.NewLine}Gender: {Gender}{Environment.NewLine}" +
+                $"Weight: {Weight}{Environment.NewLine}Sleep Time: {SleepTime}{Environment.NewLine}";
         }
 
         /// <summary>

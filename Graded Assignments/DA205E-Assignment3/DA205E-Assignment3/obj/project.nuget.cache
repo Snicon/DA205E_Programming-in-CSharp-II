@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8FX8k6achVk=",
+  "dgSpecHash": "oEUMvzcMCh8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\DA205E-Assignment3.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sixten Peterson\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

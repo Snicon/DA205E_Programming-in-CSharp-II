@@ -15,12 +15,14 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         private double shellWidth;
         #endregion
 
+        #region Constructor(s)
+        public Turtle() : base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
         /// <param name="livesInWater">A boolean representing if the turtle lives in water, used in the base constructor</param>
         /// <param name="canRegrowTail">A boolean representing if the turtle regrow its tail, used in the base constructor</param>
-        #region Constructor(s)
         public Turtle(bool livesInWater, bool canRegrowTail) : base(livesInWater, canRegrowTail)
         {
         }
@@ -49,6 +51,11 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         {
             string shellWidthString = $"{Environment.NewLine}{"Shell width",-18} {ShellWidth,-10}{Environment.NewLine}";
             return base.ToString() + shellWidthString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Turtle)}{Environment.NewLine}" + base.ToStringTxt() + $"Shell Width: {shellWidth}";
         }
 
         /// <summary>

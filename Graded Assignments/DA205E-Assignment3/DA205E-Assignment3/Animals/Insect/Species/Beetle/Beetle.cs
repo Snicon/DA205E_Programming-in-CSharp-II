@@ -15,6 +15,8 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Beetle
         #endregion
 
         #region Constructor(s)
+        public Beetle(): base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
@@ -42,6 +44,11 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Beetle
         {
             string bodyTypeString = $"{Environment.NewLine}{"Body type",-18} {BodyType.ToString(),-10}{Environment.NewLine}";
             return base.ToString() + bodyTypeString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Beetle)}{Environment.NewLine}" + base.ToStringTxt() + $"Body Type: {BodyType}";
         }
 
         /// <summary>

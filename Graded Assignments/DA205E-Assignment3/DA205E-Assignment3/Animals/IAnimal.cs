@@ -63,6 +63,16 @@ namespace DA205E_Assignment3.Animals
         public string ToStringAdditional();
 
         /// <summary>
+        /// A method that formats the animal data in a suitable format for persistant data storage in a txt file.
+        /// Each field of interest is outputted on a new line in a format like below:
+        /// Id: <ID>
+        /// Name: <NAME>
+        /// etc...
+        /// </summary>
+        /// <returns>A string that is formatted and ready to be written to a txt file.</returns>
+        public abstract string ToStringTxt();
+
+        /// <summary>
         /// Overriding the ToString to better represent the object data/fields in a string. Showcasing ID, Name, Gender, Age and Weight in a nicley formatted string.
         /// </summary>
         /// <returns>The string representing the object with nice formatting.</returns>

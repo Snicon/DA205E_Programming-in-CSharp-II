@@ -1,5 +1,9 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-25
 
+using DA205E_Assignment3.Utils;
+using Newtonsoft.Json;
+using System.Xml.Serialization;
+
 namespace DA205E_Assignment3.GenericList
 {
     /// <summary>
@@ -28,6 +32,22 @@ namespace DA205E_Assignment3.GenericList
         {
             get { return list; }
         }
+
+        /// <summary>
+        /// Property for the list field that is "writeable". This list property is protected for restricted "write access" to the list variable.
+        /// </summary>
+        protected List<T> TheBaseList
+        {
+            get { return list; }
+            set { list = value; }
+        }
+
+        // TODO: is this a property?
+        protected JsonSerializerSettings options = new JsonSerializerSettings
+        {
+            Formatting = Newtonsoft.Json.Formatting.Indented,
+            TypeNameHandling = TypeNameHandling.Auto
+        };
 
         /// <summary>
         /// Simple constructor, just creates a new list for the list field.
@@ -147,6 +167,44 @@ namespace DA205E_Assignment3.GenericList
             }
 
             return info;
+        }
+
+        public virtual void JsonSerialize(string fileName)
+        {
+            try
+            {
+                string? jsonString = JsonConvert.SerializeObject(TheList, options);
+                File.WriteAllText(fileName, jsonString);
+            }
+            catch (Exception exception)
+            {
+                ValidationUtility.WarnUser("Something went wrong while trying to serialize to JSON: " + exception.Message);
+            }
+        }
+
+        public virtual void JsonDeserialize(string fileName)
+        {
+            string? jsonString = File.ReadAllText(fileName);
+            if (jsonString != null)
+                list = JsonConvert.DeserializeObject<List<T>>(jsonString, options); // TODO: Can I resolve the warning?
+        }
+
+        public virtual void XMLSerialize(string fileName)
+        {
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
+
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    serializer.Serialize(writer, TheList);
+                    writer.Close();
+                }
+            }
+            catch (Exception exception)
+            {
+                ValidationUtility.WarnUser("Something went wrong while trying to serialize to XML: " + exception.Message);
+            }
         }
     }
 }

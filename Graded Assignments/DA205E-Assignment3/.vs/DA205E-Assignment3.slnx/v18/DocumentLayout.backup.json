@@ -3,12 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\insectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\insectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\animalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\animalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\species\\butterfly\\butterfly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\species\\butterfly\\butterfly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\species\\beetle\\beetle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\species\\beetle\\beetle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\reptile\\reptile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\reptile\\reptile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\insect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\insect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\species\\insectspecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\species\\insectspecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\bird\\bird.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\bird\\bird.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\bird\\species\\dove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\bird\\species\\dove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\bird\\species\\raven\\raven.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\bird\\species\\raven\\raven.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\reptile\\species\\snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\reptile\\species\\snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\reptile\\species\\turtle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\reptile\\species\\turtle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\da205e-assignment3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\da205e-assignment3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\utils\\filemanagement\\filemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\utils\\filemanagement\\filemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\insect\\insectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment3\\da205e-assignment3\\animals\\bird\\birdfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05C23F05-0659-632D-3B93-B11A798DFCA2}|DA205E-Assignment3\\DA205E-Assignment3.csproj|solutionrelative:da205e-assignment3\\animals\\bird\\birdfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,33 +89,265 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 374,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\MainForm.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment3\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\MainForm.cs",
-              "RelativeToolTip": "DA205E-Assignment3\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Animal.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Animal.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Animal.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Animal.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAowLkAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T07:44:41.102Z",
+              "WhenOpened": "2026-03-23T11:38:52.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Program.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment3\\Program.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Program.cs",
-              "RelativeToolTip": "DA205E-Assignment3\\Program.cs",
+              "Title": "InsectFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectFactory.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\InsectFactory.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectFactory.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\InsectFactory.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAlwB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:37:05.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Insect.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Insect.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\Insect.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Insect.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\Insect.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:34:40.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InsectSpecies.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\InsectSpecies.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\Species\\InsectSpecies.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\InsectSpecies.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\Species\\InsectSpecies.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T07:44:37.998Z",
+              "WhenOpened": "2026-03-23T11:34:39.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bird.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Bird.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Bird\\Bird.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Bird.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Bird\\Bird.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwEkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:34:21.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Snake.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Species\\Snake.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Reptile\\Species\\Snake.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Species\\Snake.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Reptile\\Species\\Snake.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwC0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:22:58.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Turtle.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Species\\Turtle.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Reptile\\Species\\Turtle.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Species\\Turtle.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Reptile\\Species\\Turtle.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwDkAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:19:23.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DA205E-Assignment3",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\DA205E-Assignment3.csproj",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\DA205E-Assignment3.csproj",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\DA205E-Assignment3.csproj",
+              "RelativeToolTip": "DA205E-Assignment3\\DA205E-Assignment3.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-23T09:38:14.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\MainForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\MainForm.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\MainForm.cs",
+              "ViewState": "AgIAAI0CAAAAAAAAAAAkwKcCAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T09:17:18.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "InsectForm.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T08:51:55.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "InsectForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs [Design]",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\InsectForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T08:51:50.422Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Raven.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Species\\Raven\\Raven.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Bird\\Species\\Raven\\Raven.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Species\\Raven\\Raven.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Bird\\Species\\Raven\\Raven.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T20:14:08.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BirdFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\BirdFactory.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Bird\\BirdFactory.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\BirdFactory.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Bird\\BirdFactory.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T19:36:55.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Butterfly.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\Butterfly\\Butterfly.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\Species\\Butterfly\\Butterfly.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\Butterfly\\Butterfly.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\Species\\Butterfly\\Butterfly.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:32:26.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Beetle.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\Beetle\\Beetle.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Insect\\Species\\Beetle\\Beetle.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Insect\\Species\\Beetle\\Beetle.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Insect\\Species\\Beetle\\Beetle.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:21:11.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FileManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Utils\\FileManagement\\FileManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Utils\\FileManagement\\FileManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Utils\\FileManagement\\FileManager.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Utils\\FileManagement\\FileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T02:04:40.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dove.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Species\\Dove.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Bird\\Species\\Dove.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Bird\\Species\\Dove.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Bird\\Species\\Dove.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwEEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T20:14:24.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimalManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\AnimalManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\AnimalManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\AnimalManager.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\AnimalManager.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAAkwP8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T00:28:32.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reptile.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Reptile.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\Animals\\Reptile\\Reptile.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\Animals\\Reptile\\Reptile.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\Animals\\Reptile\\Reptile.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wEEAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T11:34:50.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ListManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\GenericList\\ListManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment3\\GenericList\\ListManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment3\\DA205E-Assignment3\\GenericList\\ListManager.cs",
+              "RelativeToolTip": "DA205E-Assignment3\\GenericList\\ListManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwCgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T08:03:55.834Z",
               "EditorCaption": ""
             }
           ]

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             grpCreateAnimal = new GroupBox();
             btnCreateAnimal = new Button();
             chkListAllSpecies = new CheckBox();
@@ -68,10 +69,38 @@
             lblGenderLst = new Label();
             rtxtAdditionalData = new RichTextBox();
             btnClearSelection = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            grpAnimalStats = new GroupBox();
+            lblResultAverageAgeOfAnimals = new Label();
+            lblAverageAgeOfAnimals = new Label();
+            lblResultTotalAmountOfAnimals = new Label();
+            lblTotalAmountOfAnimals = new Label();
+            btnCalculate = new Button();
+            grpResults = new GroupBox();
+            btnClearResults = new Button();
+            lstResults = new ListBox();
+            grpFilterAgeRange = new GroupBox();
+            nmrMaxAge = new NumericUpDown();
+            nmrMinAge = new NumericUpDown();
+            btnFilter = new Button();
+            lblMaximum = new Label();
+            lblMinimumAge = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            contextMenuStrip2 = new ContextMenuStrip(components);
+            grpSearch = new GroupBox();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
             grpCreateAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
             grpGeneralData.SuspendLayout();
             menuStrip1.SuspendLayout();
+            grpAnimalStats.SuspendLayout();
+            grpResults.SuspendLayout();
+            grpFilterAgeRange.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nmrMaxAge).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmrMinAge).BeginInit();
+            grpSearch.SuspendLayout();
             SuspendLayout();
             // 
             // grpCreateAnimal
@@ -270,6 +299,7 @@
             mnuFileNew.ShortcutKeys = Keys.Control | Keys.N;
             mnuFileNew.Size = new Size(199, 22);
             mnuFileNew.Text = "New";
+            mnuFileNew.Click += mnuFileNew_Click;
             // 
             // mnuFileOpen
             // 
@@ -277,6 +307,7 @@
             mnuFileOpen.ShortcutKeys = Keys.Control | Keys.O;
             mnuFileOpen.Size = new Size(199, 22);
             mnuFileOpen.Text = "Open...";
+            mnuFileOpen.Click += mnuFileOpen_Click;
             // 
             // mnuFileSave
             // 
@@ -284,6 +315,7 @@
             mnuFileSave.ShortcutKeys = Keys.Control | Keys.S;
             mnuFileSave.Size = new Size(199, 22);
             mnuFileSave.Text = "Save";
+            mnuFileSave.Click += mnuFileSave_Click;
             // 
             // mnuFileSaveAs
             // 
@@ -291,6 +323,7 @@
             mnuFileSaveAs.ShortcutKeys = Keys.Control | Keys.Alt | Keys.S;
             mnuFileSaveAs.Size = new Size(199, 22);
             mnuFileSaveAs.Text = "Save As...";
+            mnuFileSaveAs.Click += mnuFileSaveAs_Click;
             // 
             // mnuFileLoadImage
             // 
@@ -323,7 +356,7 @@
             // 
             mnuHelpAbout.Name = "mnuHelpAbout";
             mnuHelpAbout.ShortcutKeys = Keys.Control | Keys.Alt | Keys.A;
-            mnuHelpAbout.Size = new Size(180, 22);
+            mnuHelpAbout.Size = new Size(172, 22);
             mnuHelpAbout.Text = "&About";
             mnuHelpAbout.Click += aboutToolStripMenuItem_Click;
             // 
@@ -431,11 +464,205 @@
             btnClearSelection.UseVisualStyleBackColor = true;
             btnClearSelection.Click += btnClearSelection_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // grpAnimalStats
+            // 
+            grpAnimalStats.Controls.Add(lblResultAverageAgeOfAnimals);
+            grpAnimalStats.Controls.Add(lblAverageAgeOfAnimals);
+            grpAnimalStats.Controls.Add(lblResultTotalAmountOfAnimals);
+            grpAnimalStats.Controls.Add(lblTotalAmountOfAnimals);
+            grpAnimalStats.Controls.Add(btnCalculate);
+            grpAnimalStats.Location = new Point(12, 499);
+            grpAnimalStats.Name = "grpAnimalStats";
+            grpAnimalStats.Size = new Size(407, 60);
+            grpAnimalStats.TabIndex = 19;
+            grpAnimalStats.TabStop = false;
+            grpAnimalStats.Text = "Animal Statistics";
+            // 
+            // lblResultAverageAgeOfAnimals
+            // 
+            lblResultAverageAgeOfAnimals.AutoSize = true;
+            lblResultAverageAgeOfAnimals.Location = new Point(265, 39);
+            lblResultAverageAgeOfAnimals.Name = "lblResultAverageAgeOfAnimals";
+            lblResultAverageAgeOfAnimals.Size = new Size(84, 15);
+            lblResultAverageAgeOfAnimals.TabIndex = 4;
+            lblResultAverageAgeOfAnimals.Text = "Press calculate";
+            // 
+            // lblAverageAgeOfAnimals
+            // 
+            lblAverageAgeOfAnimals.AutoSize = true;
+            lblAverageAgeOfAnimals.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAverageAgeOfAnimals.Location = new Point(265, 22);
+            lblAverageAgeOfAnimals.Name = "lblAverageAgeOfAnimals";
+            lblAverageAgeOfAnimals.Size = new Size(130, 15);
+            lblAverageAgeOfAnimals.TabIndex = 3;
+            lblAverageAgeOfAnimals.Text = "Average age of animals";
+            // 
+            // lblResultTotalAmountOfAnimals
+            // 
+            lblResultTotalAmountOfAnimals.AutoSize = true;
+            lblResultTotalAmountOfAnimals.Location = new Point(105, 39);
+            lblResultTotalAmountOfAnimals.Name = "lblResultTotalAmountOfAnimals";
+            lblResultTotalAmountOfAnimals.Size = new Size(84, 15);
+            lblResultTotalAmountOfAnimals.TabIndex = 2;
+            lblResultTotalAmountOfAnimals.Text = "Press calculate";
+            // 
+            // lblTotalAmountOfAnimals
+            // 
+            lblTotalAmountOfAnimals.AutoSize = true;
+            lblTotalAmountOfAnimals.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalAmountOfAnimals.Location = new Point(105, 22);
+            lblTotalAmountOfAnimals.Name = "lblTotalAmountOfAnimals";
+            lblTotalAmountOfAnimals.Size = new Size(136, 15);
+            lblTotalAmountOfAnimals.TabIndex = 1;
+            lblTotalAmountOfAnimals.Text = "Total amount of animals";
+            // 
+            // btnCalculate
+            // 
+            btnCalculate.Location = new Point(6, 22);
+            btnCalculate.Name = "btnCalculate";
+            btnCalculate.Size = new Size(75, 23);
+            btnCalculate.TabIndex = 0;
+            btnCalculate.Text = "Calculate";
+            btnCalculate.UseVisualStyleBackColor = true;
+            btnCalculate.Click += btnCalculate_Click;
+            // 
+            // grpResults
+            // 
+            grpResults.Controls.Add(btnClearResults);
+            grpResults.Controls.Add(lstResults);
+            grpResults.Location = new Point(425, 499);
+            grpResults.Name = "grpResults";
+            grpResults.Size = new Size(461, 204);
+            grpResults.TabIndex = 21;
+            grpResults.TabStop = false;
+            grpResults.Text = "Animal filter/search results";
+            // 
+            // btnClearResults
+            // 
+            btnClearResults.Location = new Point(330, 175);
+            btnClearResults.Name = "btnClearResults";
+            btnClearResults.Size = new Size(125, 23);
+            btnClearResults.TabIndex = 23;
+            btnClearResults.Text = "Clear results";
+            btnClearResults.UseVisualStyleBackColor = true;
+            btnClearResults.Click += btnClearResults_Click;
+            // 
+            // lstResults
+            // 
+            lstResults.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstResults.FormattingEnabled = true;
+            lstResults.Location = new Point(6, 22);
+            lstResults.Name = "lstResults";
+            lstResults.Size = new Size(449, 139);
+            lstResults.TabIndex = 8;
+            // 
+            // grpFilterAgeRange
+            // 
+            grpFilterAgeRange.Controls.Add(nmrMaxAge);
+            grpFilterAgeRange.Controls.Add(nmrMinAge);
+            grpFilterAgeRange.Controls.Add(btnFilter);
+            grpFilterAgeRange.Controls.Add(lblMaximum);
+            grpFilterAgeRange.Controls.Add(lblMinimumAge);
+            grpFilterAgeRange.Location = new Point(12, 565);
+            grpFilterAgeRange.Name = "grpFilterAgeRange";
+            grpFilterAgeRange.Size = new Size(407, 75);
+            grpFilterAgeRange.TabIndex = 20;
+            grpFilterAgeRange.TabStop = false;
+            grpFilterAgeRange.Text = "Filter animals by range";
+            // 
+            // nmrMaxAge
+            // 
+            nmrMaxAge.Location = new Point(141, 39);
+            nmrMaxAge.Name = "nmrMaxAge";
+            nmrMaxAge.Size = new Size(120, 23);
+            nmrMaxAge.TabIndex = 22;
+            // 
+            // nmrMinAge
+            // 
+            nmrMinAge.Location = new Point(6, 39);
+            nmrMinAge.Name = "nmrMinAge";
+            nmrMinAge.Size = new Size(120, 23);
+            nmrMinAge.TabIndex = 5;
+            // 
+            // btnFilter
+            // 
+            btnFilter.Location = new Point(276, 39);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(125, 23);
+            btnFilter.TabIndex = 4;
+            btnFilter.Text = "Filter";
+            btnFilter.UseVisualStyleBackColor = true;
+            btnFilter.Click += btnFilter_Click;
+            // 
+            // lblMaximum
+            // 
+            lblMaximum.AutoSize = true;
+            lblMaximum.Location = new Point(141, 19);
+            lblMaximum.Name = "lblMaximum";
+            lblMaximum.Size = new Size(83, 15);
+            lblMaximum.TabIndex = 3;
+            lblMaximum.Text = "Maximum age";
+            // 
+            // lblMinimumAge
+            // 
+            lblMinimumAge.AutoSize = true;
+            lblMinimumAge.Location = new Point(6, 21);
+            lblMinimumAge.Name = "lblMinimumAge";
+            lblMinimumAge.Size = new Size(82, 15);
+            lblMinimumAge.TabIndex = 0;
+            lblMinimumAge.Text = "Minimum age";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            contextMenuStrip2.Name = "contextMenuStrip2";
+            contextMenuStrip2.Size = new Size(61, 4);
+            // 
+            // grpSearch
+            // 
+            grpSearch.Controls.Add(btnSearch);
+            grpSearch.Controls.Add(txtSearch);
+            grpSearch.Location = new Point(12, 646);
+            grpSearch.Name = "grpSearch";
+            grpSearch.Size = new Size(407, 57);
+            grpSearch.TabIndex = 22;
+            grpSearch.TabStop = false;
+            grpSearch.Text = "Search for animals (by ID)";
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(276, 21);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(125, 23);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(6, 22);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(255, 23);
+            txtSearch.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 493);
+            ClientSize = new Size(898, 715);
+            Controls.Add(grpSearch);
+            Controls.Add(grpFilterAgeRange);
+            Controls.Add(grpResults);
+            Controls.Add(grpAnimalStats);
             Controls.Add(btnClearSelection);
             Controls.Add(rtxtAdditionalData);
             Controls.Add(lblGenderLst);
@@ -466,6 +693,15 @@
             grpGeneralData.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            grpAnimalStats.ResumeLayout(false);
+            grpAnimalStats.PerformLayout();
+            grpResults.ResumeLayout(false);
+            grpFilterAgeRange.ResumeLayout(false);
+            grpFilterAgeRange.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nmrMaxAge).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmrMinAge).EndInit();
+            grpSearch.ResumeLayout(false);
+            grpSearch.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -512,5 +748,29 @@
         private ToolStripMenuItem mnuFileSaveAs;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem mnuFileExitApp;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private GroupBox grpAnimalStats;
+        private Label lblResultTotalAmountOfAnimals;
+        private Label lblTotalAmountOfAnimals;
+        private Button btnCalculate;
+        private Label lblResultAverageAgeOfAnimals;
+        private Label lblAverageAgeOfAnimals;
+        private GroupBox grpResults;
+        private GroupBox grpFilterAgeRange;
+        private ContextMenuStrip contextMenuStrip1;
+        private Label lblMinimumAge;
+        private NumericUpDown numericUpDown2;
+        private NumericUpDown nmrMinAge;
+        private NumericUpDown nmrMaxAge;
+        private Label lblMaximum;
+        private Button btnFilter;
+        private ListBox lstResults;
+        private Button btnClearResults;
+        private ContextMenuStrip contextMenuStrip2;
+        private GroupBox groupBox1;
+        private GroupBox grpSearch;
+        private TextBox txtSearch;
+        private Button btnSearch;
     }
 }

@@ -1,9 +1,15 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-24
+using DA205E_Assignment3.Animals.Bird.Species;
+using DA205E_Assignment3.Animals.Bird.Species.Raven;
+using System.Xml.Serialization;
+
 namespace DA205E_Assignment3.Animals.Bird
 {
     /// <summary>
     /// An abstract sub class/derived class of the base/super class Animal. It adds fields and properties for wingspan and beak type along with an overriden ToString()-method. It also implements the Category property.
     /// </summary>
+    [XmlInclude(typeof(Dove))]
+    [XmlInclude(typeof(Raven))]
     public abstract class Bird : Animal
     {
         #region Fields
@@ -12,6 +18,8 @@ namespace DA205E_Assignment3.Animals.Bird
         #endregion
 
         #region Constructor(s)
+        public Bird() { }
+
         /// <summary>
         /// Sets the wingspan and beaktype via thir properties based on the provided parameters. Also calls the base constructor.
         /// </summary>
@@ -59,6 +67,12 @@ namespace DA205E_Assignment3.Animals.Bird
             string wingspanString = $"{"Wingspan",-18} {Wingspan,-10}{Environment.NewLine}";
             string beakTypeString = $"{"BeakType",-18} {BeakType.ToString(),-10}{Environment.NewLine}";
             return base.ToString() + wingspanString + beakTypeString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return base.ToStringTxt() + $"Wingspan: {Wingspan}{Environment.NewLine}" +
+                $"Beak type: {BeakType}{Environment.NewLine}";
         }
         #endregion
     }

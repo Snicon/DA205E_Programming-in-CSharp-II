@@ -1,9 +1,14 @@
 ﻿// Sixten Peterson (AQ9300) 2026-02-24
+using DA205E_Assignment3.Animals.Reptile.Species;
+using System.Xml.Serialization;
+
 namespace DA205E_Assignment3.Animals.Reptile
 {
     /// <summary>
     /// An abstract sub class/derived class of the base/super class Animal. It adds fields and properties for lives in water and can regrow tail along with an overriden ToString()-method.
     /// </summary>
+    [XmlInclude(typeof(Snake))]
+    [XmlInclude(typeof(Turtle))]
     public abstract class Reptile : Animal
     {
         #region Fields
@@ -12,6 +17,8 @@ namespace DA205E_Assignment3.Animals.Reptile
         #endregion
 
         #region Constructor
+        public Reptile() : base() { }
+
         public Reptile(bool livesInWater, bool canRegrowTail) : base()
         {
             CanRegrowTail = canRegrowTail;
@@ -51,6 +58,12 @@ namespace DA205E_Assignment3.Animals.Reptile
             string livesInWaterString = $"{"Lives in water",-18} {LivesInWater,-10}{Environment.NewLine}";
             string canRegrowTailString = $"{"Can regrow tail",-18} {CanRegrowTail,-10}{Environment.NewLine}";
             return base.ToString() + livesInWaterString + canRegrowTailString;
+        }
+
+        public override string ToStringTxt()
+        {
+            return base.ToStringTxt() + $"Lives in water: {LivesInWater}{Environment.NewLine}" +
+                $"Can regrow tail: {CanRegrowTail}{Environment.NewLine}";
         }
         #endregion
     }

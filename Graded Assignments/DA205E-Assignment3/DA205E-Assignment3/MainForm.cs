@@ -1,4 +1,4 @@
-// Sixten Peterson (AQ9300) 2026-02-25
+// Sixten Peterson (AQ9300) 2026-03-06
 using DA205E_Assignment3.Animals;
 using DA205E_Assignment3.Animals.Bird;
 using DA205E_Assignment3.Animals.Bird.Species;
@@ -7,6 +7,7 @@ using DA205E_Assignment3.Animals.Insect.Species;
 using DA205E_Assignment3.Animals.Reptile;
 using DA205E_Assignment3.Animals.Reptile.Species;
 using DA205E_Assignment3.Utils;
+using DA205E_Assignment3.Utils.FileManagement;
 
 namespace DA205E_Assignment3
 {
@@ -20,6 +21,7 @@ namespace DA205E_Assignment3
         private Animal currentAnimal = null; // Keeps track of the current animal when editing/creating an animal
         private int speciesIndex = -1; // The int representing the animal speices in its species enum. This was introduced to support the "list all animal species" feature for grade B in assignment 1. Specifically to handle the checkbox for showing all species in the species list box control.
         private ApplicationMode applicationMode = ApplicationMode.CreateMode; // Defaults to CreateMode
+        private string fileName = string.Empty;
         #endregion
 
         #region Constructor
@@ -42,6 +44,13 @@ namespace DA205E_Assignment3
             ComponentPopulationUtility.populate(lstCategory, Enum.GetNames(typeof(Category)), (int)Category.Bird); // Populating the lstCategory list box and preselecting the Bird category
             ComponentPopulationUtility.populate(cmbGender, Enum.GetNames(typeof(GenderType)), (int)GenderType.Unknown); // Populating the cmbGender combo box and preselecting the Unknown gender
             Icon = Properties.Resources.EAMS;
+
+            // TODO: Move out to it's own method along with openFileDialog1
+            saveFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            saveFileDialog1.DefaultExt = "txt";
+
+            openFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog1.DefaultExt = "txt";
 
             RefreshUI(); // This method is called to assure that the UI is drawn correctly based on the active application mode
         }
@@ -219,6 +228,21 @@ namespace DA205E_Assignment3
 
             ValidationUtility.WarnUser("It seems like some of your input was invalid. Make sure you have inputted a name, age (0.0 or older) and weight (0.0 or heavier).");
             return false; // data was invalid and nothing has been saved to the animal object
+        }
+
+        private (double, double, bool) ReadAgeRangeData()
+        {
+            (double minAge, bool isValidMinAge) = NumericUtility.GetDouble(nmrMinAge.Text);
+            (double maxAge, bool isValidMaxAge) = NumericUtility.GetDouble(nmrMaxAge.Text);
+
+            if (isValidMinAge && isValidMaxAge)
+            {
+                // TODO: Validation of number (can't be negative...)
+                return (minAge, maxAge, true);
+            }
+
+            // TODO: Make constant?
+            return (0, 0, false);
         }
         #endregion
 
@@ -457,6 +481,19 @@ namespace DA205E_Assignment3
 
             RefreshUI(); // Makes sure the UI is "up to date" based on the state (currentAnimal)
         }
+
+        /// <summary>
+        /// Resets the underlying state of the application and redraws the GUI.
+        /// </summary>
+        private void ResetApplicationState()
+        {
+            animalManager = new AnimalManager(); // Replaces the animalManager instance with a new one in order to guarantee a fresh state
+            currentAnimal = null; // Reset state means no current animal.
+            speciesIndex = -1; // no animal to represent
+            applicationMode = ApplicationMode.CreateMode; // CreateMode when state is reset
+
+            RefreshUI(true); // Redraws the UI and re-populates the animal list
+        }
         #endregion
 
         #region menu strip items
@@ -577,5 +614,149 @@ namespace DA205E_Assignment3
             ChangeAnimal();
         }
         #endregion
+
+        // TODO: Move all methods below:
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            ResetApplicationState();
+        }
+
+        private void mnuFileSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileAs();
+        }
+
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            SaveFile();
+        }
+
+        private void SaveFileAs()
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                fileName = saveFileDialog1.FileName;
+
+            if (fileName != string.Empty) {
+                SaveFile(); // Since a fileName has been set we can just save it using the SaveFile method instead of reimplementing the whole thing in two separate methods
+            }
+        }
+      
+
+        private void SaveFile()
+        {
+            // Guard clause making sure that a fileName has been stored before trying to do an action that requires it.
+            if (fileName == string.Empty)
+            {
+                SaveFileAs();
+                return;
+            }
+
+
+            string fileExtension = Path.GetExtension(fileName).ToLower();
+
+            switch (fileExtension)
+            {
+                case ".txt":
+                    animalManager.SaveFileAs(fileName, animalManager);
+                    break;
+                case ".json":
+                    animalManager.JsonSerialize(fileName);
+                    break;
+                case ".xml":
+                    animalManager.XMLSerialize(fileName);
+                    break;
+                default:
+                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
+                    break;
+            }
+        }
+
+        private void OpenFile()
+        {
+            // Clearing application state below
+            animalManager = new AnimalManager();
+            currentAnimal = null;
+            applicationMode = ApplicationMode.CreateMode;
+            RefreshApplicationModeUI();
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                fileName = openFileDialog1.FileName; // Setting the filename field
+
+            string fileExtension = Path.GetExtension(fileName).ToLower();
+
+            switch (fileExtension)
+            {
+                case ".txt":
+                    animalManager.OpenFile(fileName, animalManager);
+                    break;
+                case ".json":
+                    animalManager.JsonDeserialize(fileName);
+                    break;
+                default:
+                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
+                    break;
+            }
+
+            RefreshUI(true); // Repopulating the animal list to make any imported animals from the file appear in the application UI.
+        }
+
+        private void mnuFileOpen_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            (int amount, double avgAge) = animalManager.CalculateBasicStatistics();
+
+            lblResultTotalAmountOfAnimals.Text = amount.ToString();
+            lblResultAverageAgeOfAnimals.Text = avgAge.ToString();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
+            (double minAge, double maxAge, bool valid) = ReadAgeRangeData(); // Reading the age range input/text controls
+
+            foreach (Animal animal in animalManager.FilterByAgeRange(minAge, maxAge))
+            {
+                animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
+            }
+
+            lstResults.Items.Clear();
+            ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
+        }
+
+        private void btnClearResults_Click(object sender, EventArgs e)
+        {
+            lstResults.Items.Clear();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
+            string searchWord = txtSearch.Text;
+
+            if (searchWord.Trim() == String.Empty)
+            {
+                ValidationUtility.WarnUser("The search field cannot be empty when searching.");
+                return;
+            }
+
+            List<Animal> searchResults = animalManager.SearchByID(searchWord);
+
+            lstResults.Items.Clear();
+            if (searchResults.Count > 0)
+            {
+                foreach (Animal animal in searchResults)
+                {
+                    animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
+                }
+                ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
+            } else
+            {
+                ValidationUtility.WarnUser("No search results found. :(");
+            }
+        }
     }
 }

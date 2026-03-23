@@ -14,12 +14,14 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         private bool venomous;
         #endregion
 
+        #region Constructor(s)
+        public Snake() : base() { }
+
         /// <summary>
         /// Simple constructor, just calls the base constructor.
         /// </summary>
         /// <param name="livesInWater">A boolean representing if the snake lives in water, used in the base constructor</param>
         /// <param name="canRegrowTail">A boolean representing if the snake regrow its tail, used in the base constructor</param>
-        #region Constructor(s)
         public Snake(bool livesInWater, bool canRegrowTail) : base(livesInWater, canRegrowTail)
         {
         }
@@ -44,6 +46,11 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
             return base.ToString() + venomousString;
         }
 
+        public override string ToStringTxt()
+        {
+            return $"{nameof(Snake)}{Environment.NewLine}" + base.ToStringTxt() + $"Venomous: {venomous}";
+        }
+
         /// <summary>
         /// Prefixes the base ToStringSummary() with the name of the species (Snake).
         /// </summary>
@@ -53,7 +60,6 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
             return $"{nameof(Snake),-8} {base.ToStringSummary()}";
         }
         #endregion
-
 
         #region Other methods
         /// <summary>

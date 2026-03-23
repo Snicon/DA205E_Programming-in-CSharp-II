@@ -62,5 +62,23 @@ namespace DA205E_Assignment3.GenericList
         /// </summary>
         /// <returns>The list collection of ToString()s</returns>
         List<string> ToStringList();
+
+        /// <summary>
+        /// Serializes the list to Json and stores it in a .json file.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to store the serialized data in.</param>
+        void JsonSerialize(string fileName);
+
+        /// <summary>
+        /// Deseraializes the list from Json and applies it to the list.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to the file that will be deserialized from</param>
+        void JsonDeserialize(string fileName);
+
+        /// <summary>
+        /// Serializes the list to XML and stores it in a .xml file.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to store the serialized data in.</param>
+        void XMLSerialize(string fileName);
     }
 }
