@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAnimal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animal xsi:type="Dove">
+    <Id>B100</Id>
+    <Name>Anna</Name>
+    <Gender>Female</Gender>
+    <Age>4</Age>
+    <Weight>18</Weight>
+    <Wingspan>4</Wingspan>
+    <BeakType>Hooked</BeakType>
+    <MilkProduction>12</MilkProduction>
+  </Animal>
+  <Animal xsi:type="Raven">
+    <Id>B101</Id>
+    <Name>Ray</Name>
+    <Gender>Female</Gender>
+    <Age>3</Age>
+    <Weight>2</Weight>
+    <Wingspan>13</Wingspan>
+    <BeakType>Hooked</BeakType>
+    <BeakSize>2</BeakSize>
+  </Animal>
+  <Animal xsi:type="Beetle">
+    <Id>I102</Id>
+    <Name>Boet</Name>
+    <Gender>Male</Gender>
+    <Age>1</Age>
+    <Weight>0.2</Weight>
+    <HasWings>true</HasWings>
+    <LifecycleStage>Adult</LifecycleStage>
+    <BodyType>Bulky</BodyType>
+  </Animal>
+  <Animal xsi:type="Butterfly">
+    <Id>I103</Id>
+    <Name>Moa</Name>
+    <Gender>Female</Gender>
+    <Age>1</Age>
+    <Weight>0.1</Weight>
+    <HasWings>true</HasWings>
+    <LifecycleStage>Adult</LifecycleStage>
+    <WingPattern>Striped</WingPattern>
+  </Animal>
+  <Animal xsi:type="Snake">
+    <Id>R104</Id>
+    <Name>Snape</Name>
+    <Gender>Male</Gender>
+    <Age>4</Age>
+    <Weight>23.4</Weight>
+    <LivesInWater>false</LivesInWater>
+    <CanRegrowTail>false</CanRegrowTail>
+    <Venomous>true</Venomous>
+  </Animal>
+  <Animal xsi:type="Turtle">
+    <Id>R105</Id>
+    <Name>Frank</Name>
+    <Gender>Unknown</Gender>
+    <Age>101</Age>
+    <Weight>60</Weight>
+    <LivesInWater>true</LivesInWater>
+    <CanRegrowTail>true</CanRegrowTail>
+    <ShellWidth>14</ShellWidth>
+  </Animal>
+</ArrayOfAnimal>

@@ -1,4 +1,4 @@
-// Sixten Peterson (AQ9300) 2026-03-06
+// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals;
 using DA205E_Assignment3.Animals.Bird;
 using DA205E_Assignment3.Animals.Bird.Species;
@@ -45,14 +45,28 @@ namespace DA205E_Assignment3
             ComponentPopulationUtility.populate(cmbGender, Enum.GetNames(typeof(GenderType)), (int)GenderType.Unknown); // Populating the cmbGender combo box and preselecting the Unknown gender
             Icon = Properties.Resources.EAMS;
 
-            // TODO: Move out to it's own method along with openFileDialog1
-            saveFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|XML files (*.xml)|*.xml|All files (*.*)|*.*";
-            saveFileDialog1.DefaultExt = "txt";
-
-            openFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|All files (*.*)|*.*";
-            openFileDialog1.DefaultExt = "txt";
+            initSaveFileDialog();
+            initOpenFileDialog();
 
             RefreshUI(); // This method is called to assure that the UI is drawn correctly based on the active application mode
+        }
+
+        /// <summary>
+        /// Sets the filter and default extenision for the save file dialog used for file handling
+        /// </summary>
+        private void initSaveFileDialog()
+        {
+            saveFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            saveFileDialog1.DefaultExt = "txt";
+        }
+
+        /// <summary>
+        /// Sets the filter and default extension for the open file dialog used for file handling
+        /// </summary>
+        private void initOpenFileDialog()
+        {
+            openFileDialog1.Filter = "Text documents (*.txt)|*.txt|JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog1.DefaultExt = "txt";
         }
         #endregion
 
@@ -230,6 +244,10 @@ namespace DA205E_Assignment3
             return false; // data was invalid and nothing has been saved to the animal object
         }
 
+        /// <summary>
+        /// Reads the age range data (the minAge and maxAge controls) and returns their values in a tuple as doubles along with a bool showing if the data was read successfully or not.
+        /// </summary>
+        /// <returns>True if data was read successfully, false if not.</returns>
         private (double, double, bool) ReadAgeRangeData()
         {
             (double minAge, bool isValidMinAge) = NumericUtility.GetDouble(nmrMinAge.Text);
@@ -237,12 +255,10 @@ namespace DA205E_Assignment3
 
             if (isValidMinAge && isValidMaxAge)
             {
-                // TODO: Validation of number (can't be negative...)
-                return (minAge, maxAge, true);
+                return (minAge, maxAge, true); // Successful return
             }
 
-            // TODO: Make constant?
-            return (0, 0, false);
+            return (0, 0, false); // Failed return
         }
         #endregion
 
@@ -494,6 +510,110 @@ namespace DA205E_Assignment3
 
             RefreshUI(true); // Redraws the UI and re-populates the animal list
         }
+
+        /// <summary>
+        /// Sets the fileName property to the file that was selected in the saveFileDialog. If fileName property was set it saves the file.
+        /// </summary>
+        private void SaveFileAs()
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                fileName = saveFileDialog1.FileName;
+                if (fileName != string.Empty)
+                {
+                    SaveFile(); // Since a fileName has been set we can just save it using the SaveFile method instead of reimplementing the whole thing in two separate methods
+                }
+        }
+
+        /// <summary>
+        /// Saves the animals list to the filename if one is set in the format specified by the file name extenison. If no filename is set SaveFileAs() is called in order to set one.
+        /// </summary>
+        private void SaveFile()
+        {
+            // Guard clause making sure that a fileName has been stored before trying to do an action that requires it.
+            if (fileName == string.Empty)
+            {
+                SaveFileAs();
+                return;
+            }
+
+            string fileExtension = Path.GetExtension(fileName).ToLower();
+
+            switch (fileExtension)
+            {
+                case ".txt":
+                    animalManager.SaveFileAs(fileName);
+                    break;
+                case ".json":
+                    animalManager.JsonSerialize(fileName);
+                    break;
+                case ".xml":
+                    animalManager.XMLSerialize(fileName);
+                    break;
+                default:
+                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Opens/imports from file. Based on the file extension the corret method of reading/deserializing is called.
+        /// </summary>
+        private void OpenFile()
+        {
+            // Clearing application state below REPLACE WITH METHOD FOR THIS.
+            animalManager = new AnimalManager();
+            currentAnimal = null;
+            applicationMode = ApplicationMode.CreateMode;
+            RefreshApplicationModeUI();
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                fileName = openFileDialog1.FileName; // Setting the filename field
+
+            string fileExtension = Path.GetExtension(fileName).ToLower();
+
+            switch (fileExtension)
+            {
+                case ".txt":
+                    animalManager.OpenFile(fileName);
+                    break;
+                case ".json":
+                    animalManager.JsonDeserialize(fileName);
+                    break;
+                default:
+                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
+                    break;
+            }
+
+            RefreshUI(true); // Repopulating the animal list to make any imported animals from the file appear in the application UI.
+        }
+
+        /// <summary>
+        /// Sets the total amount of animals and average age of animals results components to the calculated vaules.
+        /// </summary>
+        private void CalculateAnimalStatistics()
+        {
+            (int amount, double avgAge) = animalManager.CalculateBasicStatistics();
+
+            lblResultTotalAmountOfAnimals.Text = amount.ToString();
+            lblResultAverageAgeOfAnimals.Text = avgAge.ToString();
+        }
+
+        /// <summary>
+        /// Gets the animals within the age range and sets the result component in order to show them in the UI.
+        /// </summary>
+        private void GetFilteredAgeResults()
+        {
+            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
+            (double minAge, double maxAge, bool valid) = ReadAgeRangeData(); // Reading the age range input/text controls
+
+            foreach (Animal animal in animalManager.FilterByAgeRange(minAge, maxAge))
+            {
+                animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
+            }
+
+            lstResults.Items.Clear();
+            ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
+        }
         #endregion
 
         #region menu strip items
@@ -515,6 +635,77 @@ namespace DA205E_Assignment3
         private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadImage();
+        }
+
+        /// <summary>
+        /// Resets the application state via the ResetApplicationState()-method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            ResetApplicationState();
+        }
+
+        /// <summary>
+        /// Saves the application data as a file (which is ultimetley decided upon by the user).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuFileSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileAs();
+        }
+
+        /// <summary>
+        /// Saves the application to the file that was last opened or selected with save file as.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            SaveFile();
+        }
+
+        /// <summary>
+        /// Calls the OpenFile()-method when the open file menu button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuFileOpen_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+
+        /// <summary>
+        /// Searches for any matching animals based on the ID. If no result was found a pop up is shown to the user letting them know that no matches was found.
+        /// </summary>
+        private void SearchByID()
+        {
+            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
+            string searchWord = txtSearch.Text;
+
+            if (searchWord.Trim() == String.Empty)
+            {
+                ValidationUtility.WarnUser("The search field cannot be empty when searching.");
+                return;
+            }
+
+            List<Animal> searchResults = animalManager.SearchByID(searchWord);
+
+            lstResults.Items.Clear();
+            if (searchResults.Count > 0)
+            {
+                foreach (Animal animal in searchResults)
+                {
+                    animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
+                }
+                ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
+            }
+            else
+            {
+                ValidationUtility.WarnUser("No search results found. :(");
+            }
         }
         #endregion
 
@@ -613,150 +804,46 @@ namespace DA205E_Assignment3
         {
             ChangeAnimal();
         }
-        #endregion
 
-        // TODO: Move all methods below:
-        private void mnuFileNew_Click(object sender, EventArgs e)
-        {
-            ResetApplicationState();
-        }
-
-        private void mnuFileSaveAs_Click(object sender, EventArgs e)
-        {
-            SaveFileAs();
-        }
-
-        private void mnuFileSave_Click(object sender, EventArgs e)
-        {
-            SaveFile();
-        }
-
-        private void SaveFileAs()
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                fileName = saveFileDialog1.FileName;
-
-            if (fileName != string.Empty) {
-                SaveFile(); // Since a fileName has been set we can just save it using the SaveFile method instead of reimplementing the whole thing in two separate methods
-            }
-        }
-      
-
-        private void SaveFile()
-        {
-            // Guard clause making sure that a fileName has been stored before trying to do an action that requires it.
-            if (fileName == string.Empty)
-            {
-                SaveFileAs();
-                return;
-            }
-
-
-            string fileExtension = Path.GetExtension(fileName).ToLower();
-
-            switch (fileExtension)
-            {
-                case ".txt":
-                    animalManager.SaveFileAs(fileName, animalManager);
-                    break;
-                case ".json":
-                    animalManager.JsonSerialize(fileName);
-                    break;
-                case ".xml":
-                    animalManager.XMLSerialize(fileName);
-                    break;
-                default:
-                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
-                    break;
-            }
-        }
-
-        private void OpenFile()
-        {
-            // Clearing application state below
-            animalManager = new AnimalManager();
-            currentAnimal = null;
-            applicationMode = ApplicationMode.CreateMode;
-            RefreshApplicationModeUI();
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                fileName = openFileDialog1.FileName; // Setting the filename field
-
-            string fileExtension = Path.GetExtension(fileName).ToLower();
-
-            switch (fileExtension)
-            {
-                case ".txt":
-                    animalManager.OpenFile(fileName, animalManager);
-                    break;
-                case ".json":
-                    animalManager.JsonDeserialize(fileName);
-                    break;
-                default:
-                    ValidationUtility.WarnUser("Invalid file selection, this file extension is not supported. (Only .txt, .json and .xml are supported).");
-                    break;
-            }
-
-            RefreshUI(true); // Repopulating the animal list to make any imported animals from the file appear in the application UI.
-        }
-
-        private void mnuFileOpen_Click(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
-
+        /// <summary>
+        /// Calculates and shows the animal statistics in the GUI.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            (int amount, double avgAge) = animalManager.CalculateBasicStatistics();
-
-            lblResultTotalAmountOfAnimals.Text = amount.ToString();
-            lblResultAverageAgeOfAnimals.Text = avgAge.ToString();
+            CalculateAnimalStatistics();
         }
 
+        /// <summary>
+        /// Showcases any animals that fit within the specified age range in a lstbox control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
-            (double minAge, double maxAge, bool valid) = ReadAgeRangeData(); // Reading the age range input/text controls
-
-            foreach (Animal animal in animalManager.FilterByAgeRange(minAge, maxAge))
-            {
-                animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
-            }
-
-            lstResults.Items.Clear();
-            ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
+            GetFilteredAgeResults();
         }
 
+        /// <summary>
+        /// Clears the results from the lstbox control containing any filter/search results.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClearResults_Click(object sender, EventArgs e)
         {
             lstResults.Items.Clear();
         }
 
+        /// <summary>
+        /// Searches for any animals with the matching id. If any matches were found they are shown in the results lstbox control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<string> animalSummaries = new List<string>(); // Creating empty list that will be used to store string summaries
-            string searchWord = txtSearch.Text;
-
-            if (searchWord.Trim() == String.Empty)
-            {
-                ValidationUtility.WarnUser("The search field cannot be empty when searching.");
-                return;
-            }
-
-            List<Animal> searchResults = animalManager.SearchByID(searchWord);
-
-            lstResults.Items.Clear();
-            if (searchResults.Count > 0)
-            {
-                foreach (Animal animal in searchResults)
-                {
-                    animalSummaries.Add(animal.ToStringSummary()); // Adding the summary representation of each animal to the list of summaries
-                }
-                ComponentPopulationUtility.populate(lstResults, animalSummaries.ToArray(), -1);
-            } else
-            {
-                ValidationUtility.WarnUser("No search results found. :(");
-            }
+            SearchByID();
         }
+        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 
 namespace DA205E_Assignment3.Animals.Reptile.Species
 {
@@ -16,6 +16,9 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         #endregion
 
         #region Constructor(s)
+        /// <summary>
+        /// Simple constructor
+        /// </summary>
         public Turtle() : base() { }
 
         /// <summary>
@@ -53,6 +56,10 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
             return base.ToString() + shellWidthString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Turtle) and suffixes it with the shell width property.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Turtle)}{Environment.NewLine}" + base.ToStringTxt() + $"Shell Width: {shellWidth}";

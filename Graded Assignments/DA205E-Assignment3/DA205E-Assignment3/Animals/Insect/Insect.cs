@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Insect.Species.Beetle;
 using DA205E_Assignment3.Animals.Insect.Species.Butterfly;
 using System.Xml.Serialization;
@@ -18,7 +18,10 @@ namespace DA205E_Assignment3.Animals.Insect
         #endregion
 
         #region Constructor(s)
-        public Insect() { }
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
+        public Insect() : base() { }
 
         /// <summary>
         /// Sets the hasWings and lifecycleStage via thir properties based on the provided parameters. Also calls the base constructor.
@@ -66,6 +69,10 @@ namespace DA205E_Assignment3.Animals.Insect
             return base.ToString() + hasWingsString + lifecycleStageString;
         }
 
+        /// <summary>
+        /// Overriden ToStringTxtMethod(). It adds the hasWings and Lifecycle stage properties to the string.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return base.ToStringTxt() + $"Has wings: {HasWings}{Environment.NewLine}" +

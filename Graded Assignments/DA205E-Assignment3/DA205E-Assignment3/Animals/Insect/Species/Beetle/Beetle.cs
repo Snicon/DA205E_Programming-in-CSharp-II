@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 namespace DA205E_Assignment3.Animals.Insect.Species.Beetle
 {
     /// <summary>
@@ -15,6 +15,9 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Beetle
         #endregion
 
         #region Constructor(s)
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
         public Beetle(): base() { }
 
         /// <summary>
@@ -46,6 +49,10 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Beetle
             return base.ToString() + bodyTypeString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Beetle) and suffixes it with the body type.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Beetle)}{Environment.NewLine}" + base.ToStringTxt() + $"Body Type: {BodyType}";

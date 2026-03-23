@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Bird.Species;
 using DA205E_Assignment3.Animals.Bird.Species.Raven;
 
@@ -33,6 +33,12 @@ namespace DA205E_Assignment3.Animals.Bird
             return bird;
         }
 
+        /// <summary>
+        /// Attempts to create a bird of the specified species with the provided data from the dictionary. If the spcies couldn't be found in the factory switch statment, null is returned.
+        /// </summary>
+        /// <param name="species">The species of bird to create as BirdSpecies.</param>
+        /// <param name="data">A dictionary containing the relevant fields.</param>
+        /// <returns>Either null if the creation attempt failed or the actual species of bird as its object type.</returns>
         public static Bird CreateBird(BirdSpecies species, Dictionary<string, object> data)
         {
             Bird bird = null;

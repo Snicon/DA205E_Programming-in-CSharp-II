@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Bird;
 using DA205E_Assignment3.Animals.Insect;
 using DA205E_Assignment3.Animals.Insect.Species.Beetle;
@@ -14,6 +14,8 @@ namespace DA205E_Assignment3.Animals
 {
     /// <summary>
     /// The animal manager is a specialized version of the ListManager which implements the IListManager interface. In short the additional logic consists of ID generation and getting an array of all string summaries.
+    /// As of assignment 3 this class also houses specialized versions of persistant data storage via JSON and XML serializations. There are also some logic used for data filtering and searching using LINQ based on
+    /// the list of animals.
     /// 
     /// It's purpose is to handle a list of animals.
     /// </summary>
@@ -21,6 +23,7 @@ namespace DA205E_Assignment3.Animals
     {
         private static int startID = 100; // The very first number for the ID generation. This number is added to by one for each ID generated.
 
+        // File token and versioning used during reading and writing to determine the file compatability.
         private const string FileToken = "EAMS_SixtenPeterson";
         private const double FileVersion = 3.0; // 3.0 as in assignment 3
 
@@ -94,48 +97,69 @@ namespace DA205E_Assignment3.Animals
         }
 
         /// <summary>
-        /// Filters the animals list by a range of age and returns a new list of animals containing all animals within the range.
+        /// Filters the animals list by a range of age and returns a new list of animals containing all animals within the range. If any exceptions occur an empty list is returned.
         /// </summary>
         /// <param name="minAge">The minimum age in the range (inclusive)</param>
         /// <param name="maxAge">The maximum age in the range (inclusive)</param>
-        /// <returns>A new list of animals within the age range.</returns>
+        /// <returns>A new list of animals within the age range. Or an empty list if an exception occured.</returns>
         public List<Animal> FilterByAgeRange(double minAge, double maxAge) 
         {
-            return (from animal in base.TheList
+            try
+            {
+                return (from animal in base.TheList
                     where animal.Age >= minAge && animal.Age <= maxAge
                     select animal).ToList();
+            }
+            catch (Exception exception)
+            {
+                return new List<Animal>(); // Returns an empty list in case of an exception occuring
+            }
         }
 
+        /// <summary>
+        /// Searches for any animals with an ID that matched the search/key word. Any matches are returned in the form of a list. If any exceptions occur an empty list is returned.
+        /// </summary>
+        /// <param name="id">The search/key word used to search</param>
+        /// <returns>A list of animals matching the search word, or an empty list if an exception occured.</returns>
         public List<Animal> SearchByID(string id)
         {
-            // TODO: Exception handling?
-            id = id.ToLower().Trim();
+            try
+            {
+                id = id.ToLower().Trim();
 
-            return (from animal in base.TheList
-                    where animal.Id.ToLower().Contains(id)
-                    select animal).ToList();
+                return (from animal in base.TheList
+                        where animal.Id.ToLower().Contains(id)
+                        select animal).ToList();
+            }
+            catch(Exception exception)
+            {
+                return new List<Animal>(); // Returns an empty list in case of an exception occuring
+            }
         }
 
-
+        /// <summary>
+        /// Serializes the list to JSON, then stores the JSON in the specified file if successful.
+        /// </summary>
+        /// <param name="fileName">The filename that the JSON is to be stored in.</param>
         public override void JsonSerialize(string fileName)
         {
-            bool validData = true;
+            bool validData = true; // Defaults to true, will be changed to false if a DuplicateAnimalNameException occurs
 
             try
             {
-                ValidateNoDuplicates();
+                ValidateNoDuplicates(); // Validates that there are no duplications
             }
-            catch (DuplicateAnimalNameException exception) 
+            catch (DuplicateAnimalNameException exception)  // Duplicate animal names were found
             {
-                validData = false;
-                ValidationUtility.WarnUser(exception.Message + Environment.NewLine + exception.Name);
+                validData = false; // Data is invalid
+                ValidationUtility.WarnUser("It seems like you application contains duplicate animal names which is not allowed. Please resovle the name duplication before exporting/saving to a JSON file.");
             }
 
-            if (validData)
+            if (validData) // Data is valid (no duplicate names)
             {
                 try
                 {
-                    string? jsonString = JsonConvert.SerializeObject(TheList, base.options);
+                    string? jsonString = JsonConvert.SerializeObject(TheList, base.options); // Serializing the list to json, applying an option that makes it more human readable.
                     File.WriteAllText(fileName, jsonString);
                 }
                 catch (Exception exception)
@@ -145,16 +169,29 @@ namespace DA205E_Assignment3.Animals
             }
         }
 
+        /// <summary>
+        /// Reads a file and deserializes its containing JSON to a list of animals stored in this class.
+        /// </summary>
+        /// <param name="fileName">The filename of the file to read from</param>
         public override void JsonDeserialize(string fileName)
         {
-            string? jsonString = File.ReadAllText(fileName);
+            string? jsonString = File.ReadAllText(fileName); // Reading the file
             if (jsonString != null)
             {
-                TheBaseList = JsonConvert.DeserializeObject<List<Animal>>(jsonString, options); // TODO: Can I resolve the warning?
-                reassignStartID();
+                var deserialized = JsonConvert.DeserializeObject<List<Animal>>(jsonString, options); // Deserializing
+
+                if (deserialized != null) // Simple null check
+                {
+                    TheBaseList = deserialized; // Updating the list
+                    reassignStartID(); // Making sure any new id assignments follows the biggest id in the list
+                }
             }
         }
 
+        /// <summary>
+        /// Validats that there are no duplicate names in the animal list
+        /// </summary>
+        /// <exception cref="DuplicateAnimalNameException"></exception>
         public void ValidateNoDuplicates()
         {
             var duplicates = (from animal in base.TheList
@@ -169,9 +206,13 @@ namespace DA205E_Assignment3.Animals
             }
         }
 
-        public void SaveFileAs(string fileName, AnimalManager animalManager)
+        /// <summary>
+        /// Saves a .txt-file representation of all the animals from the list.
+        /// </summary>
+        /// <param name="fileName">The file the list will be stored to</param>
+        public void SaveFileAs(string fileName)
         {
-            int animalCount = animalManager.Count;
+            int animalCount = Count;
             try
             {
                 using (var writer = new StreamWriter(fileName))
@@ -180,7 +221,7 @@ namespace DA205E_Assignment3.Animals
                     writer.WriteLine(FileVersion); // Writing the file version to allow for implementation of backwards compatability in the future if needed.
                     writer.WriteLine(animalCount); // Writing the count of animals to aid the reading of the text file by letting the program know how many animals to process.
 
-                    foreach (Animal animal in animalManager.TheList)
+                    foreach (Animal animal in TheList)
                     {
                         writer.WriteLine(animal.ToStringTxt());
                     }
@@ -188,17 +229,21 @@ namespace DA205E_Assignment3.Animals
             }
             catch (Exception)
             {
-                ValidationUtility.WarnUser("Something went wrong while saving a file!");
+                ValidationUtility.WarnUser("Something went wrong while saving a .txt file!");
             }
         }
 
-        public void OpenFile(string fileName, AnimalManager animalManager)
+        /// <summary>
+        /// Opens/reads and imports any animals from the file into the application. May throw a FileVersionMissmatchException if the file versions don't match, indicating incompatability.
+        /// </summary>
+        /// <param name="fileName">The file to read from.</param>
+        /// <exception cref="FileVersionMissmatchException"></exception>
+        public void OpenFile(string fileName)
         {
             try
             {
                 using (var reader = new StreamReader(fileName))
                 {
-                    // TODO: Improve code below:
                     string fileToken = reader.ReadLine();
                     double fileVersion = double.Parse(reader.ReadLine());
 
@@ -276,7 +321,7 @@ namespace DA205E_Assignment3.Animals
 
                         if (animal != null)
                         {
-                            animalManager.Add(animal); // Adding animal if it is not null (as in an animal object was successfully created based on the data from the .txt file)
+                            Add(animal); // Adding animal if it is not null (as in an animal object was successfully created based on the data from the .txt file)
 
                             if (i == animalCount - 1) // If it is the last animal assure the startID is updated so that any new animals get a unique id.
                                 reassignStartID();
@@ -291,10 +336,13 @@ namespace DA205E_Assignment3.Animals
             }
             catch (Exception exception)
             {
-                ValidationUtility.WarnUser(exception.ToString()); // TODO: Replace with user friendly alternative
+                ValidationUtility.WarnUser("Something went wrong while trying to read from the file...");
             }
         }
 
+        /// <summary>
+        /// Reassigns the startID in order to make sure any new animals get a valid and unique id. Without reassigning there is a chance duplicate IDs are given after opening from a file.
+        /// </summary>
         private void reassignStartID()
         {
             if (Count > 0) // Making sure the list is not empty

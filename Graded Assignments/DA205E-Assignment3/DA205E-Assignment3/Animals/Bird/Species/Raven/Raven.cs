@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 namespace DA205E_Assignment3.Animals.Bird.Species.Raven
 {
     /// <summary>
@@ -16,7 +16,7 @@ namespace DA205E_Assignment3.Animals.Bird.Species.Raven
 
         #region Constructors
         /// <summary>
-        /// Simplest form of constructor...
+        /// Basic constructor.
         /// </summary>
         public Raven(): base() { }
 
@@ -52,6 +52,10 @@ namespace DA205E_Assignment3.Animals.Bird.Species.Raven
             return base.ToString() + beakSizeString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Raven) and suffixes it with the beak size.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Raven)}{Environment.NewLine}" + base.ToStringTxt() + $"Beak Size: {BeakSize}";

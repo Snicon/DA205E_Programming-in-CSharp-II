@@ -1,8 +1,8 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 namespace DA205E_Assignment3.Animals.Bird.Species
 {
     /// <summary>
-    /// Sub class of the base/super class Bird. It adds the mildProduction field along with a property along with overriden ToString() and ToStringSummary() methods. Additionally any abstract methods are implemented here as this class is not abstract.
+    /// Sub class of the base/super class Bird. It adds the milkProduction field along with a property along with overriden ToString() and ToStringSummary() methods. Additionally any abstract methods are implemented here as this class is not abstract.
     /// </summary>
     public class Dove : Bird
     {
@@ -16,7 +16,7 @@ namespace DA205E_Assignment3.Animals.Bird.Species
 
         #region Constructors
         /// <summary>
-        /// Simplest form of constructor...
+        /// Very basic constructor
         /// </summary>
         public Dove(): base() { }
 
@@ -58,6 +58,10 @@ namespace DA205E_Assignment3.Animals.Bird.Species
             return base.ToString() + milkProductionString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Dove) and suffixes it with the milk production.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Dove)}{Environment.NewLine}" + base.ToStringTxt() + $"Milk Production: {MilkProduction}";

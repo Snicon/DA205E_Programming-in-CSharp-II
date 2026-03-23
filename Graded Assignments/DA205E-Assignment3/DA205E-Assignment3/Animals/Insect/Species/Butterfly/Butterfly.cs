@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
 {
     /// <summary>
@@ -16,6 +16,9 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
 
 
         #region Constructor(s)
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
         public Butterfly() : base() { }
 
         /// <summary>
@@ -23,9 +26,7 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
         /// </summary>
         /// <param name="hasWings">A boolean representing if the Butterfly have any wings, used in the base constructor</param>
         /// <param name="lifecycleStage">The lifecycle stage of the Butterfly, used in the base constructor</param>
-        public Butterfly(bool hasWings, LifecycleStage lifecycleStage) : base(hasWings, lifecycleStage)
-        {
-        }
+        public Butterfly(bool hasWings, LifecycleStage lifecycleStage) : base(hasWings, lifecycleStage) { }
         #endregion
 
         #region Properties
@@ -47,6 +48,10 @@ namespace DA205E_Assignment3.Animals.Insect.Species.Butterfly
             return base.ToString() + wingpatternString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Butterfly) and suffixes it with the wing pattern.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Butterfly)}{Environment.NewLine}" + base.ToStringTxt() + $"Wing Pattern: {WingPattern}";

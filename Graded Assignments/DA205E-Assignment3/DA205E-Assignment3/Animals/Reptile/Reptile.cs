@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Reptile.Species;
 using System.Xml.Serialization;
 
@@ -17,8 +17,16 @@ namespace DA205E_Assignment3.Animals.Reptile
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
         public Reptile() : base() { }
 
+        /// <summary>
+        /// Basic constructor that sets the canRegrowTail and livesInWater fields.
+        /// </summary>
+        /// <param name="livesInWater"></param>
+        /// <param name="canRegrowTail"></param>
         public Reptile(bool livesInWater, bool canRegrowTail) : base()
         {
             CanRegrowTail = canRegrowTail;
@@ -60,6 +68,10 @@ namespace DA205E_Assignment3.Animals.Reptile
             return base.ToString() + livesInWaterString + canRegrowTailString;
         }
 
+        /// <summary>
+        /// Overriden ToStringTxtMethod(). It adds the lives in water and can regrow tail properties to the string.
+        /// </summary>
+        /// <returns>A nicley fromatted string used for storing an animal in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return base.ToStringTxt() + $"Lives in water: {LivesInWater}{Environment.NewLine}" +

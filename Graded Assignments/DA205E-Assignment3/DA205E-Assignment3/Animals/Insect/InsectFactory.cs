@@ -1,5 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-04
-using DA205E_Assignment3.Animals.Bird.Species.Raven;
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Insect.Species;
 using DA205E_Assignment3.Animals.Insect.Species.Beetle;
 using DA205E_Assignment3.Animals.Insect.Species.Butterfly;
@@ -35,6 +34,12 @@ namespace DA205E_Assignment3.Animals.Insect
             return insect;
         }
 
+        /// <summary>
+        /// Attempts to create an insect of the specified species with the provided data from the dictionary. If the spcies couldn't be found in the factory switch statment, null is returned.
+        /// </summary>
+        /// <param name="species">The species of insect to create as InsectSpecies</param>
+        /// <param name="data">A dictionary containing the relevant fields.</param>
+        /// <returns>Either null if the creation attempt failed or the actual species of insect as its object type.</returns>
         public static Insect CreateInsect(InsectSpecies species, Dictionary<string, object> data)
         {
             Insect insect = null;

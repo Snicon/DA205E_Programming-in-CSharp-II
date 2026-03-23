@@ -1,5 +1,6 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-25
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 
+using DA205E_Assignment3.Animals;
 using DA205E_Assignment3.Utils;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
@@ -12,7 +13,15 @@ namespace DA205E_Assignment3.GenericList
     /// <typeparam name="T"></typeparam>
     public class ListManager<T> : IListManager<T>
     {
+        #region Fields
         private List<T> list; // Field that stores the list of items
+
+        protected JsonSerializerSettings options = new JsonSerializerSettings
+        {
+            Formatting = Newtonsoft.Json.Formatting.Indented,
+            TypeNameHandling = TypeNameHandling.Auto
+        };
+        #endregion
 
         /// <summary>
         /// Returns the count/length of the list.
@@ -41,13 +50,6 @@ namespace DA205E_Assignment3.GenericList
             get { return list; }
             set { list = value; }
         }
-
-        // TODO: is this a property?
-        protected JsonSerializerSettings options = new JsonSerializerSettings
-        {
-            Formatting = Newtonsoft.Json.Formatting.Indented,
-            TypeNameHandling = TypeNameHandling.Auto
-        };
 
         /// <summary>
         /// Simple constructor, just creates a new list for the list field.
@@ -169,6 +171,10 @@ namespace DA205E_Assignment3.GenericList
             return info;
         }
 
+        /// <summary>
+        /// Serializes the list to Json and stores it in a .json file.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to store the serialized data in.</param>
         public virtual void JsonSerialize(string fileName)
         {
             try
@@ -182,13 +188,28 @@ namespace DA205E_Assignment3.GenericList
             }
         }
 
+        /// <summary>
+        /// Deseraializes the list from Json and applies it to the list.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to the file that will be deserialized from</param>
         public virtual void JsonDeserialize(string fileName)
         {
             string? jsonString = File.ReadAllText(fileName);
             if (jsonString != null)
-                list = JsonConvert.DeserializeObject<List<T>>(jsonString, options); // TODO: Can I resolve the warning?
+            {
+                var deserialized = JsonConvert.DeserializeObject<List<T>>(jsonString, options); // Deserializing
+
+                if (deserialized != null) // Simple null check
+                {
+                    list = deserialized; // Updating the list
+                }
+            }
         }
 
+        /// <summary>
+        /// Serializes the list to XML and stores it in a .xml file.
+        /// </summary>
+        /// <param name="fileName">The fileName/path to store the serialized data in.</param>
         public virtual void XMLSerialize(string fileName)
         {
             try

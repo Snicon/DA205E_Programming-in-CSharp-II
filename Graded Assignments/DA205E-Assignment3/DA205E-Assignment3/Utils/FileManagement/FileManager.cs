@@ -2,7 +2,7 @@
 namespace DA205E_Assignment3.Utils.FileManagement
 {
     /// <summary>
-    /// This static class houses any logic required for handling files, as of assignment 2 specifically image files. TODO: Update comment
+    /// This static class houses any logic required for handling files, as of assignment 2 specifically image files.
     /// </summary>
     public static class FileManager
     {

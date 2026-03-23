@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 using DA205E_Assignment3.Animals.Bird.Species;
 using DA205E_Assignment3.Animals.Bird.Species.Raven;
 using System.Xml.Serialization;
@@ -18,7 +18,10 @@ namespace DA205E_Assignment3.Animals.Bird
         #endregion
 
         #region Constructor(s)
-        public Bird() { }
+        /// <summary>
+        /// Simple consturctor
+        /// </summary>
+        public Bird() : base() { }
 
         /// <summary>
         /// Sets the wingspan and beaktype via thir properties based on the provided parameters. Also calls the base constructor.
@@ -69,6 +72,10 @@ namespace DA205E_Assignment3.Animals.Bird
             return base.ToString() + wingspanString + beakTypeString;
         }
 
+        /// <summary>
+        /// Overriden ToStringTxtMethod(). It adds the wingspan and beak type properties to the string.
+        /// </summary>
+        /// <returns>A nicley fromatted string used for storing an animal in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return base.ToStringTxt() + $"Wingspan: {Wingspan}{Environment.NewLine}" +

@@ -1,0 +1,63 @@
+EAMS_SixtenPeterson
+3
+6
+Dove
+Id: B100
+Name: Anna
+Age: 4
+Gender: Female
+Weight: 18
+Sleep Time: 0
+Wingspan: 4
+Beak type: Hooked
+Milk Production: 12
+Raven
+Id: B101
+Name: Ray
+Age: 3
+Gender: Female
+Weight: 2
+Sleep Time: 0
+Wingspan: 13
+Beak type: Hooked
+Beak Size: 2
+Beetle
+Id: I102
+Name: Boet
+Age: 1
+Gender: Male
+Weight: 0,2
+Sleep Time: 0
+Has wings: True
+Lifecycle stage: Adult
+Body Type: Bulky
+Butterfly
+Id: I103
+Name: Moa
+Age: 1
+Gender: Female
+Weight: 0,1
+Sleep Time: 0
+Has wings: True
+Lifecycle stage: Adult
+Wing Pattern: Striped
+Snake
+Id: R104
+Name: Snape
+Age: 4
+Gender: Male
+Weight: 23,4
+Sleep Time: 0
+Lives in water: False
+Can regrow tail: False
+Venomous: True
+Turtle
+Id: R105
+Name: Frank
+Age: 101
+Gender: Unknown
+Weight: 60
+Sleep Time: 0
+Lives in water: True
+Can regrow tail: True
+Shell Width: 14

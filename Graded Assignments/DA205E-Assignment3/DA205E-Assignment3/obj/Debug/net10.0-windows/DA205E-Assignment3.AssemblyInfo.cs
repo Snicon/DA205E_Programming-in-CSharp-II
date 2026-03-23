@@ -17,7 +17,7 @@ using System.Reflection;
 
 Credit to my girlfriend, Moa Sjöblom, for the application artwork that she hand made on her iPad. See the application icon as well as the icon in this about box.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("3.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.0+6bcaaf1ece57f36534d1de77955858da730a24e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.0+dea1d31fb9a24d3141a136d790e2bb985be766c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcoPark Animal Management System (EAMS)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EcoPark Animal Management System (EAMS) V2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.0")]

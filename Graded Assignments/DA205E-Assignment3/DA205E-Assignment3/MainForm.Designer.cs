@@ -577,6 +577,7 @@
             // nmrMaxAge
             // 
             nmrMaxAge.Location = new Point(141, 39);
+            nmrMaxAge.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nmrMaxAge.Name = "nmrMaxAge";
             nmrMaxAge.Size = new Size(120, 23);
             nmrMaxAge.TabIndex = 22;
@@ -584,6 +585,7 @@
             // nmrMinAge
             // 
             nmrMinAge.Location = new Point(6, 39);
+            nmrMinAge.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nmrMinAge.Name = "nmrMinAge";
             nmrMinAge.Size = new Size(120, 23);
             nmrMinAge.TabIndex = 5;

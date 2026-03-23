@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-23
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 
 using DA205E_Assignment3.Animals.Bird.Species;
 using DA205E_Assignment3.Animals.Bird.Species.Raven;
@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 namespace DA205E_Assignment3.Animals
 {
     /// <summary>
-    /// The root class for all animal derived classes (obviously). This class implements the IAnimal interface.
+    /// The root class for all animal derived classes (obviously). This class implements the IAnimal interface. The XMLIncludes are there to allow for XML serialization of all the dereived animal classes.
     /// </summary>
     [XmlInclude(typeof(Dove))]
     [XmlInclude(typeof(Raven))]

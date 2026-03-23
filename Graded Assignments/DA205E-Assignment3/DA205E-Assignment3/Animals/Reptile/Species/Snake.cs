@@ -1,4 +1,4 @@
-﻿// Sixten Peterson (AQ9300) 2026-02-24
+﻿// Sixten Peterson (AQ9300) 2026-03-23
 namespace DA205E_Assignment3.Animals.Reptile.Species
 {
     /// <summary>
@@ -15,6 +15,9 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         #endregion
 
         #region Constructor(s)
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
         public Snake() : base() { }
 
         /// <summary>
@@ -22,9 +25,7 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
         /// </summary>
         /// <param name="livesInWater">A boolean representing if the snake lives in water, used in the base constructor</param>
         /// <param name="canRegrowTail">A boolean representing if the snake regrow its tail, used in the base constructor</param>
-        public Snake(bool livesInWater, bool canRegrowTail) : base(livesInWater, canRegrowTail)
-        {
-        }
+        public Snake(bool livesInWater, bool canRegrowTail) : base(livesInWater, canRegrowTail) { }
         #endregion
 
         #region Properties
@@ -46,6 +47,10 @@ namespace DA205E_Assignment3.Animals.Reptile.Species
             return base.ToString() + venomousString;
         }
 
+        /// <summary>
+        /// Prefixes the base ToStringTxt() with the name of the species (Snake) and suffixes it with the venomous.
+        /// </summary>
+        /// <returns>A string representation of the animal used when storing it in a .txt-file.</returns>
         public override string ToStringTxt()
         {
             return $"{nameof(Snake)}{Environment.NewLine}" + base.ToStringTxt() + $"Venomous: {venomous}";
