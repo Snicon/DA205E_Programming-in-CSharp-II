@@ -11,11 +11,15 @@ This repo contains all the assignments I've worked on along any other relevant f
 ## About assignments
 
 ### Assignment 1 - Encapsulation and Inheritance
-
 To be updated...
 
-### Assignment 2 - Polymorphism
+### Assignment 2 - Polymorphism, Generics & Collections
+To be updated...
 
+### Assignment 3 - Files, Exceptions and LINQ
+To be updated...
+
+### Assignment 4 - Delegates, Events and WPF
 To be updated...
 
 More assignments will be added once they are published...
@@ -31,7 +35,7 @@ More assignments will be added once they are published...
 |Quiz 1|☑|A|A|
 |Assignment 3|☑|-|A|
 |Quiz 2|☑|A|A|
-|Assignment 4|☐|-|A|
+|Assignment 4|☑|-|A|
 |Assignment 5|☐|-|A|
 |Assignment 6|☐|-|A|
 |Quiz 3|☐|-|A|
