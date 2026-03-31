@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>DA205E_Assignment4</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="airplane_simulator-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="airplane_simulator-icon.ico" />
+  </ItemGroup>
+
+</Project>

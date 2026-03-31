@@ -1,0 +1,100 @@
+﻿<!-- Sixten Peterson (AQ9300) 2026-03-31 -->
+<Window x:Class="DA205E_Assignment4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA205E_Assignment4"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Airport Simulator" 
+        Height="800"
+        Width="600"
+        Icon="pack://application:,,,/DA205E-Assignment4;component/airplane_simulator-icon.ico"> <!-- Setting the icon to the one my girlfriend made for the application. Hopefully this won't break when I hand it in. I have never changed the icon for a WPF application before. -->
+    <Grid Margin="15"> <!-- Using a grid for layouting -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" /> <!-- Two equally big columns -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" /> <!-- Rows with varying heights to best showcase the different individual parts of the GUI -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2.*" />
+        </Grid.RowDefinitions>
+
+        <!-- Row 0 (first row) of the GUI: contains the add new flight group box and the airplanes + change airplane data group boxes -->
+        <GroupBox Header="Add new flight" Padding="5"> <!-- Using a group box to group all the fields and the button related to creating a new flight/airplane -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" /> <!-- The left column takes just enough space (width) to display all the labels -->
+                    <ColumnDefinition Width="*"/> <!-- The rest of the space is given to the text boxes that include some margin to the left side for white space -->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" /> <!-- There is probably a better way of going about this but at least this worked well enough, basically a row is created for each field/textbox + label as well as the button -->
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label x:Name="lblName" Content="Name" /> <!-- Label for the airplane name -->
+                <TextBox x:Name="txtName" Text="{Binding AirplaneName}" Grid.Row="0" Grid.Column="1" Margin="40,0,0,0"/> <!-- Text box/field for the airplane name, it binds to the AirplaneName property in the code-behind. Row 0, Column 1. -->
+
+                <Label x:Name="lblFlightID" Content="Flight ID" Grid.Row="1" Margin="0,10,0,0" /> <!-- Label for the flight ID, setting the row to 1 (meaning the second row) and adding some bottom margin for white space -->
+                <TextBox x:Name="txtFlightID" Text="{Binding ID}" Grid.Row="1" Grid.Column="1" Margin="40,10,0,0" /> <!-- Text box/field for the flight ID, it binds to the ID property in the code-behind. Row 1, Column 1. -->
+
+                <Label x:Name="lblDestination" Content="Destination" Grid.Row="2" Margin="0,10,0,0" /> <!-- Label for the flight destination, setting the row to 2 (meaning the third row) and adding some bottom margin for white space -->
+                <TextBox x:Name="txtDestination" Text="{Binding Destination}" Grid.Row="2" Grid.Column="1" Margin="40,10,0,0" /> <!-- Text box/field for the flight destination, it binds to the Destination property in the code-behind. Row 2, Column 1. -->
+
+                <Label x:Name="lblFlightTime" Content="Flight time" Grid.Row="3" Margin="0,10,0,0" /> <!-- Label for the flight time, setting the row to 3 (meaning the fourth row) and adding some bottom margin for white space -->
+                <TextBox x:Name="txtFlightTime" Text="{Binding FlightTime}" Grid.Row="3" Grid.Column="1" Margin="40,10,0,0" /> <!-- Text box/field for the flight time, it binds to the FlightTime property in the code-behind. Row 3, Column 1. -->
+
+                <Button x:Name="btnAddPlane" Grid.Row="4" Grid.ColumnSpan="2" Margin="0, 16, 0, 0" Width="140" Height="32" Content="Add Plane" Click="btnAddPlane_Click" /> <!--<Button in Row 4 that spans over both columns. -->
+            </Grid>
+        </GroupBox>
+
+        <!-- Row 1 (second row) of the GUI: contains the airplane actions groupbox -->
+        <Grid Grid.Column="1" Margin="20, 0, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Airplanes" Padding="5"> <!-- GroupBox for the airplanes -->
+                <ListBox x:Name="lstAirplanes" Grid.Row="0" SelectionChanged="lstAirplanes_SelectionChanged" /> <!-- list box that will consist of any created airplanes -->
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Header="Change airplane data" Padding="5" Margin="0, 5, 0, 0"> <!-- Group box for the chage airplane data controls -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label x:Name="lblFlightHeight" Content="New flight height"/>
+                        <TextBox x:Name="txtFlightHeight" Text="{Binding NewFlightHeight}" Margin="0,0,0,10" /> <!-- Text box that binds to the NewFlightHeight property in the code-behind -->
+                    </StackPanel>
+                    <Button x:Name="btnChangeHeight" Content="Change" Grid.Column="1" Height="18" VerticalAlignment="Bottom" Margin="15, 0, 0, 10" Click="btnChangeHeight_Click"/>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <Label x:Name="lblNewDestination" Content="New destination"/>
+                        <TextBox x:Name="txtNewDestination" Text="{Binding NewDestination}"/> <!-- Text box that binds to the NewDestination property in the code-behind -->
+                    </StackPanel>
+                    <Button x:Name="btnNewDestination" Content="Change" Grid.Row="1" Grid.Column="1" Height="18" VerticalAlignment="Bottom" Margin="15, 0, 0, 0" Click="btnNewDestination_Click" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="Airplane actions" Padding="10" Margin="0, 20, 0, 0"> <!-- GroupBox for the airplane actions -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="25">
+                <Button x:Name="btnTakeOff" Width="100" Content="Take Off" Click="btnTakeOff_Click" Margin="0, 0, 45, 0"/>
+                <Button x:Name="btnRemovePlane" Width="140" Content="Remove plane" Click="btnRemovePlane_Click" />
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Row 2 (third row) of the GUI: contains the flight log -->
+        <ListBox x:Name="lstFlightLog" ItemsSource="{Binding FlightLog}" Grid.Row="2" Grid.ColumnSpan="2" Margin="0, 25, 0, 0" /> <!-- Listbox that binds to the FlightLog property -->
+    </Grid>
+</Window>

@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\event\\args\\specialized\\landedeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\event\\args\\specialized\\landedeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\event\\args\\specialized\\flightheighteventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\event\\args\\specialized\\flightheighteventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\utils\\numericutillity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\utils\\numericutillity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\genericlist\\listmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\genericlist\\ilistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\genericlist\\ilistmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\event\\args\\iairplaneeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\event\\args\\iairplaneeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\event\\args\\airplaneeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\event\\args\\airplaneeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\event\\args\\specialized\\takeoffeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\event\\args\\specialized\\takeoffeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\data\\controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\data\\controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment4\\da205e-assignment4\\data\\airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EED55A-400E-EFC6-75C9-4176B0E07E63}|DA205E-Assignment4\\DA205E-Assignment4.csproj|solutionrelative:da205e-assignment4\\data\\airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 193,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NumericUtillity.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Utils\\NumericUtillity.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Utils\\NumericUtillity.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Utils\\NumericUtillity.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Utils\\NumericUtillity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:03:58.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\GenericList\\ListManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\GenericList\\ListManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\GenericList\\ListManager.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\GenericList\\ListManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:03:47.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IListManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\GenericList\\IListManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\GenericList\\IListManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\GenericList\\IListManager.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\GenericList\\IListManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:03:13.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAirplaneEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\IAirplaneEventArgs.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Event\\Args\\IAirplaneEventArgs.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\IAirplaneEventArgs.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Event\\Args\\IAirplaneEventArgs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:03:03.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AirplaneEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\AirplaneEventArgs.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Event\\Args\\AirplaneEventArgs.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\AirplaneEventArgs.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Event\\Args\\AirplaneEventArgs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:00:37.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TakeoffEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\TakeoffEventArgs.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Event\\Args\\Specialized\\TakeoffEventArgs.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\TakeoffEventArgs.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Event\\Args\\Specialized\\TakeoffEventArgs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T19:58:54.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ControlTower.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Data\\ControlTower.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Data\\ControlTower.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Data\\ControlTower.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Data\\ControlTower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T19:27:14.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Airplane.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Data\\Airplane.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Data\\Airplane.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Data\\Airplane.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Data\\Airplane.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T18:46:53.068Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 555,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T20:07:28.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlightHeightEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\FlightHeightEventArgs.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Event\\Args\\Specialized\\FlightHeightEventArgs.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\FlightHeightEventArgs.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Event\\Args\\Specialized\\FlightHeightEventArgs.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T19:49:25.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LandedEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\LandedEventArgs.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment4\\Event\\Args\\Specialized\\LandedEventArgs.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment4\\DA205E-Assignment4\\Event\\Args\\Specialized\\LandedEventArgs.cs",
+              "RelativeToolTip": "DA205E-Assignment4\\Event\\Args\\Specialized\\LandedEventArgs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T19:55:41.424Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
