@@ -27,7 +27,7 @@ More assignments will be added once they are published...
 |Assignment|Handed in|Grade|Best possible grade|
 |-|-|-|-|
 |Assignment 1|☑|A|A|
-|Assignment 2|☑|-|A|
+|Assignment 2|☑|A|A|
 |Quiz 1|☑|A|A|
 |Assignment 3|☑|-|A|
 |Quiz 2|☑|A|A|
