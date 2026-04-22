@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD735A71-1680-4B09-90E7-66A9B781B807}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FD735A71-1680-4B09-90E7-66A9B781B807}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD735A71-1680-4B09-90E7-66A9B781B807}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD735A71-1680-4B09-90E7-66A9B781B807}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 193,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml",
+              "RelativeToolTip": "DA205E-Assignment5\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-22T19:24:59.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T19:24:57.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
