@@ -22,6 +22,9 @@ To be updated...
 ### Assignment 4 - Delegates, Events and WPF
 To be updated...
 
+### Assignment 5 - Records, Tuples and Data Structures
+To be updated...
+
 More assignments will be added once they are published...
 
 ## Progress \& grades
@@ -43,8 +46,3 @@ More assignments will be added once they are published...
 ### Final grade
 
 To be determined.
-
-
-
-
-
