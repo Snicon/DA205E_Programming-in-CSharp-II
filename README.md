@@ -1,6 +1,6 @@
 # DA205E (Spring 26) - [Programming in C#, II](https://mau.se/en/study-education/courses/da205e) @ [MAU](https://mau.se/en/)
 
-This is the continuation course of the Programming in C# course (DA204E). In this course we are diving deeper into OOP with C# as well as programming GUI:s, this time using WPF. The course consists of multiple assignments grouped into two groups as far as grading goes along with three quizzes.
+This is the continuation course of the Programming in C# course (DA204E). In this course we are diving deeper into OOP with C# as well as programming GUI:s, this time using both Windows forms and WPF. The course consists of multiple assignments grouped into two groups as far as grading goes along with three quizzes.
 
 ## Structure
 
@@ -40,7 +40,7 @@ More assignments will be added once they are published...
 |Quiz 2|☑|A|A|
 |Assignment 4|☑|-|A|
 |Assignment 5|☐|-|A|
-|Quiz 3|☐|-|A|
+|Quiz 3|☑|A|A|
 |Assignment 6 pt 1|☐|-|A| (Optional for final grade C, required for final grade B or A)
 |Assignment 6 pt 2|☐|-|A| (Optional for final grade C, required for final grade B or A)
 
