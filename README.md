@@ -40,8 +40,9 @@ More assignments will be added once they are published...
 |Quiz 2|☑|A|A|
 |Assignment 4|☑|-|A|
 |Assignment 5|☐|-|A|
-|Assignment 6|☐|-|A|
 |Quiz 3|☐|-|A|
+|Assignment 6 pt 1|☐|-|A| (Optional for final grade C, required for final grade B or A)
+|Assignment 6 pt 2|☐|-|A| (Optional for final grade C, required for final grade B or A)
 
 ### Final grade
 
