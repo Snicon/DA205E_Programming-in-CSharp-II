@@ -36,7 +36,7 @@ More assignments will be added once they are published...
 |Assignment 1|☑|A|A|
 |Assignment 2|☑|A|A|
 |Quiz 1|☑|A|A|
-|Assignment 3|☑|-|A|
+|Assignment 3|☑|A|A|
 |Quiz 2|☑|A|A|
 |Assignment 4|☑|-|A|
 |Assignment 5|☐|-|A|
