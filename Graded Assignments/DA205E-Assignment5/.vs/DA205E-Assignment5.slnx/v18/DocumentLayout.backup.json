@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\model\\transaction\\transactionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\model\\transaction\\transactionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\edittransactionwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\edittransactionwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\converters\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\converters\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\genericobservablecollection\\iobservablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\genericobservablecollection\\iobservablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\model\\category\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\model\\category\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\genericobservablecollection\\observablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\genericobservablecollection\\observablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\model\\category\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\model\\category\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\model\\transaction\\transactionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\model\\transaction\\transactionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\model\\appdata\\appdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +63,8 @@
       "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\edittransactionwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\edittransactionwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\validationutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\validationutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\genericobservablecollection\\iobservablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\genericobservablecollection\\iobservablecollectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\converters\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|solutionrelative:da205e-assignment5\\converters\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E1F2199-6C91-A416-74F1-5F1CD9B441DC}|DA205E-Assignment5\\DA205E-Assignment5.csproj|c:\\users\\sixten peterson\\development\\da205e\\graded assignments\\da205e-assignment5\\da205e-assignment5\\converters\\decimaltostringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,67 +78,142 @@
       "DocumentGroups": [
         {
           "DockedWidth": 275,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 11,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ObservableCollectionManager.cs",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\ObservableCollectionManager.cs",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\GenericObservableCollection\\ObservableCollectionManager.cs",
               "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\ObservableCollectionManager.cs",
               "RelativeToolTip": "DA205E-Assignment5\\GenericObservableCollection\\ObservableCollectionManager.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAmwH0AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAgwI0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T18:08:04.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T18:08:04.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "TransactionManager.cs",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\TransactionManager.cs",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Transaction\\TransactionManager.cs",
               "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\TransactionManager.cs",
               "RelativeToolTip": "DA205E-Assignment5\\Model\\Transaction\\TransactionManager.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAgwEwBAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowFkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T17:56:12.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T17:56:12.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml.cs",
               "RelativeToolTip": "DA205E-Assignment5\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAFYBAAAAAAAAAAAowHkBAABKAAAAAAAAAA==",
+              "ViewState": "AgIAACUBAAAAAAAAAAAgwEYBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T16:23:50.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T16:23:50.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\AssemblyInfo.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T10:32:31.203Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ValidationUtil.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\ValidationUtil.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\ValidationUtil.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\ValidationUtil.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\ValidationUtil.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T14:35:47.003Z",
-              "EditorCaption": ""
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\App.xaml",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml",
+              "RelativeToolTip": "DA205E-Assignment5\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-18T10:32:26.43Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T10:32:11.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T09:01:19.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:58:29.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\Category.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Category\\Category.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\Category.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\Model\\Category\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:56:52.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MonthlyCashFlowSummary.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:54:12.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IObservableCollectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:13:44.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "EditTransactionWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\EditTransactionWindow.xaml.cs",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\EditTransactionWindow.xaml.cs",
@@ -150,98 +225,36 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\AssemblyInfo.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T10:32:31.203Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\App.xaml",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml",
-              "RelativeToolTip": "DA205E-Assignment5\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-18T10:32:26.43Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "EnumToBooleanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:09:29.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\App.xaml.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\App.xaml.cs",
+              "DocumentIndex": 15,
+              "Title": "ValidationUtil.cs",
+              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\ValidationUtil.cs",
+              "RelativeDocumentMoniker": "DA205E-Assignment5\\ValidationUtil.cs",
+              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\ValidationUtil.cs",
+              "RelativeToolTip": "DA205E-Assignment5\\ValidationUtil.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T10:32:11.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T14:35:47.003Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Transaction.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\Model\\Transaction\\Transaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T09:01:19.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CategoryManager.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\Model\\Category\\CategoryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:58:29.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\Category.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\Category\\Category.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\Category\\Category.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\Model\\Category\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:56:52.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MonthlyCashFlowSummary.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\Model\\CashFlow\\MonthlyCashFlowSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:54:12.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AppData.cs",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Model\\AppData\\AppData.cs",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\Model\\AppData\\AppData.cs",
@@ -249,34 +262,7 @@
               "RelativeToolTip": "DA205E-Assignment5\\Model\\AppData\\AppData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:26:40.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IObservableCollectionManager.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\GenericObservableCollection\\IObservableCollectionManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:13:44.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "EnumToBooleanConverter.cs",
-              "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
-              "RelativeDocumentMoniker": "DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
-              "ToolTip": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
-              "RelativeToolTip": "DA205E-Assignment5\\Converters\\EnumToBooleanConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:09:29.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T08:26:40.88Z"
             },
             {
               "$type": "Document",
@@ -288,8 +274,7 @@
               "RelativeToolTip": "DA205E-Assignment5\\Converters\\DecimalToStringConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:04:26.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T08:04:26.76Z"
             }
           ]
         }
@@ -314,7 +299,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Sixten Peterson\\Development\\DA205E\\Graded Assignments\\DA205E-Assignment5\\DA205E-Assignment5\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DA205E-Assignment5\\MainWindow.xaml",

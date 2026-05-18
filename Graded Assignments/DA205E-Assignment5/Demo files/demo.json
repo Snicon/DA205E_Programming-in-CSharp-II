@@ -1,0 +1,190 @@
+{
+  "Categories": {
+    "Count": 6,
+    "Collection": [
+      {
+        "Name": "Food",
+        "Type": 0
+      },
+      {
+        "Name": "Public transportation",
+        "Type": 0
+      },
+      {
+        "Name": "Books",
+        "Type": 0
+      },
+      {
+        "Name": "Streaming services",
+        "Type": 0
+      },
+      {
+        "Name": "Salary",
+        "Type": 1
+      },
+      {
+        "Name": "Tradera",
+        "Type": 1
+      }
+    ]
+  },
+  "Transactions": {
+    "FilteredTransactions": [
+      {
+        "Date": "2026-04-08T00:00:00",
+        "Amount": 300.0,
+        "Category": {
+          "Name": "Food",
+          "Type": 0
+        },
+        "Description": "Restaurant dinner"
+      },
+      {
+        "Date": "2026-04-22T00:00:00",
+        "Amount": 50.0,
+        "Category": {
+          "Name": "Public transportation",
+          "Type": 0
+        },
+        "Description": "24 hour ticket"
+      },
+      {
+        "Date": "2026-05-18T23:18:39.8559524+02:00",
+        "Amount": 23500.0,
+        "Category": {
+          "Name": "Salary",
+          "Type": 1
+        },
+        "Description": "Salary"
+      },
+      {
+        "Date": "2026-04-25T00:00:00",
+        "Amount": 23400.0,
+        "Category": {
+          "Name": "Salary",
+          "Type": 1
+        },
+        "Description": "Salaary"
+      },
+      {
+        "Date": "2026-01-06T00:00:00",
+        "Amount": 900.0,
+        "Category": {
+          "Name": "Books",
+          "Type": 0
+        },
+        "Description": "Pro C# 10 with .Net 6"
+      },
+      {
+        "Date": "2026-04-02T00:00:00",
+        "Amount": 200.0,
+        "Category": {
+          "Name": "Books",
+          "Type": 0
+        },
+        "Description": "Microsoft Visual C# Step by Step"
+      },
+      {
+        "Date": "2026-05-20T00:00:00",
+        "Amount": 190.0,
+        "Category": {
+          "Name": "Streaming services",
+          "Type": 0
+        },
+        "Description": "Netflix"
+      },
+      {
+        "Date": "2026-04-20T00:00:00",
+        "Amount": 190.0,
+        "Category": {
+          "Name": "Streaming services",
+          "Type": 0
+        },
+        "Description": "Netflix"
+      }
+    ],
+    "Months": {
+      "Count": 3,
+      "Collection": [
+        "2026-01-01T00:00:00",
+        "2026-04-01T00:00:00",
+        "2026-05-01T00:00:00"
+      ]
+    },
+    "Count": 8,
+    "Collection": [
+      {
+        "Date": "2026-04-08T00:00:00",
+        "Amount": 300.0,
+        "Category": {
+          "Name": "Food",
+          "Type": 0
+        },
+        "Description": "Restaurant dinner"
+      },
+      {
+        "Date": "2026-04-22T00:00:00",
+        "Amount": 50.0,
+        "Category": {
+          "Name": "Public transportation",
+          "Type": 0
+        },
+        "Description": "24 hour ticket"
+      },
+      {
+        "Date": "2026-05-18T23:18:39.8559524+02:00",
+        "Amount": 23500.0,
+        "Category": {
+          "Name": "Salary",
+          "Type": 1
+        },
+        "Description": "Salary"
+      },
+      {
+        "Date": "2026-04-25T00:00:00",
+        "Amount": 23400.0,
+        "Category": {
+          "Name": "Salary",
+          "Type": 1
+        },
+        "Description": "Salaary"
+      },
+      {
+        "Date": "2026-01-06T00:00:00",
+        "Amount": 900.0,
+        "Category": {
+          "Name": "Books",
+          "Type": 0
+        },
+        "Description": "Pro C# 10 with .Net 6"
+      },
+      {
+        "Date": "2026-04-02T00:00:00",
+        "Amount": 200.0,
+        "Category": {
+          "Name": "Books",
+          "Type": 0
+        },
+        "Description": "Microsoft Visual C# Step by Step"
+      },
+      {
+        "Date": "2026-05-20T00:00:00",
+        "Amount": 190.0,
+        "Category": {
+          "Name": "Streaming services",
+          "Type": 0
+        },
+        "Description": "Netflix"
+      },
+      {
+        "Date": "2026-04-20T00:00:00",
+        "Amount": 190.0,
+        "Category": {
+          "Name": "Streaming services",
+          "Type": 0
+        },
+        "Description": "Netflix"
+      }
+    ]
+  }
+}
