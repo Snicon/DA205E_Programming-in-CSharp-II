@@ -4,7 +4,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
 {
     public class OxfordStrategy : ICitationStrategy
     {
-        // https://www.umu.se/en/library/search-write-study/writing-references/harvard-writing-reference-list/
+        // https://www.umu.se/en/library/search-write-study/writing-references/oxford-writing-reference-list/
         public string Format(Literature literature) // TODO: Refactor into smaller methods and just call them based on the object type if this method grows to big?
         {
             string baseString = $"{literature.Author}. {literature.Title}.";
