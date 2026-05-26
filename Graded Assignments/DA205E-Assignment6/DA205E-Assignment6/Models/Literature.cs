@@ -13,6 +13,7 @@ namespace DA205E_Assignment6.Models
         #region Fields
         private int id;
         private string title;
+        private string author;
         private int yearPublished;
         private LiteratureFormat format;
         private LiteratureStatus status;
@@ -31,6 +32,12 @@ namespace DA205E_Assignment6.Models
         {
             get => title;
             set { title = value; }
+        }
+
+        public string Author
+        {
+            get => author;
+            set => author = value;
         }
 
         public int YearPublished

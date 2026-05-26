@@ -1,7 +1,5 @@
 ﻿// Sixten Peterson (AQ9300) 2026-05-26
 
-using System.Security.Policy;
-
 namespace DA205E_Assignment6.Models
 {
     /// <summary>
