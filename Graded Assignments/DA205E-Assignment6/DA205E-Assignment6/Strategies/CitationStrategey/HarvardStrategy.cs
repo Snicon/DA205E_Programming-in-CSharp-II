@@ -4,23 +4,62 @@ using DA205E_Assignment6.Models;
 
 namespace DA205E_Assignment6.Strategies.CitationStrategey
 {
+    /// <summary>
+    /// Implements the Harvard citation style.
+    /// This strategy fromats literature according to the umu library standards.
+    /// https://www.umu.se/en/library/search-write-study/writing-references/harvard-writing-reference-list/
+    /// </summary>
     public class HarvardStrategy : ICitationStrategy
     {
-        // https://www.umu.se/en/library/search-write-study/writing-references/harvard-writing-reference-list/
-        public string Format(Literature literature) // TODO: Refactor into smaller methods and just call them based on the object type if this method grows to big?
+        /// <summary>
+        /// Formats a literature object into an Harvard-style citation string.
+        /// </summary>
+        /// <param name="literature">The literature object to format.</param>
+        /// <returns>A formatted citation string, or an empty string if the type is unsupported.</returns> TODO: Update if I change to exception.
+        public string Format(Literature literature)
         {
-            string baseString = $"{literature.Author}. ({literature.YearPublished}). {literature.Title}.";
-
-            if (literature is Book book)
+            return literature switch
             {
-                string editionFormatted = book.Edition > 1 ? $" {book.FormattedEdition} ed." : string.Empty;
-                return $"{baseString}{editionFormatted} {book.Publisher}"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object
-            } else if (literature is JournalArticle journalArticle)
-            {
-                return $"{baseString} {journalArticle.JournalName} {journalArticle.Volume}({journalArticle.Issue}): pp. {journalArticle.Pages}."; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object; Add DOI/URL or eqivelent?
-            }
+                Book book => FormatBook(book),
+                JournalArticle journalArticle => FormatJournalArticle(journalArticle),
+                _ => string.Empty // This literature type is not supported. TODO: Refactor to NotImplemented exception and add try catch when formatting instead?
+            };
+        }
 
-            return string.Empty; // This literature type is not supported.
+        /// <summary>
+        /// Handles the specific task of formatting the citation for a Book.
+        /// </summary>
+        /// <param name="book">The book to format the citation for.</param>
+        /// <returns>A nicely formatted citation string.</returns>
+        private string FormatBook(Book book)
+        {
+            string baseString = BaseCitationString(book);
+            string editionFormatted = book.Edition > 1 ? $" {book.FormattedEdition} ed." : string.Empty;
+
+            return $"{baseString}{editionFormatted} {book.Publisher}"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object)
+        }
+
+        /// <summary>
+        /// Handles the specific task of formatting the citation for a Journal Articel.
+        /// </summary>
+        /// <param name="journalArticle">The journal article to format the citation for.</param>
+        /// <returns>A nicely formatted citation string.</returns>
+        private string FormatJournalArticle(JournalArticle journalArticle)
+        {
+            string baseString = BaseCitationString(journalArticle);
+            string url = journalArticle.URL != null ? $" {journalArticle.URL}" : string.Empty;
+            string datePattern = "YYYY-MM-dd"; // TODO: Refactor in order to make this reusable over all citations for less code duplication?
+
+            return $"{baseString} {journalArticle.JournalName} {journalArticle.Volume}({journalArticle.Issue}): pp. {journalArticle.Pages}. {url} (Accessed {DateTime.Now.ToString(datePattern)})"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object
+        }
+
+        /// <summary>
+        /// Small helper method that returns the shared base string (Author, YearPublished and Title) used in all Harvard citations.
+        /// </summary>
+        /// <returns>The base string</returns>
+        private string BaseCitationString(Literature literature)
+        {
+            return $"{literature.Author}. ({literature.YearPublished}). {literature.Title}.";
         }
     }
 }

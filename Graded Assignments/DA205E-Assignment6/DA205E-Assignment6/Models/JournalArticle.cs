@@ -12,6 +12,7 @@ namespace DA205E_Assignment6.Models
         private int volume;
         private int issue;
         private string pages;
+        private string url;
         #endregion
 
         #region Properties
@@ -37,6 +38,12 @@ namespace DA205E_Assignment6.Models
         {
             get => pages;
             set => pages = value;
+        }
+
+        public string URL
+        {
+            get => url;
+            set => url = value;
         }
         #endregion
 
