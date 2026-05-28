@@ -36,7 +36,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
             string baseString = BaseCitationString(book);
 
             string editionFormatted = book.Edition > 1 ? $" ({book.FormattedEdition} ed.)" : string.Empty;
-            return $"{baseString}{editionFormatted}. {book.Publisher}"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object)
+            return $"{baseString}{editionFormatted}. {book.Publisher}";
         }
 
         /// <summary>
@@ -48,7 +48,34 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         {
             string baseString = BaseCitationString(journalArticle);
 
-            return $"{baseString}. {journalArticle.JournalName}, {journalArticle.Volume}({journalArticle.Issue}), pp. {journalArticle.Pages}. {journalArticle.URL}"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object
+            return $"{baseString}. {journalArticle.JournalName}, {journalArticle.Volume}({journalArticle.Issue}), pp. {journalArticle.Pages}. {journalArticle.URL}";
+        }
+
+        /// <summary>
+        /// Helper method for that formats the name (with initials) according to the APA style.
+        /// </summary>
+        /// <param name="author">The author names in an Author struct</param>
+        /// <returns>A string representation of the name according to the APA style.</returns>
+        private string FormatAuthorName(Author author)
+        {
+            // First initial
+            string firstInitial = !string.IsNullOrEmpty(author.FirstName) 
+                ? $"{author.FirstName}. "
+                : string.Empty;
+
+            // Middle initial
+            string middleInitials = string.Empty;
+            if (!string.IsNullOrEmpty(author.MiddleName)) 
+            {
+                // Splitting in case of multiple middle names
+                string[] middleNames = author.MiddleName.Split(' ');
+                foreach (string name in middleNames)
+                {
+                    middleInitials += $" {name}. ";
+                }
+            }
+
+            return $"{author.LastName}, {firstInitial}{middleInitials}".Trim();
         }
 
         /// <summary>
@@ -57,7 +84,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         /// <returns>The base string</returns>
         private string BaseCitationString(Literature literature)
         {
-            return $"{literature.Author}. ({literature.YearPublished}). {literature.Title}";
+            return $"{FormatAuthorName(literature.AuthorRecord)}. ({literature.YearPublished}). {literature.Title}";
         }
     }
 }

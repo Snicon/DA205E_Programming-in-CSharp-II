@@ -36,7 +36,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
             string baseString = BaseCitationString(book);
             string editionFormatted = book.Edition > 1 ? $" {book.FormattedEdition} ed." : string.Empty;
 
-            return $"{baseString}{editionFormatted} {book.Publisher}"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object)
+            return $"{baseString}{editionFormatted} {book.Publisher}";
         }
 
         /// <summary>
@@ -50,7 +50,35 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
             string url = journalArticle.URL != null ? $" {journalArticle.URL}" : string.Empty;
             string datePattern = "YYYY-MM-dd"; // TODO: Refactor in order to make this reusable over all citations for less code duplication?
 
-            return $"{baseString} {journalArticle.JournalName} {journalArticle.Volume}({journalArticle.Issue}): pp. {journalArticle.Pages}. {url} (Accessed {DateTime.Now.ToString(datePattern)})"; // TODO: Make author formatted correctly (Right now it just writes the name as it was saved in the Literature object
+            return $"{baseString} {journalArticle.JournalName} {journalArticle.Volume}({journalArticle.Issue}): pp. {journalArticle.Pages}. {url} (Accessed {DateTime.Now.ToString(datePattern)})";
+        }
+
+        /// <summary>
+        /// Helper method for that formats the name (with initials) according to the Hardvard style.
+        /// </summary>
+        /// <param name="author">The author names in an Author struct</param>
+        /// <returns>A string representation of the name according to the Harvard style.</returns>
+        private string FormatAuthorName(Author author)
+        {
+            // Initials
+            string initials = string.Empty;
+
+            // First initial
+            if (!string.IsNullOrEmpty(author.FirstName))
+                initials += $"{author.FirstName}.";
+
+            // Middle initial(s)
+            if (!string.IsNullOrEmpty(author.MiddleName))
+            {
+                // Splitting in case of multiple middle names
+                string[] middleNames = author.MiddleName.Split(' ');
+                foreach (string name in middleNames)
+                {
+                    initials += $"{name}.";
+                }
+            }
+
+            return $"{author.LastName}, {initials}";
         }
 
         /// <summary>
@@ -59,7 +87,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         /// <returns>The base string</returns>
         private string BaseCitationString(Literature literature)
         {
-            return $"{literature.Author}. ({literature.YearPublished}). {literature.Title}.";
+            return $"{FormatAuthorName(literature.AuthorRecord)} ({literature.YearPublished}). {literature.Title}.";
         }
     }
 }

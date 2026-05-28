@@ -40,6 +40,29 @@ namespace DA205E_Assignment6.Models
             set => author = value;
         }
 
+        /// <summary>
+        /// Essentialy determines the names of the author and returns an Author record containing the names.
+        /// This property is mainly here in order to simplify the citation strategy logic by having the names structured.
+        /// Without this method this process would have to be reimplemented in all the citation strategies.
+        /// </summary>
+        public Author AuthorRecord
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Author))
+                    return new Author(); // Just empty strings for all names. TODO: Improve, this is not ideal for production
+
+                string[] parts = Author.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Splitting name into multiple parts and removed any empty empty strings
+
+                // Identifying the string parts as different names.
+                string last = parts[parts.Length - 1]; // The last occuring name in the parts of the name is obviously the last name
+                string first = parts.Length > 1 ? parts[0] : string.Empty; // If more than one name occurs then the first name is the first part. If only one name occurs it is assumed that name is the last name.
+                string middle = parts.Length > 2 ? string.Join(" ", parts.Skip(1).Take(parts.Length - 2)) : string.Empty; // Gets the middle name if there is any
+
+                return new Author(first, middle, last);
+            }
+        }
+
         public int YearPublished
         {
             get => yearPublished;
