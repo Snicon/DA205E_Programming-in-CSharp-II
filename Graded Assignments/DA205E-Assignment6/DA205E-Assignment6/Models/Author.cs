@@ -1,5 +1,9 @@
 ﻿namespace DA205E_Assignment6.Models
 {
+    /// <summary>
+    /// A lightweight author record used to pass structured author names to citation strategies.
+    /// Not stored in the database in order to simplify the logic and get the project done within the time limit.
+    /// </summary>
     public record Author
     {
         #region Fields
@@ -34,6 +38,12 @@
             FirstName = firstName;
             MiddleName = middleName;
             LastName = lastName;
+        }
+        public Author()
+        {
+            FirstName = string.Empty;
+            MiddleName = string.Empty;
+            LastName = string.Empty;
         }
         #endregion
     }
