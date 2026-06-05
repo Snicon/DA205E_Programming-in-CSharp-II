@@ -8,7 +8,16 @@ namespace DA205E_Assignment6.Models
         private int id;
         private string name;
         private string code;
-        private List<Literature> readingList;
+        private List<Literature> literature;
+        #endregion
+
+        #region Constructor
+        public Course(string name, string code)
+        {
+            // Validation is made outside of constructor for better or for worse.
+            Name = name;
+            Code = code;
+        }
         #endregion
 
         #region Properties
@@ -30,15 +39,11 @@ namespace DA205E_Assignment6.Models
             set => code = value;
         }
 
-        public List<Literature> ReadingList
+        public List<Literature> Literature
         {
-            get => readingList;
-            set => readingList = value;
+            get => literature;
+            set => literature = value;
         }
-        #endregion
-
-        #region Methods
-        // TODO: Add methods
         #endregion
     }
 }

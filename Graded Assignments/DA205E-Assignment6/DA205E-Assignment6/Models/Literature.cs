@@ -20,6 +20,20 @@ namespace DA205E_Assignment6.Models
         private List<Course> courses;
         #endregion
 
+        #region Constructors
+        protected Literature() { }
+
+        protected Literature(string title, string author, int yearPublished, LiteratureFormat format, LiteratureStatus status, List<Course> courses)
+        {
+            this.title = title;
+            this.author = author;
+            this.yearPublished = yearPublished;
+            this.format = format;
+            this.status = status;
+            this.courses = courses;
+        }
+        #endregion
+
         #region Properties
         [Key]
         public int Id
@@ -43,7 +57,7 @@ namespace DA205E_Assignment6.Models
         /// <summary>
         /// Essentialy determines the names of the author and returns an Author record containing the names.
         /// This property is mainly here in order to simplify the citation strategy logic by having the names structured.
-        /// Without this method this process would have to be reimplemented in all the citation strategies.
+        /// Without this property this process would have to be reimplemented in all the citation strategies.
         /// </summary>
         public Author AuthorRecord
         {
@@ -97,7 +111,12 @@ namespace DA205E_Assignment6.Models
         /// <returns>A nicley formatted string of the fields.</returns>
         public string GetBaseDetails()
         {
-            return $"Id: {Id}{System.Environment.NewLine}Title: {Title}{System.Environment.NewLine}Year Published: {YearPublished}{System.Environment.NewLine}Format: {Format.ToString()}{System.Environment.NewLine}Status: {Status}{System.Environment.NewLine}"; // TODO: Courses not included for now.
+            string courseString = $"Courses:{System.Environment.NewLine}";
+            foreach (Course course in Courses)
+            {
+                courseString += $"- {course.Name} ({course.Code}){System.Environment.NewLine}";
+            }
+            return $"Id: {Id}{System.Environment.NewLine}Title: {Title}{System.Environment.NewLine}Year Published: {YearPublished}{System.Environment.NewLine}Format: {Format.ToString()}{System.Environment.NewLine}Status: {Status}{System.Environment.NewLine}{courseString}";
         }
         #endregion
     }

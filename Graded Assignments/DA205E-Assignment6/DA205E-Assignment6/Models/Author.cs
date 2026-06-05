@@ -1,4 +1,5 @@
-﻿namespace DA205E_Assignment6.Models
+﻿// Sixten Peterson (AQ9300) 2026-05-28
+namespace DA205E_Assignment6.Models
 {
     /// <summary>
     /// A lightweight author record used to pass structured author names to citation strategies.

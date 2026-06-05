@@ -84,7 +84,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         /// <returns>The base string</returns>
         private string BaseCitationString(Literature literature)
         {
-            return $"{FormatAuthorName(literature.AuthorRecord)}. ({literature.YearPublished}). {literature.Title}";
+            return $"{FormatAuthorName(literature.AuthorRecord)} ({literature.YearPublished}). {literature.Title}";
         }
     }
 }

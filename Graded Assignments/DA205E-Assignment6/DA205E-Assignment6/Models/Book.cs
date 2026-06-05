@@ -1,5 +1,7 @@
 ﻿// Sixten Peterson (AQ9300) 2026-05-26
 
+using DA205E_Assignment6.Models.Enums;
+
 namespace DA205E_Assignment6.Models
 {
     /// <summary>
@@ -12,6 +14,21 @@ namespace DA205E_Assignment6.Models
         private int edition;
         private string publisher;
         private string city;
+        #endregion
+
+        #region Constructor(s)
+        public Book() { }
+
+        public Book(
+            string title, string author, int yearPublished, LiteratureFormat format, LiteratureStatus status,
+            List<Course> courses, string isbn, int edition, string publisher, string city
+        ) : base(title, author, yearPublished, format, status, courses)
+        {
+            ISBN = isbn;
+            Edition = edition;
+            Publisher = publisher;
+            City = city;
+        }
         #endregion
 
         #region Properties
@@ -55,6 +72,10 @@ namespace DA205E_Assignment6.Models
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Gets info about the book, including general literature data along with specialized book data in a nicley formatted string.
+        /// </summary>
+        /// <returns>A formatted string of data</returns>
         public override string GetInfo()
         {
             return GetBaseDetails() + $"ISBN: {ISBN}{System.Environment.NewLine}Publisher: {Publisher}{System.Environment.NewLine}City: {City}{System.Environment.NewLine}";

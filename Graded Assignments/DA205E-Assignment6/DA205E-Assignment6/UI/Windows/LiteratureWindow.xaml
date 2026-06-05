@@ -1,0 +1,158 @@
+﻿<!-- Sixten Peterson (AQ9300) 2026-05-05 -->
+<Window x:Class="DA205E_Assignment6.UI.Windows.LiteratureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DA205E_Assignment6.UI.Windows"
+        xmlns:converters="clr-namespace:DA205E_Assignment6.UI.Converters"
+        mc:Ignorable="d"
+        Title="Add literature" Height="520" Width="800">
+    <Window.Resources>
+        <converters:IntToStringConverter x:Key="IntToStringConverter"/>
+    </Window.Resources>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 0, Column 0: General literature data-->
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="General literature data" Margin="0,0,5,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Literature title -->
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lblTitle" Target="{Binding ElementName=txtTitle}" Content="Title"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtTitle" Text="{Binding LiteratureTitle}" Margin="40,0,0,0"/>
+
+                <!-- Literature author -->
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblAuthor" Target="{Binding ElementName=txtAuthor}" Content="Author"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtAuthor" Text="{Binding Author}" Margin="40,0,0,0"/>
+
+                <!-- Literature year published -->
+                <Label Grid.Row="2" Grid.Column="0" x:Name="lblYearPublished" Target="{Binding ElementName=txtYearPublished}" Content="Year published"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtYearPublished" Text="{Binding YearPublished, Converter={StaticResource IntToStringConverter}}" Margin="40,0,0,0"/>
+
+                <!-- Literature Format -->
+                <Label Grid.Row="3" Grid.Column="0" x:Name="lblFormat" Target="{Binding ElementName=cmbFormat}" Content="Format"/>
+                <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cmbFormat" SelectedValue="{Binding Format}" Margin="40,0,0,0"/>
+
+                <!-- Literature Status -->
+                <Label Grid.Row="4" Grid.Column="0" x:Name="lblStatus" Target="{Binding ElementName=cmbStatus}" Content="Status"/>
+                <ComboBox Grid.Row="4" Grid.Column="1" x:Name="cmbStatus" SelectedValue="{Binding Status}" Margin="40,0,0,0"/>
+
+                <!-- Courses the literature belongs to -->
+                <Label Grid.Row="5" Grid.Column="0" x:Name="lblCourses" Target="{Binding ElementName=lstCourses}" Content="Courses"/>
+                <ListBox Grid.Row="5" Grid.Column="1" x:Name="lstCourses" ItemsSource="{Binding AllCourses}" SelectionMode="Multiple" Height="200" Margin="40,0,0,0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="2">
+                                <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="5,0,2,0"/>
+                                <TextBlock Text=" - "/>
+                                <TextBlock Text="{Binding Code}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+
+        <!-- Row 1, Column 0: Literature type-->
+        <GroupBox x:Name="grpLiteratureType"  Grid.Row="1" Grid.Column="0" Header="Literature type" Margin="0,0,5,0"> <!-- This control is made collapsed in code behind when this window is in edit mode-->
+            <ComboBox x:Name="cmbType" Margin="0,3" SelectionChanged="cmbType_SelectionChanged"/>
+        </GroupBox>
+
+        <!-- Row 0, Column 1: Book data (Shown when literature type is LiteratureType.Book) -->
+        <GroupBox x:Name="grpBook" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Header="Book data" Margin="0,0,5,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!-- Book ISBN -->
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lblISBN" Target="{Binding ElementName=txtISBN}" Content="ISBN"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtISBN" Text="{Binding ISBN}" Margin="40,0,0,0"/>
+
+                <!-- Book edition -->
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblEdition" Target="{Binding ElementName=txtEdition}" Content="Edition"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtEdition" Text="{Binding Edition, Converter={StaticResource IntToStringConverter}}" Margin="40,0,0,0"/>
+
+                <!-- Book publisher -->
+                <Label Grid.Row="2" Grid.Column="0" x:Name="lblPublisher" Target="{Binding ElementName=txtPublisher}" Content="Publisher"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtPublisher" Text="{Binding Publisher}" Margin="40,0,0,0"/>
+
+                <!-- Book city -->
+                <Label Grid.Row="3" Grid.Column="0" x:Name="lblCity" Target="{Binding ElementName=txtCity}" Content="City"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCity" Text="{Binding City}" Margin="40,0,0,0"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Row 0, Column 1: JournalArticle data (Shown when literature type is LiteratureType.JournalArticle) -->
+        <GroupBox x:Name="grpJournalArticle"  Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Header="Journal article data" Margin="0,0,5,0" Visibility="Collapsed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Journal name -->
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lblJournalName" Target="{Binding ElementName=txtJournalName}" Content="Journal name"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtJournalName" Text="{Binding JournalName}" Margin="40,0,0,0"/>
+
+                <!-- Journal volume -->
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblVolume" Target="{Binding ElementName=txtVolume}" Content="Volume"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtVolume" Text="{Binding Volume, Converter={StaticResource IntToStringConverter}}" Margin="40,0,0,0"/>
+
+                <!-- Journal issue -->
+                <Label Grid.Row="2" Grid.Column="0" x:Name="lblIssue" Target="{Binding ElementName=txtIssue}" Content="Issue"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtIssue" Text="{Binding Issue, Converter={StaticResource IntToStringConverter}}" Margin="40,0,0,0"/>
+
+                <!-- Journal pages -->
+                <Label Grid.Row="3" Grid.Column="0" x:Name="lblPages" Target="{Binding ElementName=txtPages}" Content="Pages"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtPages" Text="{Binding Pages}" Margin="40,0,0,0"/>
+
+                <!-- Journal url -->
+                <Label Grid.Row="4" Grid.Column="0" x:Name="lblURL" Target="{Binding ElementName=txtURL}" Content="URL"/>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtURL" Text="{Binding URL}" Margin="40,0,0,0"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Row 2, Column 0: Add/Edit literature button (Content changed in code-behind) -->
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnSubmit" Margin="0,15,5,0" Padding="25,5" Content="Add literature" Click="btnSubmit_Click"/>
+            <Button x:Name="btnCancel" Margin="5,15,0,0" Padding="25,5" Content="Cancel" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

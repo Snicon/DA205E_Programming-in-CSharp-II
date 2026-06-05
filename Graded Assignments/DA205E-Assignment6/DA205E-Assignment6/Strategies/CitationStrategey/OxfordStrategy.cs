@@ -32,8 +32,8 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         private string FormatBook(Book book)
         {
             string baseString = BaseCitationString(book);
-            string editionFormatted = book.Edition > 1 ? $" {book.FormattedEdition} ed." : string.Empty; // TODO: Refactor in order to make this reusable over all citations for less code duplication?
-            
+            string editionFormatted = book.Edition > 1 ? $" {book.FormattedEdition} ed." : string.Empty; // TODO: Refactor in order to make this reusable over all citations for less code duplication? (Will be done after hand in due to time constraints:/)
+
             return $"{baseString}{editionFormatted} ({book.Publisher}, {book.YearPublished})";
         }
 
@@ -46,7 +46,7 @@ namespace DA205E_Assignment6.Strategies.CitationStrategey
         {
             string baseString = BaseCitationString(journalArticle);
             string url = journalArticle.URL != null ? $" {journalArticle.URL}" : string.Empty;
-            string datePattern = "YYYY-MM-dd"; // TODO: Refactor in order to make this reusable over all citations for less code duplication?
+            string datePattern = "yyyy-MM-dd"; // TODO: Refactor in order to make this reusable over all citations for less code duplication? (Will be done after hand in due to time constraints:/)
 
             return $"{baseString} {journalArticle.JournalName} {journalArticle.Volume}: {journalArticle.Issue} ({journalArticle.YearPublished}): pp. {journalArticle.Pages}.{url} (Accessed {DateTime.Now.ToString(datePattern)})";
         }

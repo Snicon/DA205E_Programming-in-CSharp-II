@@ -1,4 +1,5 @@
-﻿using DA205E_Assignment6.Models;
+﻿// Sixten Peterson (AQ9300) 2026-06-02
+using DA205E_Assignment6.Models;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 
