@@ -7,6 +7,8 @@
         xmlns:local="clr-namespace:DA205E_Assignment6.UI.Windows"
         xmlns:converters="clr-namespace:DA205E_Assignment6.UI.Converters"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
         Title="Add literature" Height="520" Width="800">
     <Window.Resources>
         <converters:IntToStringConverter x:Key="IntToStringConverter"/>

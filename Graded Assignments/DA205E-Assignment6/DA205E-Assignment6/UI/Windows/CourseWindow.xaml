@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:DA205E_Assignment6.UI.Windows"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
         Title="Add course"
         Height="200"
         Width="300">

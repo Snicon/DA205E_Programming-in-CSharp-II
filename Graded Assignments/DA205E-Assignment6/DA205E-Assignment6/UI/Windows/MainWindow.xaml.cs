@@ -115,6 +115,18 @@ namespace DA205E_Assignment6
         }
         #endregion
 
+        #region Helper methods
+        private void UpdateLiteratureInfo()
+        {
+            string info = "No literature selected...";
+
+            if (SelectedLiterature != null)
+                info = SelectedLiterature.GetInfo();
+
+            txtLiteratureInfo.Text = info;
+        }
+        #endregion
+
         #region Event handlers
         /// <summary>
         /// Event handler for when the Add course button is pressed, it opens a new window for adding a new course and
@@ -125,6 +137,7 @@ namespace DA205E_Assignment6
         private void btnCourseAdd_Click(object sender, RoutedEventArgs e)
         {
             CourseWindow courseWindow = new CourseWindow();
+            courseWindow.Owner = this;
             bool? dialogResult = courseWindow.ShowDialog();
 
             if (dialogResult == true) { // I.e. dialog was not canceled
@@ -180,6 +193,7 @@ namespace DA205E_Assignment6
                     manager.Delete(SelectedCourse);
                     UpdateCourses(); // Since a deletion was made we need to re-fetch the courses from the database.
                     UpdateLiterature();
+                    UpdateLiteratureInfo();
                 }
 
             }
@@ -198,6 +212,7 @@ namespace DA205E_Assignment6
             else
             {
                 CourseWindow courseWindow = new CourseWindow(SelectedCourse);
+                courseWindow.Owner = this;
                 bool? dialogResult = courseWindow.ShowDialog();
 
                 if (dialogResult == true)
@@ -232,6 +247,7 @@ namespace DA205E_Assignment6
         private void btnLiteratureAdd_Click(object sender, RoutedEventArgs e)
         {
             LiteratureWindow literatureWindow = new LiteratureWindow(courses.ToList());
+            literatureWindow.Owner = this;
             bool? dialogResult = literatureWindow.ShowDialog();
 
             if (dialogResult == true)
@@ -275,12 +291,7 @@ namespace DA205E_Assignment6
         /// <param name="e"></param>
         private void dgLiterature_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            string info = "No literature selected...";
-
-            if (SelectedLiterature != null)
-                info = SelectedLiterature.GetInfo();
-
-            txtLiteratureInfo.Text = info;
+            UpdateLiteratureInfo();
         }
 
         /// <summary>
@@ -360,6 +371,7 @@ namespace DA205E_Assignment6
                     manager.Delete(SelectedLiterature);
                     UpdateLiterature(); // Since a deletion was made we need to re-fetch the literature from the database.
                     UpdateCourses(); // Courses also contain data about literature.
+                    UpdateLiteratureInfo();
                 }
             }
         }
@@ -378,6 +390,7 @@ namespace DA205E_Assignment6
             else
             {
                 LiteratureWindow literatureWindow = new LiteratureWindow(courses.ToList(), SelectedLiterature);
+                literatureWindow.Owner = this;
                 bool? dialogResult = literatureWindow.ShowDialog();
 
                 if (dialogResult == true)
