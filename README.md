@@ -57,7 +57,7 @@ To be updated...
 |Assignment 5|☑|-|A|
 |Quiz 3|☑|A|A|
 |Assignment 6 pt 1|☑|A|A| (Optional for final grade C, required for final grade B or A)
-|Assignment 6 pt 2|☐|-|A| (Optional for final grade C, required for final grade B or A)
+|Assignment 6 pt 2|☑|-|A| (Optional for final grade C, required for final grade B or A)
 
 
 ### Final grade
