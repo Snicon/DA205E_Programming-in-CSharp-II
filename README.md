@@ -53,13 +53,13 @@ To be updated...
 |Quiz 1|☑|A|A|
 |Assignment 3|☑|A|A|
 |Quiz 2|☑|A|A|
-|Assignment 4|☑|-|A|
-|Assignment 5|☑|-|A|
+|Assignment 4|☑|A|A|
+|Assignment 5|☑|A|A|
 |Quiz 3|☑|A|A|
 |Assignment 6 pt 1|☑|A|A| (Optional for final grade C, required for final grade B or A)
-|Assignment 6 pt 2|☑|-|A| (Optional for final grade C, required for final grade B or A)
+|Assignment 6 pt 2|☑|A|A| (Optional for final grade C, required for final grade B or A)
 
 
 ### Final grade
 
-To be determined.
+A
