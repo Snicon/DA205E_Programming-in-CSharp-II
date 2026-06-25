@@ -48,7 +48,9 @@ The project proposal also includes a UML diagram, see the image below. Any flaws
 ![Assignment 6, UML diagram](https://github.com/Snicon/DA205E_Programming-in-CSharp-II/blob/main/Application%20Images/Assignment_6-UML-diagram.png?raw=true)
 
 ### Assignment 6, pt2
-To be updated...
+For this part the actual application was developed. All the features listed above except for the last one (filtering and search) was implemented. Unfortenatley there were time constraints. In addition to the mentioned features the data for the application is all stored in a SQLite database with the help of Enitity Framework Core.
+
+![Assignment 6 application](https://github.com/Snicon/DA205E_Programming-in-CSharp-II/blob/main/Application%20Images/Assignment_6.png?raw=true)
 
 ## Progress \& grades
 
@@ -69,5 +71,4 @@ To be updated...
 
 
 ### Final grade
-
 A
