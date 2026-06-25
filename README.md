@@ -37,7 +37,15 @@ Assignment 5 brings yet another application, this time focused on records, tuple
 ![Assignment 5 application, the GUI showcases category and transactions creation forms, management of transactions as well as filtering and seraching for transactions along with monthly cas flow calculations.](https://github.com/Snicon/DA205E_Programming-in-CSharp-II/blob/main/Application%20Images/Assignment_5.png?raw=true)
 
 ### Assignment 6, pt1
-To be updated...
+In short a project proposal outlining a project of my own. I decided to write a proposal for an application that keeps tracks of literature for a studnets courses, features listed below:
+- Organize literature by specific courses.
+- Track the status of each literature (for example, owned, borrowed, lent).
+- Track the format of the literature (physical or digital).
+- Generate bibliography entry/citation in standard formats (like APA, Harvard, etc).
+- Filter and search among the resources based on various criteria (for example author, ISBN, course, status, etc).
+
+The project proposal also includes a UML diagram, see the image below. Any flaws in this diagram are resolved during the next part of assignment 6.
+![Assignment 6, UML diagram](https://github.com/Snicon/DA205E_Programming-in-CSharp-II/blob/main/Application%20Images/Assignment_6-UML-diagram.png?raw=true)
 
 ### Assignment 6, pt2
 To be updated...
